@@ -1,13 +1,13 @@
 {
-	"name": "mars-three.js",
-	"version": "1.0.0",
-	"description": "",
+	"name": "SuperGrids.css",
+	"version": "0.1.0",
+	"description": "SuperGrids.css - The Definitive Grid-System for the web.",
 	"main": "",
 	"scripts": {
-		"start": "concurrently \"browser-sync start --config ./bs-config.js\" \"node-sass -w scss/ -o css/\""
+		"start": "concurrently \"browser-sync start --config ./bs-config.js\" \"node-sass -w src/scss/ -o src/css/\""
 	},
 	"author": "G7495x",
-	"license": "ISC",
+	"license": "Apache-2.0",
 	"dependencies": {},
 	"devDependencies": {
 		"browser-sync": "^2.26.3",

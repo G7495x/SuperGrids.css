@@ -1,4 +1,3 @@
-
 // Browser-sync config file
 //--------------------------------------------------------------------------
 // For up-to-date information about the options:
@@ -10,11 +9,11 @@
 
 module.exports={
 	'files':[
-		'*',
-		'css/*'
+		'src/*',
+		'src/css/*'
 	],
 	notify:false,
 	reloadDelay:100,
-	server:['.'],
+	server:['src'],
 	watchEvents:['add','change','unlink']
 };
