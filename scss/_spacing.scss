@@ -1,0 +1,114 @@
+@import "variables";
+@import "breakpoints";
+
+@mixin m($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ margin: $size !important }
+}
+@mixin mx($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ @include mr($size); @include ml($size) }
+}
+@mixin my($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ @include mt($size); @include mb($size) }
+}
+@mixin mt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ margin-top: $size !important }
+}
+@mixin mr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ margin-right: $size !important }
+}
+@mixin mb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ margin-bottom: $size !important }
+}
+@mixin ml($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ margin-left: $size !important }
+}
+
+@mixin p($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ padding: $size !important }
+}
+@mixin px($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ @include pr($size); @include pl($size) }
+}
+@mixin py($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ @include pt($size); @include pb($size) }
+}
+@mixin pt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ padding-top: $size !important }
+}
+@mixin pr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ padding-right: $size !important }
+}
+@mixin pb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ padding-bottom: $size !important }
+}
+@mixin pl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ padding-left: $size !important }
+}
+
+// TODO:
+// Customizable Aspect Ratio
+// .square
+@mixin square($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		&::after{
+		  content: "";
+		  float: left;
+		  clear: both;
+			padding-top: 100%;
+		}
+	}
+}
+
+@mixin container($name: xl,$breakpoints: $grid-breakpoints){
+	display: block;
+	@include media-breakpoint-up($name,$breakpoints){
+		padding-right: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;
+		padding-left: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;
+	}
+}
+
+@each $breakpoint in map-keys($grid-breakpoints){
+	$suffix: breakpoint-suffix($breakpoint);
+	@include media-breakpoint-up($breakpoint){
+		.m-auto#{$suffix}{ @include m(auto) }
+		.mx-auto#{$suffix}{ @include mx(auto) }
+		.my-auto#{$suffix}{ @include my(auto) }
+		.mt-auto#{$suffix}{ @include mt(auto) }
+		.mr-auto#{$suffix}{ @include mr(auto) }
+		.mb-auto#{$suffix}{ @include mb(auto) }
+		.ml-auto#{$suffix}{ @include ml(auto) }
+
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-unit;
+
+			.m-#{$size}#{$suffix}{ @include m($size*1px) }
+			.mx-#{$size}#{$suffix}{ @include mx($size*1px) }
+			.my-#{$size}#{$suffix}{ @include my($size*1px) }
+			.mt-#{$size}#{$suffix}{ @include mt($size*1px) }
+			.mr-#{$size}#{$suffix}{ @include mr($size*1px) }
+			.mb-#{$size}#{$suffix}{ @include mb($size*1px) }
+			.ml-#{$size}#{$suffix}{ @include ml($size*1px) }
+
+			.p-#{$size}#{$suffix}{ @include p($size*1px) }
+			.px-#{$size}#{$suffix}{ @include px($size*1px) }
+			.py-#{$size}#{$suffix}{ @include py($size*1px) }
+			.pt-#{$size}#{$suffix}{ @include pt($size*1px) }
+			.pr-#{$size}#{$suffix}{ @include pr($size*1px) }
+			.pb-#{$size}#{$suffix}{ @include pb($size*1px) }
+			.pl-#{$size}#{$suffix}{ @include pl($size*1px) }
+		}
+		@for $size from 1 through $spacing-steps{
+			$size: $size*$spacing-unit;
+
+			.m-m#{$size}#{$suffix}{ @include m($size*-1px) }
+			.mx-m#{$size}#{$suffix}{ @include mx($size*-1px) }
+			.my-m#{$size}#{$suffix}{ @include my($size*-1px) }
+			.mt-m#{$size}#{$suffix}{ @include mt($size*-1px) }
+			.mr-m#{$size}#{$suffix}{ @include mr($size*-1px) }
+			.mb-m#{$size}#{$suffix}{ @include mb($size*-1px) }
+			.ml-m#{$size}#{$suffix}{ @include ml($size*-1px) }
+		}
+	}
+}
+
+.container{ @include container }

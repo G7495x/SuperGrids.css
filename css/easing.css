@@ -1,0 +1,580 @@
+.ease {
+  transition-timing-function: ease !important;
+  animation-timing-function: ease !important; }
+
+.ease-in {
+  transition-timing-function: ease-in !important;
+  animation-timing-function: ease-in !important; }
+
+.ease-out {
+  transition-timing-function: ease-out !important;
+  animation-timing-function: ease-out !important; }
+
+.ease-inout {
+  transition-timing-function: ease-in-out !important;
+  animation-timing-function: ease-in-out !important; }
+
+.ease-linear {
+  transition-timing-function: linear !important;
+  animation-timing-function: linear !important; }
+
+.ease-in-sine {
+  transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important;
+  animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important; }
+
+.ease-out-sine {
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important;
+  animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important; }
+
+.ease-inout-sine {
+  transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; }
+
+.ease-in-quad {
+  transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important;
+  animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important; }
+
+.ease-out-quad {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }
+
+.ease-inout-quad {
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important; }
+
+.ease-in-cubic {
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important; }
+
+.ease-out-cubic {
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important; }
+
+.ease-inout-cubic {
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important; }
+
+.ease-in-quart {
+  transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important;
+  animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important; }
+
+.ease-out-quart {
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important; }
+
+.ease-inout-quart {
+  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important;
+  animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important; }
+
+.ease-in-quint {
+  transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important;
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important; }
+
+.ease-out-quint {
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important; }
+
+.ease-inout-quint {
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important;
+  animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important; }
+
+.ease-in-expo {
+  transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important;
+  animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important; }
+
+.ease-out-expo {
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important; }
+
+.ease-inout-expo {
+  transition-timing-function: cubic-bezier(1, 0, 0, 1) !important;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1) !important; }
+
+.ease-in-circ {
+  transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important;
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important; }
+
+.ease-out-circ {
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important; }
+
+.ease-inout-circ {
+  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+  animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important; }
+
+.ease-in-back {
+  transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important; }
+
+.ease-out-back {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; }
+
+.ease-inout-back {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important; }
+
+@media (min-width: 576px) {
+  .ease-sm {
+    transition-timing-function: ease !important;
+    animation-timing-function: ease !important; }
+
+  .ease-in-sm {
+    transition-timing-function: ease-in !important;
+    animation-timing-function: ease-in !important; }
+
+  .ease-out-sm {
+    transition-timing-function: ease-out !important;
+    animation-timing-function: ease-out !important; }
+
+  .ease-inout-sm {
+    transition-timing-function: ease-in-out !important;
+    animation-timing-function: ease-in-out !important; }
+
+  .ease-linear-sm {
+    transition-timing-function: linear !important;
+    animation-timing-function: linear !important; }
+
+  .ease-in-sine-sm {
+    transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important;
+    animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important; }
+
+  .ease-out-sine-sm {
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important; }
+
+  .ease-inout-sine-sm {
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; }
+
+  .ease-in-quad-sm {
+    transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important;
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important; }
+
+  .ease-out-quad-sm {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }
+
+  .ease-inout-quad-sm {
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important; }
+
+  .ease-in-cubic-sm {
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important;
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important; }
+
+  .ease-out-cubic-sm {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important; }
+
+  .ease-inout-cubic-sm {
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important; }
+
+  .ease-in-quart-sm {
+    transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important;
+    animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important; }
+
+  .ease-out-quart-sm {
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important; }
+
+  .ease-inout-quart-sm {
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important; }
+
+  .ease-in-quint-sm {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important;
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important; }
+
+  .ease-out-quint-sm {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important; }
+
+  .ease-inout-quint-sm {
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important;
+    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important; }
+
+  .ease-in-expo-sm {
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important;
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important; }
+
+  .ease-out-expo-sm {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important; }
+
+  .ease-inout-expo-sm {
+    transition-timing-function: cubic-bezier(1, 0, 0, 1) !important;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1) !important; }
+
+  .ease-in-circ-sm {
+    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important;
+    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important; }
+
+  .ease-out-circ-sm {
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important; }
+
+  .ease-inout-circ-sm {
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important; }
+
+  .ease-in-back-sm {
+    transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important; }
+
+  .ease-out-back-sm {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; }
+
+  .ease-inout-back-sm {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important; } }
+@media (min-width: 768px) {
+  .ease-md {
+    transition-timing-function: ease !important;
+    animation-timing-function: ease !important; }
+
+  .ease-in-md {
+    transition-timing-function: ease-in !important;
+    animation-timing-function: ease-in !important; }
+
+  .ease-out-md {
+    transition-timing-function: ease-out !important;
+    animation-timing-function: ease-out !important; }
+
+  .ease-inout-md {
+    transition-timing-function: ease-in-out !important;
+    animation-timing-function: ease-in-out !important; }
+
+  .ease-linear-md {
+    transition-timing-function: linear !important;
+    animation-timing-function: linear !important; }
+
+  .ease-in-sine-md {
+    transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important;
+    animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important; }
+
+  .ease-out-sine-md {
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important; }
+
+  .ease-inout-sine-md {
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; }
+
+  .ease-in-quad-md {
+    transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important;
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important; }
+
+  .ease-out-quad-md {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }
+
+  .ease-inout-quad-md {
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important; }
+
+  .ease-in-cubic-md {
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important;
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important; }
+
+  .ease-out-cubic-md {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important; }
+
+  .ease-inout-cubic-md {
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important; }
+
+  .ease-in-quart-md {
+    transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important;
+    animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important; }
+
+  .ease-out-quart-md {
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important; }
+
+  .ease-inout-quart-md {
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important; }
+
+  .ease-in-quint-md {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important;
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important; }
+
+  .ease-out-quint-md {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important; }
+
+  .ease-inout-quint-md {
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important;
+    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important; }
+
+  .ease-in-expo-md {
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important;
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important; }
+
+  .ease-out-expo-md {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important; }
+
+  .ease-inout-expo-md {
+    transition-timing-function: cubic-bezier(1, 0, 0, 1) !important;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1) !important; }
+
+  .ease-in-circ-md {
+    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important;
+    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important; }
+
+  .ease-out-circ-md {
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important; }
+
+  .ease-inout-circ-md {
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important; }
+
+  .ease-in-back-md {
+    transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important; }
+
+  .ease-out-back-md {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; }
+
+  .ease-inout-back-md {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important; } }
+@media (min-width: 992px) {
+  .ease-lg {
+    transition-timing-function: ease !important;
+    animation-timing-function: ease !important; }
+
+  .ease-in-lg {
+    transition-timing-function: ease-in !important;
+    animation-timing-function: ease-in !important; }
+
+  .ease-out-lg {
+    transition-timing-function: ease-out !important;
+    animation-timing-function: ease-out !important; }
+
+  .ease-inout-lg {
+    transition-timing-function: ease-in-out !important;
+    animation-timing-function: ease-in-out !important; }
+
+  .ease-linear-lg {
+    transition-timing-function: linear !important;
+    animation-timing-function: linear !important; }
+
+  .ease-in-sine-lg {
+    transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important;
+    animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important; }
+
+  .ease-out-sine-lg {
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important; }
+
+  .ease-inout-sine-lg {
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; }
+
+  .ease-in-quad-lg {
+    transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important;
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important; }
+
+  .ease-out-quad-lg {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }
+
+  .ease-inout-quad-lg {
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important; }
+
+  .ease-in-cubic-lg {
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important;
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important; }
+
+  .ease-out-cubic-lg {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important; }
+
+  .ease-inout-cubic-lg {
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important; }
+
+  .ease-in-quart-lg {
+    transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important;
+    animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important; }
+
+  .ease-out-quart-lg {
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important; }
+
+  .ease-inout-quart-lg {
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important; }
+
+  .ease-in-quint-lg {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important;
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important; }
+
+  .ease-out-quint-lg {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important; }
+
+  .ease-inout-quint-lg {
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important;
+    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important; }
+
+  .ease-in-expo-lg {
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important;
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important; }
+
+  .ease-out-expo-lg {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important; }
+
+  .ease-inout-expo-lg {
+    transition-timing-function: cubic-bezier(1, 0, 0, 1) !important;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1) !important; }
+
+  .ease-in-circ-lg {
+    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important;
+    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important; }
+
+  .ease-out-circ-lg {
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important; }
+
+  .ease-inout-circ-lg {
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important; }
+
+  .ease-in-back-lg {
+    transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important; }
+
+  .ease-out-back-lg {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; }
+
+  .ease-inout-back-lg {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important; } }
+@media (min-width: 1200px) {
+  .ease-xl {
+    transition-timing-function: ease !important;
+    animation-timing-function: ease !important; }
+
+  .ease-in-xl {
+    transition-timing-function: ease-in !important;
+    animation-timing-function: ease-in !important; }
+
+  .ease-out-xl {
+    transition-timing-function: ease-out !important;
+    animation-timing-function: ease-out !important; }
+
+  .ease-inout-xl {
+    transition-timing-function: ease-in-out !important;
+    animation-timing-function: ease-in-out !important; }
+
+  .ease-linear-xl {
+    transition-timing-function: linear !important;
+    animation-timing-function: linear !important; }
+
+  .ease-in-sine-xl {
+    transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important;
+    animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) !important; }
+
+  .ease-out-sine-xl {
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1) !important; }
+
+  .ease-inout-sine-xl {
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; }
+
+  .ease-in-quad-xl {
+    transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important;
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important; }
+
+  .ease-out-quad-xl {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }
+
+  .ease-inout-quad-xl {
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955) !important; }
+
+  .ease-in-cubic-xl {
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important;
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important; }
+
+  .ease-out-cubic-xl {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) !important; }
+
+  .ease-inout-cubic-xl {
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important; }
+
+  .ease-in-quart-xl {
+    transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important;
+    animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22) !important; }
+
+  .ease-out-quart-xl {
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important; }
+
+  .ease-inout-quart-xl {
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !important; }
+
+  .ease-in-quint-xl {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important;
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06) !important; }
+
+  .ease-out-quint-xl {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important; }
+
+  .ease-inout-quint-xl {
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important;
+    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1) !important; }
+
+  .ease-in-expo-xl {
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important;
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035) !important; }
+
+  .ease-out-expo-xl {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important; }
+
+  .ease-inout-expo-xl {
+    transition-timing-function: cubic-bezier(1, 0, 0, 1) !important;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1) !important; }
+
+  .ease-in-circ-xl {
+    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important;
+    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335) !important; }
+
+  .ease-out-circ-xl {
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) !important; }
+
+  .ease-inout-circ-xl {
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86) !important; }
+
+  .ease-in-back-xl {
+    transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important; }
+
+  .ease-out-back-xl {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; }
+
+  .ease-inout-back-xl {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important; } }

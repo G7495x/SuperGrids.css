@@ -1,0 +1,76 @@
+@import "variables";
+@import "breakpoints";
+
+@mixin row(
+	$columns: $grid-columns, // Number of columns (Adjustable)
+	$breakpoints: $grid-breakpoints, // Custom breakpoints, default: $grid-breakpoints
+	$spacing-step: $spacing-unit, // Size of step by which spc values are incremented (in px)
+	$spacing-steps: $grid-spacing-steps // No. of spc increments. Eg. - 4 steps of 5px each gives spc-0, spc-5, spc-10, spc-15, spc-20
+){
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	&[class*=spc-]{
+		padding: calc(var(--SG-grid-spacing) / 2);
+		>*{ margin: calc(var(--SG-grid-spacing) / 2) }
+		>.ext{ margin: calc(var(--SG-grid-spacing) / -2) }
+	}
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint,$breakpoints);
+		@include media-breakpoint-up($breakpoint,$breakpoints){
+			>.col#{$suffix}{
+				flex: 1;
+				min-width: 0;
+				max-width: none;
+			}
+			>.col-auto#{$suffix}{
+				flex: 0 auto;
+				min-width: 0;
+				max-width: none;
+			}
+			@for $i from 1 through $columns{
+				>.col-#{$i}#{$suffix}{
+					flex: 0 auto;
+					min-width: #{100%/$columns*$i};
+					max-width: #{100%/$columns*$i};
+				}
+			}
+			@for $spacing from 0 through $spacing-steps{
+				$spacing: $spacing*$spacing-step;
+				&.spc-#{$spacing}#{$suffix}{ --SG-grid-spacing: #{$spacing*1px} }
+			}
+			&[class*=spc-]{
+				@for $i from 1 through $columns{
+					>.col-#{$i}#{$suffix}{
+						min-width: calc(#{100%/$columns*$i} - var(--SG-grid-spacing));
+						max-width: calc(#{100%/$columns*$i} - var(--SG-grid-spacing));
+						&.ext{
+							min-width: calc(#{100%/$columns*$i} + var(--SG-grid-spacing));
+							max-width: calc(#{100%/$columns*$i} + var(--SG-grid-spacing));
+						}
+					}
+				}
+			}
+		}
+	}
+	@each $breakpoint in map-keys($breakpoints){
+		@if breakpoint-min($breakpoint,$breakpoints){
+			>*.w-100#{breakpoint-suffix($breakpoint,$breakpoints)}{ display: none }
+		}
+		>*.w-100-#{$breakpoint}-o{ display: none }
+	}
+	@include responsive(">*.w-100"){
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	@include responsive-o(">*.w-100"){
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.row{ @include row }

@@ -1,0 +1,38 @@
+// TODO
+// Cite bootstrap, easings.net
+// !important
+// Form Styling, button groups, radio groups
+// Grid NXT responsive grid columns
+// CSS Variables?
+// Prefix custom properties
+// horizontal vertical gap
+
+@import "reboot";
+@import "grid";
+// @import "grid-nxt";
+@import "flex";
+@import "align";
+@import "scroll";
+@import "easing";
+@import "spacing";
+@import "position";
+@import "display";
+@import "custom-tags";
+
+// TODO
+card,
+.card{
+	border-radius: 5px;
+	padding: 15px;
+	background-color: white;
+	color: #333;
+	box-shadow:
+		0 5px 20px rgba(black,.1),
+		0 0 0 1px rgba(black,.0375);
+}
+
+.cc{
+	@include pos-stk;
+	@include pos-abs(sm);
+	@include pos-rel(md,lg);
+}

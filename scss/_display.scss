@@ -1,0 +1,56 @@
+@import "variables";
+@import "breakpoints";
+
+@mixin inline($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: inline !important }
+}
+@mixin i-block($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: inline-block !important }
+}
+@mixin block($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: block !important }
+}
+@mixin table($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: table !important }
+}
+@mixin t-cell($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: table-cell !important }
+}
+@mixin t-row($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: table-row !important }
+}
+@mixin flex($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: flex !important }
+}
+@mixin i-flex($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: inline-flex !important }
+}
+@mixin grid($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: grid !important }
+}
+@mixin i-grid($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: inline-grid !important }
+}
+@mixin hide($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){ display: none !important }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints){
+	$suffix: breakpoint-suffix($breakpoint);
+	@include media-breakpoint-up($breakpoint){
+		.inline#{$suffix}{ @include inline }
+		.i-block#{$suffix}{ @include i-block }
+		.block#{$suffix}{ @include block }
+		.table#{$suffix}{ @include table }
+		.t-cell#{$suffix}{ @include t-cell }
+		.t-row#{$suffix}{ @include t-row }
+		.flex#{$suffix}{ @include flex }
+		.i-flex#{$suffix}{ @include i-flex }
+		.grid#{$suffix}{ @include grid }
+		.i-grid#{$suffix}{ @include i-grid }
+		.hide#{$suffix}{ @include hide }
+	}
+	@include media-breakpoint-only($breakpoint){
+		.hide-#{$breakpoint}-o{ @include hide }
+	}
+}
