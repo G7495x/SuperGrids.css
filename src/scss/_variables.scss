@@ -12,7 +12,7 @@ $grid-breakpoints:(
 	xl: 1200px // Extra large devices (large desktops, 1200px and up)
 )!default;
 
-$spacing-unit:  5 !default; // Size in px of step by which spacing values are incremented (No need to include px)
+$spacing-step-size: 5 !default; // Size in px of step by which spacing values are incremented (No need to include px)
 $spacing-steps: 8 !default; // No. of spacing steps (for margin, padding classes etc.)
 
 // Grid spacing variables

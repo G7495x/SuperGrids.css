@@ -4,7 +4,7 @@
 @mixin row(
 	$columns: $grid-columns, // Number of columns (Adjustable)
 	$breakpoints: $grid-breakpoints, // Custom breakpoints, default: $grid-breakpoints
-	$spacing-step: $spacing-unit, // Size of step by which spc values are incremented (in px)
+	$spacing-step: $spacing-step-size, // Size of step by which spc values are incremented (in px)
 	$spacing-steps: $grid-spacing-steps // No. of spc increments. Eg. - 4 steps of 5px each gives spc-0, spc-5, spc-10, spc-15, spc-20
 ){
 	display: flex;

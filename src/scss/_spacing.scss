@@ -79,7 +79,7 @@
 		.ml-auto#{$suffix}{ @include ml(auto) }
 
 		@for $size from 0 through $spacing-steps{
-			$size: $size*$spacing-unit;
+			$size: $size*$spacing-step-size;
 
 			.m-#{$size}#{$suffix}{ @include m($size*1px) }
 			.mx-#{$size}#{$suffix}{ @include mx($size*1px) }
@@ -98,7 +98,7 @@
 			.pl-#{$size}#{$suffix}{ @include pl($size*1px) }
 		}
 		@for $size from 1 through $spacing-steps{
-			$size: $size*$spacing-unit;
+			$size: $size*$spacing-step-size;
 
 			.m-m#{$size}#{$suffix}{ @include m($size*-1px) }
 			.mx-m#{$size}#{$suffix}{ @include mx($size*-1px) }
