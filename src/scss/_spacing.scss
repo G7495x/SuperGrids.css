@@ -1,54 +1,26 @@
 @import "variables";
 @import "breakpoints";
 
-@mixin m($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ margin: $size !important }
-}
-@mixin mx($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ @include mr($size); @include ml($size) }
-}
-@mixin my($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ @include mt($size); @include mb($size) }
-}
-@mixin mt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ margin-top: $size !important }
-}
-@mixin mr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ margin-right: $size !important }
-}
-@mixin mb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ margin-bottom: $size !important }
-}
-@mixin ml($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ margin-left: $size !important }
-}
+@mixin m($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ margin: $size !important } }
+@mixin mt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ margin-top: $size !important } }
+@mixin mr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ margin-right: $size !important } }
+@mixin mb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ margin-bottom: $size !important } }
+@mixin ml($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ margin-left: $size !important } }
+@mixin mx($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include mr($size); @include ml($size) } }
+@mixin my($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include mt($size); @include mb($size) } }
 
-@mixin p($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ padding: $size !important }
-}
-@mixin px($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ @include pr($size); @include pl($size) }
-}
-@mixin py($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ @include pt($size); @include pb($size) }
-}
-@mixin pt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ padding-top: $size !important }
-}
-@mixin pr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ padding-right: $size !important }
-}
-@mixin pb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ padding-bottom: $size !important }
-}
-@mixin pl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ padding-left: $size !important }
-}
+@mixin p($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding: $size !important } }
+@mixin pt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding-top: $size !important } }
+@mixin pr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding-right: $size !important } }
+@mixin pb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding-bottom: $size !important } }
+@mixin pl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding-left: $size !important } }
+@mixin px($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include pr($size); @include pl($size) } }
+@mixin py($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include pt($size); @include pb($size) } }
 
 // TODO:
 // Customizable Aspect Ratio
 // .square
-@mixin square($up: null,$down: null,$breakpoints: $grid-breakpoints){
+@mixin fix-aspect($up: null,$down: null,$breakpoints: $grid-breakpoints){
 	@include resp($up,$down,$breakpoints){
 		&::after{
 		  content: "";
@@ -59,6 +31,8 @@
 	}
 }
 
+// Container is used for centering webpage content on big displays.
+// NOT THE SAME AS BOOTSTRAP CONTAINER.
 @mixin container($name: xl,$breakpoints: $grid-breakpoints){
 	display: block;
 	@include media-breakpoint-up($name,$breakpoints){
@@ -97,6 +71,8 @@
 			.pb-#{$size}#{$suffix}{ @include pb($size*1px) }
 			.pl-#{$size}#{$suffix}{ @include pl($size*1px) }
 		}
+
+		// Negative Margins
 		@for $size from 1 through $spacing-steps{
 			$size: $size*$spacing-step-size;
 
