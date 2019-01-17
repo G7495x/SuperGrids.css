@@ -1,17 +1,19 @@
-// https://github.com/G7495x/SuperGrids.css
+// https://github.com/G7495x/SuperGrids.css v0.9.0
 
-// REASONS
-// suffix to infix - Not possible because of responsive rules (breakpoints.scss)
+// WONT FIX
+// suffix to infix (bootstrap compatibility) - Not possible because of responsive rules (breakpoints.scss)
 
 // TODO
 // Cite bootstrap, easings.net (licensing)
-// !important
-// Form Styling, button groups, radio groups
-// Grid v2 responsive grid columns
-// Grid v2 row-gap col-gap
-// SCSS to CSS Variables?
+// Forms Component (button groups, radio groups, etc.)
 // Border Rules
-// breakpoints.scss - responsive-down
+// Spacing.scss - Customizable Aspect Ratio, .square
+// Reboot.scss - Flag for print links
+//
+// !important (time consuming change, only benifit is if user uses sass mixins)
+// SCSS to CSS Variables?
+// breakpoints.scss - responsive-down??
+// Reboot.scss - Variables to Variables.scss??
 
 // COMPONENTS MAP
 
@@ -34,20 +36,20 @@
 // * - Depends variables.scss & breakpoints.scss
 // ** - Depends on everything before it
 
-@import "reboot";
+@import "components/reboot";
 
-// @import "grid-v1";
-@import "grid-v2";
+// @import "components/grid-v1";
+@import "components/grid-v2";
 
-@import "flex";
-@import "align";
-@import "scroll";
-@import "easing";
-@import "spacing";
-@import "position";
-@import "display";
+@import "components/flex";
+@import "components/align";
+@import "components/scroll";
+@import "components/easing";
+@import "components/spacing";
+@import "components/position";
+@import "components/display";
 
-@import "custom-tags"; // Optional
+// @import "components/custom-tags"; // Optional
 
 /// TODO Remove
 card,
@@ -63,7 +65,7 @@ card,
 }
 
 // .cc{
-// 	@include pos-stk;
+// 	@include pos-sty;
 // 	@include pos-abs(sm);
 // 	@include pos-rel(md,lg);
 // }

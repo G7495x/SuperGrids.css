@@ -17,9 +17,6 @@
 @mixin px($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include pr($size); @include pl($size) } }
 @mixin py($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include pt($size); @include pb($size) } }
 
-// TODO:
-// Customizable Aspect Ratio
-// .square
 @mixin fix-aspect($up: null,$down: null,$breakpoints: $grid-breakpoints){
 	@include resp($up,$down,$breakpoints){
 		&::after{

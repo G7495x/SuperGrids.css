@@ -5,7 +5,7 @@
 @mixin pos-rel($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: relative !important } }
 @mixin pos-abs($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: absolute !important } }
 @mixin pos-fix($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: fixed !important } }
-@mixin pos-stk($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: sticky !important } }
+@mixin pos-sty($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: sticky !important } }
 
 @mixin stretch-to-fit($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ top: 0; right: 0; bottom: 0; left: 0 } }
 
@@ -16,7 +16,7 @@
 		.pos-rel#{$suffix}{ @include pos-rel }
 		.pos-abs#{$suffix}{ @include pos-abs }
 		.pos-fix#{$suffix}{ @include pos-fix }
-		.pos-stk#{$suffix}{ @include pos-stk }
+		.pos-sty#{$suffix}{ @include pos-sty }
 
 		.stretch-to-fit#{$suffix}{ @include stretch-to-fit }
 	}

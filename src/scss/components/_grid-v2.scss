@@ -11,12 +11,12 @@
 	flex-wrap: wrap;
 	align-content: flex-start;
 	&[class*=spc-]{
-		padding: calc(var(--supergrids-grid-spacing) / 2);
-		>*{ margin: calc(var(--supergrids-grid-spacing) / 2) }
+		padding:    calc(var(--rowGap) / 2) calc(var(--colGap) / 2);
+		>*{ margin: calc(var(--rowGap) / 2) calc(var(--colGap) / 2) }
 
 		// Extrude: Use this class to extrude content when spc- is enabled for the parent row
 		// Useful in places like nested grids, etc.
-		>.col-extrude{ margin: calc(var(--supergrids-grid-spacing) / -2) }
+		>.col-extrude{ margin: calc(var(--rowGap) / -2) calc(var(--colGap) / -2) }
 	}
 	@each $breakpoint in map-keys($breakpoints){
 		$suffix: breakpoint-suffix($breakpoint,$breakpoints);
@@ -33,23 +33,32 @@
 			}
 			@for $i from 1 through $columns{
 				>.col-#{$i}#{$suffix}{
+					--colCount: #{$columns};
 					flex: 0 auto;
-					min-width: #{100%/$columns*$i};
-					max-width: #{100%/$columns*$i};
+					min-width: calc(#{100%*$i} / var(--colCount));
+					max-width: calc(#{100%*$i} / var(--colCount));
 				}
 			}
 			@for $spacing from 0 through $spacing-steps{
 				$spacing: $spacing*$spacing-step;
-				&.spc-#{$spacing}#{$suffix}{ --supergrids-grid-spacing: #{$spacing*1px} }
+				&.spc-#{$spacing}#{$suffix}{
+					--rowGap: #{$spacing*1px};
+					--colGap: #{$spacing*1px};
+				}
+			}
+			@for $spacing from 0 through $spacing-steps{
+				$spacing: $spacing*$spacing-step;
+				&.spc-row-#{$spacing}#{$suffix}{ --rowGap: #{$spacing*1px}; }
+				&.spc-col-#{$spacing}#{$suffix}{ --colGap: #{$spacing*1px}; }
 			}
 			&[class*=spc-]{
 				@for $i from 1 through $columns{
 					>.col-#{$i}#{$suffix}{
-						min-width: calc(#{100%/$columns*$i} - var(--supergrids-grid-spacing));
-						max-width: calc(#{100%/$columns*$i} - var(--supergrids-grid-spacing));
+						min-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
+						max-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
 						&.col-extrude{
-							min-width: calc(#{100%/$columns*$i} + var(--supergrids-grid-spacing));
-							max-width: calc(#{100%/$columns*$i} + var(--supergrids-grid-spacing));
+							min-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
+							max-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
 						}
 					}
 				}
@@ -77,3 +86,12 @@
 }
 
 .row{ @include row }
+
+@each $breakpoint in map-keys($grid-breakpoints){
+	$suffix: breakpoint-suffix($breakpoint);
+	@include media-breakpoint-up($breakpoint){
+		@for $i from 1 through $grid-columns{
+			.row-#{$i}#{$suffix}>[class*=col-]{ --colCount: #{$i}; }
+		}
+	}
+}

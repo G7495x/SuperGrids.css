@@ -1,12 +1,10 @@
-// TODO
-// Variables
-
 // CSS Reset
 //
-// CSS Reset ensures that websites look consistent across browsers while complying to modern HTML standards
-// This CSS Reset style-sheet is specifically optimized for this framework
+// CSS Reset ensures that websites look consistent across browsers while complying to modern HTML standards.
+// This CSS Reset style-sheet is specifically optimized for this framework.
 //
-// Forked & modified from Normalize.css. Normalize is licensed MIT. https://github.com/necolas/normalize.css
+// Forked & modified from Normalize.css.
+// Normalize is licensed MIT. https://github.com/necolas/normalize.css
 
 $background-color: white;
 $text-color: #333;
@@ -17,6 +15,7 @@ $font-family-monospace: monospace;
 *::after{
 	flex-shrink: 0; // Prevent shrinking of flex elements by default in some browsers
 	box-sizing: border-box; // `width` is now not affected by `padding` or `border`
+	background-size: cover; // prevent background image distortion
 	font-size: inherit; // Make `font-size` an inherited property
 }
 
@@ -272,7 +271,6 @@ ol{ padding-left: 35px }
 dd{ margin-left: 25px }
 
 // Append link URL when printing
-// TODO: Flag for print links
 @media print{
 	a[href]:not([role])::after,
 	a[href][role="link"]::after{
