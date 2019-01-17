@@ -5,21 +5,18 @@
 	$columns: $grid-columns, // Number of columns (Adjustable)
 	$breakpoints: $grid-breakpoints, // Custom breakpoints, default: $grid-breakpoints
 	$spacing-step: $spacing-step-size, // Size of step by which spc values are incremented (in px)
-	$spacing-steps: $grid-spacing-steps // No. of spc increments. Eg. - 4 steps of 5px each gives spc-5, spc-10, spc-15, spc-20
+	$spacing-steps: $grid-spacing-steps // No. of spc increments. Eg. - 4 steps of 5px each gives spc-0, spc-5, spc-10, spc-15, spc-20
 ){
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	@for $spacing from 1 through $spacing-steps{
-		$spacing: $spacing*$spacing-step;
-		&.spc-#{$spacing}{
-			padding: $spacing*.5px;
-			>*{ margin: $spacing*.5px }
+	&[class*=spc-]{
+		padding: calc(var(--supergrids-grid-spacing) / 2);
+		>*{ margin: calc(var(--supergrids-grid-spacing) / 2) }
 
-			// Extrude: Use this class to extrude content when spc- is enabled for the parent row
-			// Useful in places like nested grids, etc.
-			>.col-extrude{ margin: $spacing*-.5px }
-		}
+		// Extrude: Use this class to extrude content when spc- is enabled for the parent row
+		// Useful in places like nested grids, etc.
+		>.col-extrude{ margin: calc(var(--supergrids-grid-spacing) / -2) }
 	}
 	@each $breakpoint in map-keys($breakpoints){
 		$suffix: breakpoint-suffix($breakpoint,$breakpoints);
@@ -41,17 +38,18 @@
 					max-width: #{100%/$columns*$i};
 				}
 			}
-			@for $spacing from 1 through $spacing-steps{
+			@for $spacing from 0 through $spacing-steps{
 				$spacing: $spacing*$spacing-step;
-				&.spc-#{$spacing}{
-					@for $i from 1 through $columns{
-						>.col-#{$i}#{$suffix}{
-							min-width: calc(#{100%/$columns*$i} - #{$spacing}px);
-							max-width: calc(#{100%/$columns*$i} - #{$spacing}px);
-							&.col-extrude{
-								min-width: calc(#{100%/$columns*$i} + #{$spacing}px);
-								max-width: calc(#{100%/$columns*$i} + #{$spacing}px);
-							}
+				&.spc-#{$spacing}#{$suffix}{ --supergrids-grid-spacing: #{$spacing*1px} }
+			}
+			&[class*=spc-]{
+				@for $i from 1 through $columns{
+					>.col-#{$i}#{$suffix}{
+						min-width: calc(#{100%/$columns*$i} - var(--supergrids-grid-spacing));
+						max-width: calc(#{100%/$columns*$i} - var(--supergrids-grid-spacing));
+						&.col-extrude{
+							min-width: calc(#{100%/$columns*$i} + var(--supergrids-grid-spacing));
+							max-width: calc(#{100%/$columns*$i} + var(--supergrids-grid-spacing));
 						}
 					}
 				}
@@ -70,7 +68,7 @@
 		margin: 0;
 		padding: 0;
 	}
-	@include responsive-o(">*.w-100"){
+	@include responsive-only(">*.w-100"){
 		display: block;
 		width: 100%;
 		margin: 0;
