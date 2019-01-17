@@ -23,9 +23,9 @@
 @mixin fix-aspect($up: null,$down: null,$breakpoints: $grid-breakpoints){
 	@include resp($up,$down,$breakpoints){
 		&::after{
-		  content: "";
-		  float: left;
-		  clear: both;
+			content: "";
+			float: left;
+			clear: both;
 			padding-top: 100%;
 		}
 	}
