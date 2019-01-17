@@ -603,7 +603,7 @@ blockquote {
     padding: calc(var(--supergrids-grid-spacing) / 2); }
     .row[class*=spc-] > *, row[class*=spc-] > * {
       margin: calc(var(--supergrids-grid-spacing) / 2); }
-    .row[class*=spc-] > .ext, row[class*=spc-] > .ext {
+    .row[class*=spc-] > .col-extrude, row[class*=spc-] > .col-extrude {
       margin: calc(var(--supergrids-grid-spacing) / -2); }
   .row > .col, row > .col {
     flex: 1;
@@ -674,73 +674,73 @@ blockquote {
   .row[class*=spc-] > .col-1, row[class*=spc-] > .col-1 {
     min-width: calc(8.33333% - var(--supergrids-grid-spacing));
     max-width: calc(8.33333% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-1.ext, row[class*=spc-] > .col-1.ext {
+    .row[class*=spc-] > .col-1.col-extrude, row[class*=spc-] > .col-1.col-extrude {
       min-width: calc(8.33333% + var(--supergrids-grid-spacing));
       max-width: calc(8.33333% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-2, row[class*=spc-] > .col-2 {
     min-width: calc(16.66667% - var(--supergrids-grid-spacing));
     max-width: calc(16.66667% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-2.ext, row[class*=spc-] > .col-2.ext {
+    .row[class*=spc-] > .col-2.col-extrude, row[class*=spc-] > .col-2.col-extrude {
       min-width: calc(16.66667% + var(--supergrids-grid-spacing));
       max-width: calc(16.66667% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-3, row[class*=spc-] > .col-3 {
     min-width: calc(25% - var(--supergrids-grid-spacing));
     max-width: calc(25% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-3.ext, row[class*=spc-] > .col-3.ext {
+    .row[class*=spc-] > .col-3.col-extrude, row[class*=spc-] > .col-3.col-extrude {
       min-width: calc(25% + var(--supergrids-grid-spacing));
       max-width: calc(25% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-4, row[class*=spc-] > .col-4 {
     min-width: calc(33.33333% - var(--supergrids-grid-spacing));
     max-width: calc(33.33333% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-4.ext, row[class*=spc-] > .col-4.ext {
+    .row[class*=spc-] > .col-4.col-extrude, row[class*=spc-] > .col-4.col-extrude {
       min-width: calc(33.33333% + var(--supergrids-grid-spacing));
       max-width: calc(33.33333% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-5, row[class*=spc-] > .col-5 {
     min-width: calc(41.66667% - var(--supergrids-grid-spacing));
     max-width: calc(41.66667% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-5.ext, row[class*=spc-] > .col-5.ext {
+    .row[class*=spc-] > .col-5.col-extrude, row[class*=spc-] > .col-5.col-extrude {
       min-width: calc(41.66667% + var(--supergrids-grid-spacing));
       max-width: calc(41.66667% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-6, row[class*=spc-] > .col-6 {
     min-width: calc(50% - var(--supergrids-grid-spacing));
     max-width: calc(50% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-6.ext, row[class*=spc-] > .col-6.ext {
+    .row[class*=spc-] > .col-6.col-extrude, row[class*=spc-] > .col-6.col-extrude {
       min-width: calc(50% + var(--supergrids-grid-spacing));
       max-width: calc(50% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-7, row[class*=spc-] > .col-7 {
     min-width: calc(58.33333% - var(--supergrids-grid-spacing));
     max-width: calc(58.33333% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-7.ext, row[class*=spc-] > .col-7.ext {
+    .row[class*=spc-] > .col-7.col-extrude, row[class*=spc-] > .col-7.col-extrude {
       min-width: calc(58.33333% + var(--supergrids-grid-spacing));
       max-width: calc(58.33333% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-8, row[class*=spc-] > .col-8 {
     min-width: calc(66.66667% - var(--supergrids-grid-spacing));
     max-width: calc(66.66667% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-8.ext, row[class*=spc-] > .col-8.ext {
+    .row[class*=spc-] > .col-8.col-extrude, row[class*=spc-] > .col-8.col-extrude {
       min-width: calc(66.66667% + var(--supergrids-grid-spacing));
       max-width: calc(66.66667% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-9, row[class*=spc-] > .col-9 {
     min-width: calc(75% - var(--supergrids-grid-spacing));
     max-width: calc(75% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-9.ext, row[class*=spc-] > .col-9.ext {
+    .row[class*=spc-] > .col-9.col-extrude, row[class*=spc-] > .col-9.col-extrude {
       min-width: calc(75% + var(--supergrids-grid-spacing));
       max-width: calc(75% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-10, row[class*=spc-] > .col-10 {
     min-width: calc(83.33333% - var(--supergrids-grid-spacing));
     max-width: calc(83.33333% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-10.ext, row[class*=spc-] > .col-10.ext {
+    .row[class*=spc-] > .col-10.col-extrude, row[class*=spc-] > .col-10.col-extrude {
       min-width: calc(83.33333% + var(--supergrids-grid-spacing));
       max-width: calc(83.33333% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-11, row[class*=spc-] > .col-11 {
     min-width: calc(91.66667% - var(--supergrids-grid-spacing));
     max-width: calc(91.66667% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-11.ext, row[class*=spc-] > .col-11.ext {
+    .row[class*=spc-] > .col-11.col-extrude, row[class*=spc-] > .col-11.col-extrude {
       min-width: calc(91.66667% + var(--supergrids-grid-spacing));
       max-width: calc(91.66667% + var(--supergrids-grid-spacing)); }
   .row[class*=spc-] > .col-12, row[class*=spc-] > .col-12 {
     min-width: calc(100% - var(--supergrids-grid-spacing));
     max-width: calc(100% - var(--supergrids-grid-spacing)); }
-    .row[class*=spc-] > .col-12.ext, row[class*=spc-] > .col-12.ext {
+    .row[class*=spc-] > .col-12.col-extrude, row[class*=spc-] > .col-12.col-extrude {
       min-width: calc(100% + var(--supergrids-grid-spacing));
       max-width: calc(100% + var(--supergrids-grid-spacing)); }
   @media (min-width: 576px) {
@@ -813,73 +813,73 @@ blockquote {
     .row[class*=spc-] > .col-1-sm, row[class*=spc-] > .col-1-sm {
       min-width: calc(8.33333% - var(--supergrids-grid-spacing));
       max-width: calc(8.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-1-sm.ext, row[class*=spc-] > .col-1-sm.ext {
+      .row[class*=spc-] > .col-1-sm.col-extrude, row[class*=spc-] > .col-1-sm.col-extrude {
         min-width: calc(8.33333% + var(--supergrids-grid-spacing));
         max-width: calc(8.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-2-sm, row[class*=spc-] > .col-2-sm {
       min-width: calc(16.66667% - var(--supergrids-grid-spacing));
       max-width: calc(16.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-2-sm.ext, row[class*=spc-] > .col-2-sm.ext {
+      .row[class*=spc-] > .col-2-sm.col-extrude, row[class*=spc-] > .col-2-sm.col-extrude {
         min-width: calc(16.66667% + var(--supergrids-grid-spacing));
         max-width: calc(16.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-3-sm, row[class*=spc-] > .col-3-sm {
       min-width: calc(25% - var(--supergrids-grid-spacing));
       max-width: calc(25% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-3-sm.ext, row[class*=spc-] > .col-3-sm.ext {
+      .row[class*=spc-] > .col-3-sm.col-extrude, row[class*=spc-] > .col-3-sm.col-extrude {
         min-width: calc(25% + var(--supergrids-grid-spacing));
         max-width: calc(25% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-4-sm, row[class*=spc-] > .col-4-sm {
       min-width: calc(33.33333% - var(--supergrids-grid-spacing));
       max-width: calc(33.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-4-sm.ext, row[class*=spc-] > .col-4-sm.ext {
+      .row[class*=spc-] > .col-4-sm.col-extrude, row[class*=spc-] > .col-4-sm.col-extrude {
         min-width: calc(33.33333% + var(--supergrids-grid-spacing));
         max-width: calc(33.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-5-sm, row[class*=spc-] > .col-5-sm {
       min-width: calc(41.66667% - var(--supergrids-grid-spacing));
       max-width: calc(41.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-5-sm.ext, row[class*=spc-] > .col-5-sm.ext {
+      .row[class*=spc-] > .col-5-sm.col-extrude, row[class*=spc-] > .col-5-sm.col-extrude {
         min-width: calc(41.66667% + var(--supergrids-grid-spacing));
         max-width: calc(41.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-6-sm, row[class*=spc-] > .col-6-sm {
       min-width: calc(50% - var(--supergrids-grid-spacing));
       max-width: calc(50% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-6-sm.ext, row[class*=spc-] > .col-6-sm.ext {
+      .row[class*=spc-] > .col-6-sm.col-extrude, row[class*=spc-] > .col-6-sm.col-extrude {
         min-width: calc(50% + var(--supergrids-grid-spacing));
         max-width: calc(50% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-7-sm, row[class*=spc-] > .col-7-sm {
       min-width: calc(58.33333% - var(--supergrids-grid-spacing));
       max-width: calc(58.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-7-sm.ext, row[class*=spc-] > .col-7-sm.ext {
+      .row[class*=spc-] > .col-7-sm.col-extrude, row[class*=spc-] > .col-7-sm.col-extrude {
         min-width: calc(58.33333% + var(--supergrids-grid-spacing));
         max-width: calc(58.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-8-sm, row[class*=spc-] > .col-8-sm {
       min-width: calc(66.66667% - var(--supergrids-grid-spacing));
       max-width: calc(66.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-8-sm.ext, row[class*=spc-] > .col-8-sm.ext {
+      .row[class*=spc-] > .col-8-sm.col-extrude, row[class*=spc-] > .col-8-sm.col-extrude {
         min-width: calc(66.66667% + var(--supergrids-grid-spacing));
         max-width: calc(66.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-9-sm, row[class*=spc-] > .col-9-sm {
       min-width: calc(75% - var(--supergrids-grid-spacing));
       max-width: calc(75% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-9-sm.ext, row[class*=spc-] > .col-9-sm.ext {
+      .row[class*=spc-] > .col-9-sm.col-extrude, row[class*=spc-] > .col-9-sm.col-extrude {
         min-width: calc(75% + var(--supergrids-grid-spacing));
         max-width: calc(75% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-10-sm, row[class*=spc-] > .col-10-sm {
       min-width: calc(83.33333% - var(--supergrids-grid-spacing));
       max-width: calc(83.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-10-sm.ext, row[class*=spc-] > .col-10-sm.ext {
+      .row[class*=spc-] > .col-10-sm.col-extrude, row[class*=spc-] > .col-10-sm.col-extrude {
         min-width: calc(83.33333% + var(--supergrids-grid-spacing));
         max-width: calc(83.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-11-sm, row[class*=spc-] > .col-11-sm {
       min-width: calc(91.66667% - var(--supergrids-grid-spacing));
       max-width: calc(91.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-11-sm.ext, row[class*=spc-] > .col-11-sm.ext {
+      .row[class*=spc-] > .col-11-sm.col-extrude, row[class*=spc-] > .col-11-sm.col-extrude {
         min-width: calc(91.66667% + var(--supergrids-grid-spacing));
         max-width: calc(91.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-12-sm, row[class*=spc-] > .col-12-sm {
       min-width: calc(100% - var(--supergrids-grid-spacing));
       max-width: calc(100% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-12-sm.ext, row[class*=spc-] > .col-12-sm.ext {
+      .row[class*=spc-] > .col-12-sm.col-extrude, row[class*=spc-] > .col-12-sm.col-extrude {
         min-width: calc(100% + var(--supergrids-grid-spacing));
         max-width: calc(100% + var(--supergrids-grid-spacing)); } }
   @media (min-width: 768px) {
@@ -952,73 +952,73 @@ blockquote {
     .row[class*=spc-] > .col-1-md, row[class*=spc-] > .col-1-md {
       min-width: calc(8.33333% - var(--supergrids-grid-spacing));
       max-width: calc(8.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-1-md.ext, row[class*=spc-] > .col-1-md.ext {
+      .row[class*=spc-] > .col-1-md.col-extrude, row[class*=spc-] > .col-1-md.col-extrude {
         min-width: calc(8.33333% + var(--supergrids-grid-spacing));
         max-width: calc(8.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-2-md, row[class*=spc-] > .col-2-md {
       min-width: calc(16.66667% - var(--supergrids-grid-spacing));
       max-width: calc(16.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-2-md.ext, row[class*=spc-] > .col-2-md.ext {
+      .row[class*=spc-] > .col-2-md.col-extrude, row[class*=spc-] > .col-2-md.col-extrude {
         min-width: calc(16.66667% + var(--supergrids-grid-spacing));
         max-width: calc(16.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-3-md, row[class*=spc-] > .col-3-md {
       min-width: calc(25% - var(--supergrids-grid-spacing));
       max-width: calc(25% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-3-md.ext, row[class*=spc-] > .col-3-md.ext {
+      .row[class*=spc-] > .col-3-md.col-extrude, row[class*=spc-] > .col-3-md.col-extrude {
         min-width: calc(25% + var(--supergrids-grid-spacing));
         max-width: calc(25% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-4-md, row[class*=spc-] > .col-4-md {
       min-width: calc(33.33333% - var(--supergrids-grid-spacing));
       max-width: calc(33.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-4-md.ext, row[class*=spc-] > .col-4-md.ext {
+      .row[class*=spc-] > .col-4-md.col-extrude, row[class*=spc-] > .col-4-md.col-extrude {
         min-width: calc(33.33333% + var(--supergrids-grid-spacing));
         max-width: calc(33.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-5-md, row[class*=spc-] > .col-5-md {
       min-width: calc(41.66667% - var(--supergrids-grid-spacing));
       max-width: calc(41.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-5-md.ext, row[class*=spc-] > .col-5-md.ext {
+      .row[class*=spc-] > .col-5-md.col-extrude, row[class*=spc-] > .col-5-md.col-extrude {
         min-width: calc(41.66667% + var(--supergrids-grid-spacing));
         max-width: calc(41.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-6-md, row[class*=spc-] > .col-6-md {
       min-width: calc(50% - var(--supergrids-grid-spacing));
       max-width: calc(50% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-6-md.ext, row[class*=spc-] > .col-6-md.ext {
+      .row[class*=spc-] > .col-6-md.col-extrude, row[class*=spc-] > .col-6-md.col-extrude {
         min-width: calc(50% + var(--supergrids-grid-spacing));
         max-width: calc(50% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-7-md, row[class*=spc-] > .col-7-md {
       min-width: calc(58.33333% - var(--supergrids-grid-spacing));
       max-width: calc(58.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-7-md.ext, row[class*=spc-] > .col-7-md.ext {
+      .row[class*=spc-] > .col-7-md.col-extrude, row[class*=spc-] > .col-7-md.col-extrude {
         min-width: calc(58.33333% + var(--supergrids-grid-spacing));
         max-width: calc(58.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-8-md, row[class*=spc-] > .col-8-md {
       min-width: calc(66.66667% - var(--supergrids-grid-spacing));
       max-width: calc(66.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-8-md.ext, row[class*=spc-] > .col-8-md.ext {
+      .row[class*=spc-] > .col-8-md.col-extrude, row[class*=spc-] > .col-8-md.col-extrude {
         min-width: calc(66.66667% + var(--supergrids-grid-spacing));
         max-width: calc(66.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-9-md, row[class*=spc-] > .col-9-md {
       min-width: calc(75% - var(--supergrids-grid-spacing));
       max-width: calc(75% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-9-md.ext, row[class*=spc-] > .col-9-md.ext {
+      .row[class*=spc-] > .col-9-md.col-extrude, row[class*=spc-] > .col-9-md.col-extrude {
         min-width: calc(75% + var(--supergrids-grid-spacing));
         max-width: calc(75% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-10-md, row[class*=spc-] > .col-10-md {
       min-width: calc(83.33333% - var(--supergrids-grid-spacing));
       max-width: calc(83.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-10-md.ext, row[class*=spc-] > .col-10-md.ext {
+      .row[class*=spc-] > .col-10-md.col-extrude, row[class*=spc-] > .col-10-md.col-extrude {
         min-width: calc(83.33333% + var(--supergrids-grid-spacing));
         max-width: calc(83.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-11-md, row[class*=spc-] > .col-11-md {
       min-width: calc(91.66667% - var(--supergrids-grid-spacing));
       max-width: calc(91.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-11-md.ext, row[class*=spc-] > .col-11-md.ext {
+      .row[class*=spc-] > .col-11-md.col-extrude, row[class*=spc-] > .col-11-md.col-extrude {
         min-width: calc(91.66667% + var(--supergrids-grid-spacing));
         max-width: calc(91.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-12-md, row[class*=spc-] > .col-12-md {
       min-width: calc(100% - var(--supergrids-grid-spacing));
       max-width: calc(100% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-12-md.ext, row[class*=spc-] > .col-12-md.ext {
+      .row[class*=spc-] > .col-12-md.col-extrude, row[class*=spc-] > .col-12-md.col-extrude {
         min-width: calc(100% + var(--supergrids-grid-spacing));
         max-width: calc(100% + var(--supergrids-grid-spacing)); } }
   @media (min-width: 992px) {
@@ -1091,73 +1091,73 @@ blockquote {
     .row[class*=spc-] > .col-1-lg, row[class*=spc-] > .col-1-lg {
       min-width: calc(8.33333% - var(--supergrids-grid-spacing));
       max-width: calc(8.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-1-lg.ext, row[class*=spc-] > .col-1-lg.ext {
+      .row[class*=spc-] > .col-1-lg.col-extrude, row[class*=spc-] > .col-1-lg.col-extrude {
         min-width: calc(8.33333% + var(--supergrids-grid-spacing));
         max-width: calc(8.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-2-lg, row[class*=spc-] > .col-2-lg {
       min-width: calc(16.66667% - var(--supergrids-grid-spacing));
       max-width: calc(16.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-2-lg.ext, row[class*=spc-] > .col-2-lg.ext {
+      .row[class*=spc-] > .col-2-lg.col-extrude, row[class*=spc-] > .col-2-lg.col-extrude {
         min-width: calc(16.66667% + var(--supergrids-grid-spacing));
         max-width: calc(16.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-3-lg, row[class*=spc-] > .col-3-lg {
       min-width: calc(25% - var(--supergrids-grid-spacing));
       max-width: calc(25% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-3-lg.ext, row[class*=spc-] > .col-3-lg.ext {
+      .row[class*=spc-] > .col-3-lg.col-extrude, row[class*=spc-] > .col-3-lg.col-extrude {
         min-width: calc(25% + var(--supergrids-grid-spacing));
         max-width: calc(25% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-4-lg, row[class*=spc-] > .col-4-lg {
       min-width: calc(33.33333% - var(--supergrids-grid-spacing));
       max-width: calc(33.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-4-lg.ext, row[class*=spc-] > .col-4-lg.ext {
+      .row[class*=spc-] > .col-4-lg.col-extrude, row[class*=spc-] > .col-4-lg.col-extrude {
         min-width: calc(33.33333% + var(--supergrids-grid-spacing));
         max-width: calc(33.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-5-lg, row[class*=spc-] > .col-5-lg {
       min-width: calc(41.66667% - var(--supergrids-grid-spacing));
       max-width: calc(41.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-5-lg.ext, row[class*=spc-] > .col-5-lg.ext {
+      .row[class*=spc-] > .col-5-lg.col-extrude, row[class*=spc-] > .col-5-lg.col-extrude {
         min-width: calc(41.66667% + var(--supergrids-grid-spacing));
         max-width: calc(41.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-6-lg, row[class*=spc-] > .col-6-lg {
       min-width: calc(50% - var(--supergrids-grid-spacing));
       max-width: calc(50% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-6-lg.ext, row[class*=spc-] > .col-6-lg.ext {
+      .row[class*=spc-] > .col-6-lg.col-extrude, row[class*=spc-] > .col-6-lg.col-extrude {
         min-width: calc(50% + var(--supergrids-grid-spacing));
         max-width: calc(50% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-7-lg, row[class*=spc-] > .col-7-lg {
       min-width: calc(58.33333% - var(--supergrids-grid-spacing));
       max-width: calc(58.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-7-lg.ext, row[class*=spc-] > .col-7-lg.ext {
+      .row[class*=spc-] > .col-7-lg.col-extrude, row[class*=spc-] > .col-7-lg.col-extrude {
         min-width: calc(58.33333% + var(--supergrids-grid-spacing));
         max-width: calc(58.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-8-lg, row[class*=spc-] > .col-8-lg {
       min-width: calc(66.66667% - var(--supergrids-grid-spacing));
       max-width: calc(66.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-8-lg.ext, row[class*=spc-] > .col-8-lg.ext {
+      .row[class*=spc-] > .col-8-lg.col-extrude, row[class*=spc-] > .col-8-lg.col-extrude {
         min-width: calc(66.66667% + var(--supergrids-grid-spacing));
         max-width: calc(66.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-9-lg, row[class*=spc-] > .col-9-lg {
       min-width: calc(75% - var(--supergrids-grid-spacing));
       max-width: calc(75% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-9-lg.ext, row[class*=spc-] > .col-9-lg.ext {
+      .row[class*=spc-] > .col-9-lg.col-extrude, row[class*=spc-] > .col-9-lg.col-extrude {
         min-width: calc(75% + var(--supergrids-grid-spacing));
         max-width: calc(75% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-10-lg, row[class*=spc-] > .col-10-lg {
       min-width: calc(83.33333% - var(--supergrids-grid-spacing));
       max-width: calc(83.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-10-lg.ext, row[class*=spc-] > .col-10-lg.ext {
+      .row[class*=spc-] > .col-10-lg.col-extrude, row[class*=spc-] > .col-10-lg.col-extrude {
         min-width: calc(83.33333% + var(--supergrids-grid-spacing));
         max-width: calc(83.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-11-lg, row[class*=spc-] > .col-11-lg {
       min-width: calc(91.66667% - var(--supergrids-grid-spacing));
       max-width: calc(91.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-11-lg.ext, row[class*=spc-] > .col-11-lg.ext {
+      .row[class*=spc-] > .col-11-lg.col-extrude, row[class*=spc-] > .col-11-lg.col-extrude {
         min-width: calc(91.66667% + var(--supergrids-grid-spacing));
         max-width: calc(91.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-12-lg, row[class*=spc-] > .col-12-lg {
       min-width: calc(100% - var(--supergrids-grid-spacing));
       max-width: calc(100% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-12-lg.ext, row[class*=spc-] > .col-12-lg.ext {
+      .row[class*=spc-] > .col-12-lg.col-extrude, row[class*=spc-] > .col-12-lg.col-extrude {
         min-width: calc(100% + var(--supergrids-grid-spacing));
         max-width: calc(100% + var(--supergrids-grid-spacing)); } }
   @media (min-width: 1200px) {
@@ -1230,73 +1230,73 @@ blockquote {
     .row[class*=spc-] > .col-1-xl, row[class*=spc-] > .col-1-xl {
       min-width: calc(8.33333% - var(--supergrids-grid-spacing));
       max-width: calc(8.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-1-xl.ext, row[class*=spc-] > .col-1-xl.ext {
+      .row[class*=spc-] > .col-1-xl.col-extrude, row[class*=spc-] > .col-1-xl.col-extrude {
         min-width: calc(8.33333% + var(--supergrids-grid-spacing));
         max-width: calc(8.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-2-xl, row[class*=spc-] > .col-2-xl {
       min-width: calc(16.66667% - var(--supergrids-grid-spacing));
       max-width: calc(16.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-2-xl.ext, row[class*=spc-] > .col-2-xl.ext {
+      .row[class*=spc-] > .col-2-xl.col-extrude, row[class*=spc-] > .col-2-xl.col-extrude {
         min-width: calc(16.66667% + var(--supergrids-grid-spacing));
         max-width: calc(16.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-3-xl, row[class*=spc-] > .col-3-xl {
       min-width: calc(25% - var(--supergrids-grid-spacing));
       max-width: calc(25% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-3-xl.ext, row[class*=spc-] > .col-3-xl.ext {
+      .row[class*=spc-] > .col-3-xl.col-extrude, row[class*=spc-] > .col-3-xl.col-extrude {
         min-width: calc(25% + var(--supergrids-grid-spacing));
         max-width: calc(25% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-4-xl, row[class*=spc-] > .col-4-xl {
       min-width: calc(33.33333% - var(--supergrids-grid-spacing));
       max-width: calc(33.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-4-xl.ext, row[class*=spc-] > .col-4-xl.ext {
+      .row[class*=spc-] > .col-4-xl.col-extrude, row[class*=spc-] > .col-4-xl.col-extrude {
         min-width: calc(33.33333% + var(--supergrids-grid-spacing));
         max-width: calc(33.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-5-xl, row[class*=spc-] > .col-5-xl {
       min-width: calc(41.66667% - var(--supergrids-grid-spacing));
       max-width: calc(41.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-5-xl.ext, row[class*=spc-] > .col-5-xl.ext {
+      .row[class*=spc-] > .col-5-xl.col-extrude, row[class*=spc-] > .col-5-xl.col-extrude {
         min-width: calc(41.66667% + var(--supergrids-grid-spacing));
         max-width: calc(41.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-6-xl, row[class*=spc-] > .col-6-xl {
       min-width: calc(50% - var(--supergrids-grid-spacing));
       max-width: calc(50% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-6-xl.ext, row[class*=spc-] > .col-6-xl.ext {
+      .row[class*=spc-] > .col-6-xl.col-extrude, row[class*=spc-] > .col-6-xl.col-extrude {
         min-width: calc(50% + var(--supergrids-grid-spacing));
         max-width: calc(50% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-7-xl, row[class*=spc-] > .col-7-xl {
       min-width: calc(58.33333% - var(--supergrids-grid-spacing));
       max-width: calc(58.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-7-xl.ext, row[class*=spc-] > .col-7-xl.ext {
+      .row[class*=spc-] > .col-7-xl.col-extrude, row[class*=spc-] > .col-7-xl.col-extrude {
         min-width: calc(58.33333% + var(--supergrids-grid-spacing));
         max-width: calc(58.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-8-xl, row[class*=spc-] > .col-8-xl {
       min-width: calc(66.66667% - var(--supergrids-grid-spacing));
       max-width: calc(66.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-8-xl.ext, row[class*=spc-] > .col-8-xl.ext {
+      .row[class*=spc-] > .col-8-xl.col-extrude, row[class*=spc-] > .col-8-xl.col-extrude {
         min-width: calc(66.66667% + var(--supergrids-grid-spacing));
         max-width: calc(66.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-9-xl, row[class*=spc-] > .col-9-xl {
       min-width: calc(75% - var(--supergrids-grid-spacing));
       max-width: calc(75% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-9-xl.ext, row[class*=spc-] > .col-9-xl.ext {
+      .row[class*=spc-] > .col-9-xl.col-extrude, row[class*=spc-] > .col-9-xl.col-extrude {
         min-width: calc(75% + var(--supergrids-grid-spacing));
         max-width: calc(75% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-10-xl, row[class*=spc-] > .col-10-xl {
       min-width: calc(83.33333% - var(--supergrids-grid-spacing));
       max-width: calc(83.33333% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-10-xl.ext, row[class*=spc-] > .col-10-xl.ext {
+      .row[class*=spc-] > .col-10-xl.col-extrude, row[class*=spc-] > .col-10-xl.col-extrude {
         min-width: calc(83.33333% + var(--supergrids-grid-spacing));
         max-width: calc(83.33333% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-11-xl, row[class*=spc-] > .col-11-xl {
       min-width: calc(91.66667% - var(--supergrids-grid-spacing));
       max-width: calc(91.66667% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-11-xl.ext, row[class*=spc-] > .col-11-xl.ext {
+      .row[class*=spc-] > .col-11-xl.col-extrude, row[class*=spc-] > .col-11-xl.col-extrude {
         min-width: calc(91.66667% + var(--supergrids-grid-spacing));
         max-width: calc(91.66667% + var(--supergrids-grid-spacing)); }
     .row[class*=spc-] > .col-12-xl, row[class*=spc-] > .col-12-xl {
       min-width: calc(100% - var(--supergrids-grid-spacing));
       max-width: calc(100% - var(--supergrids-grid-spacing)); }
-      .row[class*=spc-] > .col-12-xl.ext, row[class*=spc-] > .col-12-xl.ext {
+      .row[class*=spc-] > .col-12-xl.col-extrude, row[class*=spc-] > .col-12-xl.col-extrude {
         min-width: calc(100% + var(--supergrids-grid-spacing));
         max-width: calc(100% + var(--supergrids-grid-spacing)); } }
   .row > *.w-100-xs-o, row > *.w-100-xs-o {
@@ -5162,12 +5162,10 @@ blockquote {
   .ml-m40-xl {
     margin-left: -40px !important; } }
 
-.container {
-  display: block; }
-  @media (min-width: 1200px) {
-    .container {
-      padding-right: calc((100% - 1200px) / 2) !important;
-      padding-left: calc((100% - 1200px) / 2) !important; } }
+@media (min-width: 1200px) {
+  .container {
+    padding-right: calc((100% - 1200px) / 2) !important;
+    padding-left: calc((100% - 1200px) / 2) !important; } }
 
 .pos-sta {
   position: static !important; }
@@ -5421,12 +5419,3 @@ card,
   background-color: white;
   color: #333;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.0375); }
-
-.cc {
-  position: sticky !important; }
-  @media (min-width: 576px) {
-    .cc {
-      position: absolute !important; } }
-  @media (min-width: 768px) and (max-width: 1199.98px) {
-    .cc {
-      position: relative !important; } }

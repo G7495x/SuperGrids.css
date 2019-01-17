@@ -34,7 +34,6 @@
 // Container is used for centering webpage content on big displays.
 // NOT THE SAME AS BOOTSTRAP CONTAINER.
 @mixin container($name: xl,$breakpoints: $grid-breakpoints){
-	display: block;
 	@include media-breakpoint-up($name,$breakpoints){
 		padding-right: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;
 		padding-left: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;

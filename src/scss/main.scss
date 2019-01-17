@@ -9,8 +9,9 @@
 // SCSS to CSS Variables?
 // suffix to infix (Breaking Change)
 // Dependencies guide
+// Border Rules
 
-@import "reboot"; // Optional
+@import "reboot";
 
 // @import "grid";
 @import "grid-nxt";
@@ -27,6 +28,7 @@
 /// TODO Remove
 card,
 .card{
+	// display: block; ///
 	border-radius: 5px;
 	padding: 15px;
 	background-color: white;
@@ -36,9 +38,9 @@ card,
 		0 0 0 1px rgba(black,.0375);
 }
 
-.cc{
-	@include pos-stk;
-	@include pos-abs(sm);
-	@include pos-rel(md,lg);
-}
+// .cc{
+// 	@include pos-stk;
+// 	@include pos-abs(sm);
+// 	@include pos-rel(md,lg);
+// }
 ///

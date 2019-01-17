@@ -15,7 +15,7 @@
 		&.spc-#{$spacing}{
 			padding: $spacing*.5px;
 			>*{ margin: $spacing*.5px }
-			>.ext{ margin: $spacing*-.5px }
+			>.col-extrude{ margin: $spacing*-.5px }
 		}
 	}
 	@each $breakpoint in map-keys($breakpoints){
@@ -45,7 +45,7 @@
 						>.col-#{$i}#{$suffix}{
 							min-width: calc(#{100%/$columns*$i} - #{$spacing}px);
 							max-width: calc(#{100%/$columns*$i} - #{$spacing}px);
-							&.ext{
+							&.col-extrude{
 								min-width: calc(#{100%/$columns*$i} + #{$spacing}px);
 								max-width: calc(#{100%/$columns*$i} + #{$spacing}px);
 							}
