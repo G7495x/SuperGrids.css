@@ -1,134 +1,54 @@
 @import "variables";
 @import "breakpoints";
 
-@mixin horz($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; flex-direction: row }
-}
-@mixin vert($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; flex-direction: column }
-}
-@mixin horz-rev($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; flex-direction: row-reverse }
-}
-@mixin vert-rev($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; flex-direction: column-reverse }
-}
+@mixin horz($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; flex-direction: row } }
+@mixin vert($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; flex-direction: column } }
+@mixin horz-rev($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; flex-direction: row-reverse } }
+@mixin vert-rev($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; flex-direction: column-reverse } }
 
-@mixin f-wrap($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; flex-wrap: wrap }
-}
-@mixin f-wrap-rev($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; flex-wrap: wrap-reverse }
-}
-@mixin f-nowrap($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; flex-wrap: nowrap }
-}
+@mixin f-wrap($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; flex-wrap: wrap } }
+@mixin f-wrap-rev($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; flex-wrap: wrap-reverse } }
+@mixin f-nowrap($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; flex-wrap: nowrap } }
 
-@mixin f-start($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-items: flex-start }
-}
-@mixin f-end($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-items: flex-end }
-}
-@mixin f-center($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-items: center }
-}
-@mixin f-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-items: baseline }
-}
-@mixin f-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-items: stretch }
-}
+@mixin f-start($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-items: flex-start } }
+@mixin f-end($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-items: flex-end } }
+@mixin f-center($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-items: center } }
+@mixin f-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-items: baseline } }
+@mixin f-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-items: stretch } }
 
-@mixin justify-start($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; justify-content: flex-start }
-}
-@mixin justify-end($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; justify-content: flex-end }
-}
-@mixin justify-center($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; justify-content: center }
-}
-@mixin justify-space-between($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; justify-content: space-between }
-}
-@mixin justify-space-around($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; justify-content: space-around }
-}
-@mixin justify-space-evenly($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; justify-content: space-evenly }
-}
+@mixin justify-start($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; justify-content: flex-start } }
+@mixin justify-end($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; justify-content: flex-end } }
+@mixin justify-center($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; justify-content: center } }
+@mixin justify-space-between($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; justify-content: space-between } }
+@mixin justify-space-around($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; justify-content: space-around } }
+@mixin justify-space-evenly($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; justify-content: space-evenly } }
 
-@mixin content-start($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-content: flex-start }
-}
-@mixin content-end($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-content: flex-end }
-}
-@mixin content-center($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-content: center }
-}
-@mixin content-space-between($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-content: space-between }
-}
-@mixin content-space-around($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-content: space-around }
-}
-@mixin content-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex; align-content: stretch }
-}
+@mixin content-start($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: flex-start } }
+@mixin content-end($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: flex-end } }
+@mixin content-center($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: center } }
+@mixin content-space-between($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: space-between } }
+@mixin content-space-around($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: space-around } }
+@mixin content-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: stretch } }
 
-@mixin super-center($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ @include f-center; justify-content: center; align-content: center }
-}
+@mixin super-center($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include f-center; justify-content: center; align-content: center } }
 
-@mixin self-auto($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ align-self: auto }
-}
-@mixin self-start($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ align-self: flex-start }
-}
-@mixin self-end($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ align-self: flex-end }
-}
-@mixin self-center($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ align-self: center }
-}
-@mixin self-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ align-self: baseline }
-}
-@mixin self-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ align-self: stretch }
-}
+@mixin self-auto($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ align-self: auto } }
+@mixin self-start($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ align-self: flex-start } }
+@mixin self-end($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ align-self: flex-end } }
+@mixin self-center($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ align-self: center } }
+@mixin self-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ align-self: baseline } }
+@mixin self-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ align-self: stretch } }
 
-@mixin fill($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ flex: 1 }
-}
-@mixin nofill($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ flex: 0 auto }
-}
-@mixin grow-0($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ flex-grow: 0 }
-}
-@mixin grow-1($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ flex-grow: 1 }
-}
-@mixin shrink-0($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ flex-shrink: 0 }
-}
-@mixin shrink-1($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ flex-shrink: 1 }
-}
+@mixin fill($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ flex: 1 } }
+@mixin nofill($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ flex: 0 auto } }
+@mixin grow-0($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ flex-grow: 0 } }
+@mixin grow-1($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ flex-grow: 1 } }
+@mixin shrink-0($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ flex-shrink: 0 } }
+@mixin shrink-1($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ flex-shrink: 1 } }
 
-@mixin order($n,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ order: $n }
-}
-@mixin order-first($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ order: -1 }
-}
-@mixin order-last($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ order: $grid-columns+1 }
-}
+@mixin order($n,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ order: $n } }
+@mixin order-first($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ order: -1 } }
+@mixin order-last($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ order: $grid-columns+1 } }
 
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);

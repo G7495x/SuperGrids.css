@@ -1,39 +1,17 @@
 @import "variables";
 @import "breakpoints";
 
-@mixin inline($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: inline !important }
-}
-@mixin i-block($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: inline-block !important }
-}
-@mixin block($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: block !important }
-}
-@mixin table($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: table !important }
-}
-@mixin t-cell($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: table-cell !important }
-}
-@mixin t-row($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: table-row !important }
-}
-@mixin flex($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: flex !important }
-}
-@mixin i-flex($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: inline-flex !important }
-}
-@mixin grid($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: grid !important }
-}
-@mixin i-grid($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: inline-grid !important }
-}
-@mixin hide($up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){ display: none !important }
-}
+@mixin inline($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: inline !important } }
+@mixin i-block($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: inline-block !important } }
+@mixin block($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: block !important } }
+@mixin table($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: table !important } }
+@mixin t-cell($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: table-cell !important } }
+@mixin t-row($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: table-row !important } }
+@mixin flex($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex !important } }
+@mixin i-flex($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: inline-flex !important } }
+@mixin grid($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: grid !important } }
+@mixin i-grid($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: inline-grid !important } }
+@mixin hide($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: none !important } }
 
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
