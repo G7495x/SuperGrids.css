@@ -11,6 +11,8 @@ scroll{ @extend .scroll }
 scroll-x{ @extend .scroll-x }
 scroll-y{ @extend .scroll-y }
 
+container{ @extend .container }
+
 iblock{ @extend .i-block }
 flex{ @extend .flex }
 iflex{ @extend .i-flex }
