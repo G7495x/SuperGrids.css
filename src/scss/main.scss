@@ -11,6 +11,27 @@
 // Dependencies guide
 // Border Rules
 
+// COMPONENTS MAP
+
+// main.scss
+// ├─ reboot.scss
+// │  └─ typography.scss *
+// │
+// ├─ grid.scss *
+// │
+// ├─ flex.scss *
+// ├─ align.scss *
+// ├─ scroll.scss *
+// ├─ easing.scss *
+// ├─ spacing.scss *
+// ├─ position.scss *
+// ├─ display.scss *
+// │
+// └─ custom-tags.scss **
+
+// * - Depends variables.scss, breakpoints.scss
+// ** - Depends on everything before it
+
 @import "reboot";
 
 // @import "grid";
@@ -23,6 +44,7 @@
 @import "spacing";
 @import "position";
 @import "display";
+
 @import "custom-tags"; // Optional
 
 /// TODO Remove

@@ -15,6 +15,9 @@
 		&.spc-#{$spacing}{
 			padding: $spacing*.5px;
 			>*{ margin: $spacing*.5px }
+
+			// Extrude: Use this class to extrude content when spc- is enabled for the parent row
+			// Useful in places like nested grids, etc.
 			>.col-extrude{ margin: $spacing*-.5px }
 		}
 	}
