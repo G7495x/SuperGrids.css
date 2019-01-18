@@ -10,7 +10,7 @@
 // Spacing.scss - Customizable Aspect Ratio, .square
 // Reboot.scss - Flag for print links
 //
-// !important (time consuming change, only benifit is if user uses sass mixins)
+// !important (time consuming change, only benefit is if user uses sass mixins)
 // SCSS to CSS Variables?
 // breakpoints.scss - responsive-down??
 // Reboot.scss - Variables to Variables.scss??
@@ -33,7 +33,7 @@
 // │
 // └─ custom-tags.scss **
 
-// * - Depends variables.scss & breakpoints.scss
+// *  - Depends variables.scss & breakpoints.scss
 // ** - Depends on everything before it
 
 @import "components/reboot";
