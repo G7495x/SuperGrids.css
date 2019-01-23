@@ -1,0 +1,21 @@
+@import "variables";
+@import "breakpoints";
+
+@mixin v-align-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ vertical-align: baseline } }
+@mixin v-align-top($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ vertical-align: top } }
+@mixin v-align-middle($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ vertical-align: middle } }
+@mixin v-align-bottom($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ vertical-align: bottom } }
+@mixin v-align-text-bottom($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ vertical-align: text-bottom } }
+@mixin v-align-text-top($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ vertical-align: text-top } }
+
+@each $breakpoint in map-keys($grid-breakpoints){
+	$suffix: breakpoint-suffix($breakpoint);
+	@include media-breakpoint-up($breakpoint){
+		.v-align-baseline#{$suffix}{ @include v-align-baseline }
+		.v-align-top#{$suffix}{ @include v-align-top }
+		.v-align-middle#{$suffix}{ @include v-align-middle }
+		.v-align-bottom#{$suffix}{ @include v-align-bottom }
+		.v-align-text-bottom#{$suffix}{ @include v-align-text-bottom }
+		.v-align-text-top#{$suffix}{ @include v-align-text-top }
+	}
+}

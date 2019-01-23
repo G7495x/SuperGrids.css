@@ -2,7 +2,7 @@
 @import "breakpoints";
 
 @mixin scroll($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){
-		overflow: aut ;
+		overflow: auto;
 		@supports(-webkit-overflow-scrolling: touch){
 			overflow: scroll;
 			-webkit-overflow-scrolling: touch;
@@ -10,7 +10,7 @@
 	}
 }
 @mixin scroll-x($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){
-		overflow-x: aut ;
+		overflow-x: auto;
 		@supports(-webkit-overflow-scrolling: touch){
 			overflow-x: scroll;
 			-webkit-overflow-scrolling: touch;
@@ -18,7 +18,7 @@
 	}
 }
 @mixin scroll-y($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){
-		overflow-y: aut ;
+		overflow-y: auto;
 		@supports(-webkit-overflow-scrolling: touch){
 			overflow-y: scroll;
 			-webkit-overflow-scrolling: touch;

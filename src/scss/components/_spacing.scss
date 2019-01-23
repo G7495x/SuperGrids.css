@@ -9,6 +9,14 @@
 @mixin mx($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include mr($size); @include ml($size) } }
 @mixin my($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include mt($size); @include mb($size) } }
 
+@mixin b($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ border: $size solid transparent !important } }
+@mixin bt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ border-top: $size solid transparent !important } }
+@mixin br($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ border-right: $size solid transparent !important } }
+@mixin bb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ border-bottom: $size solid transparent !important } }
+@mixin bl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ border-left: $size solid transparent !important } }
+@mixin bx($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include br($size); @include bl($size) } }
+@mixin by($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include bt($size); @include bb($size) } }
+
 @mixin p($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding: $size !important } }
 @mixin pt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding-top: $size !important } }
 @mixin pr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding-right: $size !important } }
@@ -16,6 +24,9 @@
 @mixin pl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding-left: $size !important } }
 @mixin px($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include pr($size); @include pl($size) } }
 @mixin py($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include pt($size); @include pb($size) } }
+
+@mixin spb-x($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ >*:not(:last-child){ margin-right: $size } } }
+@mixin spb-y($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ >*:not(:last-child){ margin-bottom: $size } } }
 
 @mixin fix-aspect($up: null,$down: null,$breakpoints: $grid-breakpoints){
 	@include resp($up,$down,$breakpoints){
@@ -32,8 +43,8 @@
 // NOT THE SAME AS BOOTSTRAP CONTAINER.
 @mixin container($name: xl,$breakpoints: $grid-breakpoints){
 	@include media-breakpoint-up($name,$breakpoints){
-		padding-right: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;
-		padding-left: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;
+		margin-right: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;
+		margin-left: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;
 	}
 }
 
@@ -59,6 +70,14 @@
 			.mb-#{$size}#{$suffix}{ @include mb($size*1px) }
 			.ml-#{$size}#{$suffix}{ @include ml($size*1px) }
 
+			.b-#{$size}#{$suffix}{ @include b($size*1px) }
+			.bx-#{$size}#{$suffix}{ @include bx($size*1px) }
+			.by-#{$size}#{$suffix}{ @include by($size*1px) }
+			.bt-#{$size}#{$suffix}{ @include bt($size*1px) }
+			.br-#{$size}#{$suffix}{ @include br($size*1px) }
+			.bb-#{$size}#{$suffix}{ @include bb($size*1px) }
+			.bl-#{$size}#{$suffix}{ @include bl($size*1px) }
+
 			.p-#{$size}#{$suffix}{ @include p($size*1px) }
 			.px-#{$size}#{$suffix}{ @include px($size*1px) }
 			.py-#{$size}#{$suffix}{ @include py($size*1px) }
@@ -66,6 +85,9 @@
 			.pr-#{$size}#{$suffix}{ @include pr($size*1px) }
 			.pb-#{$size}#{$suffix}{ @include pb($size*1px) }
 			.pl-#{$size}#{$suffix}{ @include pl($size*1px) }
+
+			.spb-x-#{$size}#{$suffix}{ @include spb-x($size*1px) }
+			.spb-y-#{$size}#{$suffix}{ @include spb-y($size*1px) }
 		}
 
 		// Negative Margins

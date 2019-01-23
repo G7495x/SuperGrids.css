@@ -1,4 +1,4 @@
-// https://github.com/G7495x/SuperGrids.css v0.9.0
+// https://github.com/G7495x/SuperGrids.css v0.9.1
 
 // WONT FIX
 // suffix to infix (bootstrap compatibility) - Not possible because of responsive rules (breakpoints.scss)
@@ -6,29 +6,31 @@
 // TODO
 // Cite bootstrap, easings.net (licensing)
 // Forms Component (button groups, radio groups, etc.)
-// Border Rules
 // Spacing.scss - Customizable Aspect Ratio, .square
 // Reboot.scss - Flag for print links
+// grid rules
+//
 // Recheck names once (Understandability)
 // display: contents
-// grid rules
-// SPB spacing
-//
 // !important (time consuming change, only benefit is if user uses sass mixins)
 // SCSS to CSS Variables?
 // breakpoints.scss - responsive-down??
 // Reboot.scss - Variables to Variables.scss??
+// initial inherit unset??
+
+// TESTS
+// Check for class duplicates in SuperGrids.css
 
 // COMPONENTS MAP
 
-// main.scss
+// SuperGrids.scss
 // ├─ reboot.scss
 // │  └─ typography.scss *
 // │
-// ├─ grid-(v1-v2).scss *
+// ├─ grid OR grid-legacy.scss *
 // │
 // ├─ flex.scss *
-// ├─ align.scss *
+// ├─ v-align.scss *
 // ├─ scroll.scss *
 // ├─ easing.scss *
 // ├─ spacing.scss *
@@ -42,11 +44,11 @@
 
 @import "components/reboot";
 
-// @import "components/grid-v1";
-@import "components/grid-v2";
+@import "components/grid";
+// @import "components/grid-legacy";
 
 @import "components/flex";
-@import "components/align";
+@import "components/v-align";
 @import "components/scroll";
 @import "components/easing";
 @import "components/spacing";
@@ -58,7 +60,7 @@
 /// TODO Remove
 card,
 .card{
-	// display: block; ///
+	display: block; ///
 	border-radius: 5px;
 	padding: 15px;
 	background-color: white;
