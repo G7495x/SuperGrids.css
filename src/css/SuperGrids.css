@@ -10831,6 +10831,20 @@ blockquote>footer{
 	}
 }
 
+@media (min-width: 1200px){
+	.container-b{
+		border-right: calc((100% - 1200px) / 2) solid transparent !important;
+		border-left: calc((100% - 1200px) / 2) solid transparent !important;
+	}
+}
+
+@media (min-width: 1200px){
+	.container-p{
+		padding-right: calc((100% - 1200px) / 2) !important;
+		padding-left: calc((100% - 1200px) / 2) !important;
+	}
+}
+
 .pos-sta{
 	position: static !important;
 }

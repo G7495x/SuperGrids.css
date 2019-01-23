@@ -48,6 +48,22 @@
 	}
 }
 
+// Same as container, but with border instead of margin
+@mixin container-b($name: xl,$breakpoints: $grid-breakpoints){
+	@include media-breakpoint-up($name,$breakpoints){
+		border-right: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) solid transparent !important;
+		border-left: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) solid transparent !important;
+	}
+}
+
+// Same as container, but with padding instead of margin
+@mixin container-p($name: xl,$breakpoints: $grid-breakpoints){
+	@include media-breakpoint-up($name,$breakpoints){
+		padding-right: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;
+		padding-left: calc((100% - #{breakpoint-min($name,$breakpoints)}) / 2) !important;
+	}
+}
+
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
@@ -106,3 +122,5 @@
 }
 
 .container{ @include container }
+.container-b{ @include container-b }
+.container-p{ @include container-p }
