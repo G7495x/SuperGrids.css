@@ -28,6 +28,7 @@
 @mixin content-center($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: center } }
 @mixin content-space-between($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: space-between } }
 @mixin content-space-around($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: space-around } }
+@mixin content-space-evenly($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: space-evenly } }
 @mixin content-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ display: flex; align-content: stretch } }
 
 @mixin super-center($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ @include f-center; justify-content: center; align-content: center } }
@@ -47,7 +48,7 @@
 @mixin shrink-1($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ flex-shrink: 1 } }
 
 @mixin order($n,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ order: $n } }
-@mixin order-first($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ order: -1 } }
+@mixin order-first($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ order: -1*($grid-columns+1) } }
 @mixin order-last($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ order: $grid-columns+1 } }
 
 @each $breakpoint in map-keys($grid-breakpoints){
@@ -80,6 +81,7 @@
 		.content-center#{$suffix}{ @include content-center }
 		.content-space-between#{$suffix}{ @include content-space-between }
 		.content-space-around#{$suffix}{ @include content-space-around }
+		.content-space-evenly#{$suffix}{ @include content-space-evenly }
 		.content-stretch#{$suffix}{ @include content-stretch }
 
 		.super-center#{$suffix}{ @include super-center }
@@ -98,6 +100,7 @@
 		.shrink-0#{$suffix}{ @include shrink-0 }
 		.shrink-1#{$suffix}{ @include shrink-1 }
 
+		@for $n from -1*$grid-columns through -1{ .order-m#{-1*$n}#{$suffix}{ @include order($n) } }
 		@for $n from 0 through $grid-columns{ .order-#{$n}#{$suffix}{ @include order($n) } }
 		.order-first#{$suffix}{ @include order-first }
 		.order-last#{$suffix}{ @include order-last }

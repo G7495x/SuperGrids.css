@@ -20,6 +20,9 @@
 @mixin capitalize($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ text-transform: capitalize } }
 @mixin text-normal($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ text-transform: none } }
 
+@mixin small-caps($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ font-variant: small-caps } }
+@mixin font-variant-normal($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ font-variant: normal } }
+
 @mixin b-100($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ font-weight: 100 !important } }
 @mixin b-200($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ font-weight: 200 !important } }
 @mixin b-300($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ font-weight: 300 !important } }
@@ -55,6 +58,9 @@
 		.uppercase#{$suffix}{ @include uppercase }
 		.capitalize#{$suffix}{ @include capitalize }
 		.text-normal#{$suffix}{ @include text-normal }
+
+		.small-caps#{$suffix}{ @include small-caps }
+		.font-variant-normal#{$suffix}{ @include font-variant-normal }
 
 		.b-100#{$suffix}{ @include b-100 }
 		.b-200#{$suffix}{ @include b-200 }
