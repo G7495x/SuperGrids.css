@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>SuperGrids Forms</title>
+	<link rel="stylesheet" type="text/css" href="css/SuperGrids.css">
+</head>
+<body>
+	<style type="text/css">
+		body{ background: hsl(0,0%,95%); }
+		input,
+		select,
+		textarea,
+		button{
+			width: 100%;
+		}
+	</style>
+	<div class="p-10 spb-y-10">
+		<!-- <input type="image"> -->
+
+		<input type="color" placeholder="Color">
+		<input type="date" placeholder="Date">
+		<input type="datetime-local" placeholder="Datetime Local">
+		<input type="email" placeholder="E-mail">
+		<input type="hidden" placeholder="Hidden">
+		<input type="month" placeholder="Month">
+		<input type="number" placeholder="Number">
+		<input type="password" placeholder="Password">
+		<input type="search" placeholder="Search">
+		<input type="tel" placeholder="Tel">
+		<input type="text" placeholder="Text">
+		<input type="time" placeholder="Time">
+		<input type="url" placeholder="URL">
+		<input type="week" placeholder="Week">
+		<select name="cars">
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="fiat">Fiat</option>
+			<option value="audi">Audi</option>
+		</select>
+		<select>
+			<optgroup label="Swedish Cars">
+				<option value="volvo">Volvo</option>
+				<option value="saab">Saab</option>
+			</optgroup>
+			<optgroup label="German Cars">
+				<option value="mercedes">Mercedes</option>
+				<option value="audi">Audi</option>
+			</optgroup>
+		</select>
+		<textarea name="message" rows="10" cols="30">
+			The cat was playing in the garden.
+		</textarea>
+
+		<input type="button" value="Button">
+		<input type="reset">
+		<input type="submit">
+		<button>Button</button>
+
+		<div><input type="checkbox">Checkbox</div>
+		<div><input type="radio">Radio</div>
+
+		<input type="range">
+
+		<input type="file">
+
+		<div>
+			<label><input type="checkbox" name="vehicle1" value="Bike">I have a bike</label>
+			<label><input type="checkbox" name="vehicle2" value="Car">I have a car</label>
+			<label><input type="checkbox" name="vehicle3" value="Boat" checked>I have a boat</label>
+		</div>
+		<div>
+			<label><input type="radio" name="gender" value="male">Male</label>
+			<label><input type="radio" name="gender" value="female">Female</label>
+			<label><input type="radio" name="gender" value="other">Other</label>
+		</div>
+
+		<input type="text" placeholder="Text" disabled>
+		<select name="cars" disabled>
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="fiat">Fiat</option>
+			<option value="audi">Audi</option>
+		</select>
+		<button disabled>Button</button>
+		<textarea name="message" rows="10" cols="30" disabled>
+			The cat was playing in the garden.
+		</textarea>
+	</div>
+</body>
+</html>
