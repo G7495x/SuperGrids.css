@@ -16,6 +16,7 @@
 
 $accent: hsl(210,100%,60%);
 $focus-shadow: 0 0 0 3px;
+$input-height: 30px;
 
 @mixin outline-inputs{
 	input[type="color"],
@@ -39,7 +40,8 @@ $focus-shadow: 0 0 0 3px;
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-	button{ @content; }
+	button,
+	.button{ @content; }
 	input::-webkit-file-upload-button{ @content; }
 }
 
@@ -67,7 +69,6 @@ textarea,
 button{
 	border: none;
 	border-radius: 5px;
-	padding: 5px;
 	transition-property: box-shadow,background;
 	transition-duration: .25s;
 	&::placeholder{
@@ -88,10 +89,6 @@ button{
 	background-size: 12px;
 }
 
-input,
-select,
-button{ height: 30px; }
-
 *:focus{
 	outline: none;
 	box-shadow:
@@ -100,6 +97,7 @@ button{ height: 30px; }
 }
 
 @include outline-inputs{
+	height: $input-height;
 	padding: 5px 10px;
 	background-color: rgba(black,.025);
 	box-shadow: inset 0 0 0 1px rgba(black,.15);
@@ -112,8 +110,11 @@ button{ height: 30px; }
 	}
 }
 
+textarea{ height: auto; }
+
 @include button-inputs{
 	$shadow: 0 5px 20px rgba($accent,.375);
+	padding: 5px 15px;
 	background-color: $accent;
 	color: white;
 	box-shadow: $shadow;
@@ -181,6 +182,7 @@ input[type="radio"]{
 }
 
 input[type="range"]{
+	height: $input-height;
 	background-color: transparent;
 	box-shadow: none;
 	@include input-range-thumb{
@@ -226,6 +228,7 @@ input[type="range"]{
 }
 
 input[type="file"]{
+	height: $input-height;
 	&::-webkit-file-upload-button{
 		transform: translateY(-2px);
 		border: none;

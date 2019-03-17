@@ -1,10 +1,10 @@
 {
 	"name": "SuperGrids.css",
-	"version": "0.9.3",
+	"version": "0.9.4",
 	"description": "SuperGrids.css - The Definitive Modern Grid-System for the web.",
 	"main": "",
 	"scripts": {
-		"start": "concurrently \"browser-sync start --config ./bs-config.js\" \"node-sass -w src/scss/ -o src/css/\""
+		"start": "concurrently \"browser-sync start --config ./bs-config.js\" \"node-sass -w src/scss/ -r -o src/css/\""
 	},
 	"author": "G7495x",
 	"license": "Apache-2.0",

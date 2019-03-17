@@ -34,7 +34,6 @@
 			@for $i from 1 through $columns{
 				>.col-#{$i}#{$suffix}{
 					--colCount: #{$columns};
-					flex: 0 auto;
 					min-width: calc(#{100%*$i} / var(--colCount));
 					max-width: calc(#{100%*$i} / var(--colCount));
 				}
@@ -48,10 +47,20 @@
 			}
 			@for $spacing from 0 through $spacing-steps{
 				$spacing: $spacing*$spacing-step;
-				&.spc-row-#{$spacing}#{$suffix}{ --rowGap: #{$spacing*1px}; }
-				&.spc-col-#{$spacing}#{$suffix}{ --colGap: #{$spacing*1px}; }
+				&.spc-x-#{$spacing}#{$suffix}{ --colGap: #{$spacing*1px}; }
+				&.spc-y-#{$spacing}#{$suffix}{ --rowGap: #{$spacing*1px}; }
 			}
 			&[class*=spc-]{
+				>.col#{$suffix}{
+					flex: 1;
+					min-width: 0;
+					max-width: none;
+				}
+				>.col-auto#{$suffix}{
+					flex: 0 auto;
+					min-width: 0;
+					max-width: none;
+				}
 				@for $i from 1 through $columns{
 					>.col-#{$i}#{$suffix}{
 						min-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));

@@ -1,4 +1,4 @@
-// https://github.com/G7495x/SuperGrids.css v0.9.3
+// https://github.com/G7495x/SuperGrids.css v0.9.4
 
 // WONT FIX
 // suffix to infix (bootstrap compatibility) - Not possible because of responsive rules (breakpoints.scss)
@@ -27,7 +27,8 @@
 
 // SuperGrids.scss
 // ├─ reboot.scss
-// │  └─ typography.scss *
+// │  ├─ typography.scss *
+// │  └─ reboot.scss *
 // │
 // ├─ grid OR grid-legacy.scss *
 // │
@@ -58,23 +59,3 @@
 @import "components/display";
 
 // @import "components/custom-tags"; // Optional
-
-/// TODO Remove
-card,
-.card{
-	display: block; ///
-	border-radius: 5px;
-	padding: 15px;
-	background-color: white;
-	color: #333;
-	box-shadow:
-		0 5px 20px rgba(black,.1),
-		0 0 0 1px rgba(black,.0375);
-}
-
-// .cc{
-// 	@include pos-sty;
-// 	@include pos-abs(sm);
-// 	@include pos-rel(md,lg);
-// }
-///

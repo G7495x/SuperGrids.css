@@ -7,6 +7,17 @@
 </head>
 <style type="text/css">
 	body{ background-color: #eee; }
+	card,
+	.card{
+		display: block;
+		border-radius: 5px;
+		padding: 15px;
+		background-color: white;
+		color: #333;
+		box-shadow:
+			0 5px 20px rgba(0,0,0,.1),
+			0 0 0 1px rgba(0,0,0,.0375);
+	}
 </style>
 <body>
 	<!-- <container class="row spc-10 spc-15-sm">
@@ -33,7 +44,7 @@
 	</container> -->
 	<div class="container row spc-10 spc-15-sm">
 		<card></card>
-		<card class="col-md bx-5"></card>
+		<card class="col-md"></card>
 		<card class="col col-auto-md"></card>
 		<div class="w-100"></div>
 		<card class="card col-12 col-6-sm col-4-md"></card>
@@ -59,6 +70,12 @@
 			<card class="col col-2-md self-center"></card>
 			<card class="col-6 col-2-md self-end"></card>
 		</div>
+		<card class="col-3 col-auto-md"></card>
+		<card class="col-auto col-3-md"></card>
+		<div class="w-100"></div>
+		<card class="col-3 col-md"></card>
+		<card class="col col-3-md"></card>
+		<div class="w-100"></div>
 		<div class="card hide">Hello</div>
 		<div class="spb-y-10">
 			<card></card>
