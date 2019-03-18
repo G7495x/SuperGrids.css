@@ -229,6 +229,7 @@ input[type="range"]{
 
 input[type="file"]{
 	height: $input-height;
+	padding: 5px 0px;
 	&::-webkit-file-upload-button{
 		transform: translateY(-2px);
 		border: none;
