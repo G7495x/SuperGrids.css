@@ -1,14 +1,25 @@
-// CSS Reset
-//
+// Reboot - CSS Reset
+
 // CSS Reset ensures that websites look consistent across browsers while complying to modern HTML standards.
 // This CSS Reset style-sheet is specifically optimized for this framework.
 //
-// Forked & modified from Normalize.css.
+// Forked & modified from Bootstrap Reboot (Normalize.css) - Rev. Mar 12, 2019
 // Normalize is licensed MIT. https://github.com/necolas/normalize.css
+
+// COMPONENTS MAP
+
+// reboot.scss
+// ├─ typography.scss *
+// └─ forms.scss *
+// * - Depends variables.scss & breakpoints.scss
 
 $background-color: white;
 $text-color: #333;
+$font-family: sans-serif;
 $font-family-monospace: monospace;
+$font-size: 16px;
+$font-weight: initial	;
+$line-height: 1.25;
 
 *,
 *::before,
@@ -22,13 +33,8 @@ $font-family-monospace: monospace;
 html{
 	font-family: sans-serif; // Change the default font family in all browsers
 	line-height: 1.25; // Correct the line height in all browsers
-	-webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS
-	-ms-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS
+	-webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
 	-webkit-tap-highlight-color: transparent; // Change the default tap highlight to be completely transparent in iOS
-}
-
-@at-root{
-	@-ms-viewport{ width: device-width } // IE10+ doesn't honor `<meta name="viewport">` in some cases
 }
 
 article,
@@ -40,18 +46,23 @@ header,
 hgroup,
 main,
 nav,
-section{ display: block } // Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers)
+section{ display: block; } // Shim for "new" HTML5 structural elements to display correctly
 
 body{
 	margin: 0; // Remove body margin in all browsers
 	background-color: $background-color; // As a best practice, apply a default `background-color`
 	color: $text-color; // As a best practice, apply a default `color`
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	line-height: $line-height;
+	text-align: left; // Set an explicit initial text-align value so that we can later use the `inherit` value on things like `<th>` elements.
 }
 
-// Suppress the focus outline on elements that cannot be accessed via keyboard
-// This prevents an unwanted focus outline from appearing around elements that might still respond to pointer events
-// Credit: https://github.com/suitcss/base
-[tabindex="-1"]:focus{ outline: 0 !important }
+// Future-proof rule: in browsers that support :focus-visible, suppress the focus outline on elements that programmatically receive focus but wouldn't normally show a visible focus outline. In general, this would mean that the outline is only applied if the interaction that led to the element receiving programmatic focus was a keyboard interaction, or the browser has somehow determined that the user is primarily a keyboard user and/or wants focus outlines to always be presented.
+// https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
+// https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/
+[tabindex="-1"]:focus:not(:focus-visible){ outline: 0 !important; }
 
 hr{
 	height: 1px; // Make height 1 px
@@ -69,14 +80,14 @@ h6,
 p,
 ul,
 ol,
-dl{ margin: 0 } // Remove margin to heading, paragraph, list elements. Use grid spacing / margin-padding instead
+dl{ margin: 0; } // Remove margin to heading, paragraph, list elements. Use grid spacing / margin-padding instead
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6{ font-weight: normal } // Set headings to normal weight
+h6{ font-weight: normal; } // Set headings to normal weight
 
 abbr[title],
 abbr[data-original-title]{
@@ -91,13 +102,13 @@ address{
 	line-height: inherit;
 }
 
-dfn{ font-style: italic } // Add the correct font style in Android 4.3-
+dfn{ font-style: italic; } // Add the correct font style in Android 4.3-
 
-b{ font-weight: bold } // Add the correct font weight in Chrome, Edge, and Safari
+b{ font-weight: bold; } // Add the correct font weight in Chrome, Edge, and Safari
 
-strong{ font-weight: bolder } // Add the correct font weight in Chrome, Edge, and Safari
+strong{ font-weight: bolder; } // Add the correct font weight in Chrome, Edge, and Safari
 
-small{ font-size: 75% } // Add the correct font size in all browsers
+small{ font-size: 75%; } // Add the correct font size in all browsers
 
 // Prevent `sub` and `sup` elements from affecting the line height in all browsers
 sub,
@@ -108,8 +119,8 @@ sup{
 	vertical-align: baseline;
 }
 
-sub{ bottom: -.25em }
-sup{ top: -.5em }
+sub{ bottom: -.25em; }
+sup{ top: -.5em; }
 
 a{
 	text-decoration: none; // Remove underline for links
@@ -129,22 +140,26 @@ a:not([href]):not([tabindex]){
 		text-decoration: none;
 	}
 
-	&:focus{ outline: 0 }
+	&:focus{ outline: 0; }
 }
 
 pre,
 code,
 kbd,
-samp{ font-family: $font-family-monospace } // Set monospace font for relevant tags
+samp{
+	font-family: $font-family-monospace; // Set monospace font for relevant tags
+	font-size: 1em; // Correct the odd `em` font sizing in all browsers
+}
 
 pre{
 	margin: 0; // Remove margin, use grid spacing / margin-padding instead
 	overflow: auto; // Don't allow content to break outside
 }
 
-figure{ margin: 0 } // Remove margin, use grid spacing / margin-padding instead
+figure{ margin: 0; } // Remove margin, use grid spacing / margin-padding instead
 
 img{
+	vertical-align: middle;
 	display: block; // Using `display: block` for grid compatability
 	border: 0; // Remove border for `img` elements
 	object-fit: cover; // By default, set `object-fit: cover` to prevent image distortion
@@ -157,9 +172,15 @@ svg{
 	vertical-align: middle;
 }
 
-table{ border-collapse: collapse } // Prevent double borders
+table{ border-collapse: collapse; } // Prevent double borders
 
-th{ text-align: inherit } // Matches default `<td>` alignment by inheriting from the `<body>`, or the closest parent with a set `text-align`
+caption{
+	padding: 0;
+	text-align: left;
+	caption-side: bottom;
+}
+
+th{ text-align: inherit; } // Matches default `<td>` alignment by inheriting from the `<body>`, or the closest parent with a set `text-align`
 
 input,
 button,
@@ -178,8 +199,23 @@ progress{
 	-webkit-appearance: none; // For consistent custom styling across all browsers
 }
 
+input,
 button,
-select{ text-transform: none } // Remove the inheritance of text transform in Firefox
+select,
+progress{ vertical-align: middle; } // Add the correct vertical alignment in Chrome, Firefox, and Opera
+
+::-webkit-file-upload-button{
+	border-radius: 0; // Remove `border-radius` on all browsers
+	font: inherit; // Change font properties to `inherit` in Safari
+	-webkit-appearance: none; // Correct the inability to style clickable types in iOS and Safari
+}
+
+button,
+select{ text-transform: none; } // Remove the inheritance of text transform in Firefox
+
+// Remove the inheritance of word-wrap in Safari.
+// Details at https://github.com/twbs/bootstrap/issues/24990
+select{ word-wrap: normal; }
 
 // Remove inner border and padding from Firefox, but don't restore the outline like Normalize
 button::-moz-focus-inner,
@@ -199,11 +235,50 @@ input[type="checkbox"]{
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
-input[type="month"]{
+input[type="month"],
+input[type="file"]{
 	// Remove the default appearance of temporal inputs to avoid a Mobile Safari bug where setting a custom line-height prevents text from being vertically centered within the input
 	// See https://bugs.webkit.org/show_bug.cgi?id=139848 and https://github.com/twbs/bootstrap/issues/11266
 	display: flex;
 	align-items: center;
+}
+
+input[type="color"]{
+	@mixin swatch-wrapper{
+		&::-webkit-color-swatch-wrapper{ @content; }
+		&::-moz-focus-inner{ @content; }
+	}
+	@mixin swatch{
+		&::-webkit-color-swatch{ @content; }
+		&::-moz-color-swatch{ @content; }
+	}
+	@include swatch-wrapper{ padding: 0; }
+	@include swatch{
+		width: calc(100% + 10px);
+		margin: 0 -5px;
+		border: 1px solid rgba(black,.15);
+		border-radius: 2.5px;
+	}
+}
+
+input[type="range"]{
+	@mixin range-thumb{
+		&::-webkit-slider-thumb{ @content }
+		&::-moz-range-thumb{ @content }
+	}
+	@mixin range-track{
+		&::-webkit-slider-runnable-track{ @content }
+		&::-moz-range-track{ @content }
+	}
+	@include range-thumb{
+		-webkit-appearance: none;
+		box-sizing: border-box;
+	}
+	@include range-track{
+		display: flex;
+		align-items: center;
+	}
+	&::-moz-focus-outer{ border: 0; }
 }
 
 textarea{
@@ -232,53 +307,47 @@ legend{
 	white-space: normal; // Correct the text wrapping in Edge and IE
 }
 
-input,
-select,
-progress{ vertical-align: middle } // Add the correct vertical alignment in Chrome, Firefox, and Opera
-
 [type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button{ height: auto } // Correct the cursor style of increment and decrement buttons in Chrome
+[type="number"]::-webkit-outer-spin-button{ height: auto; } // Correct the style of increment and decrement buttons in Chrome
 
-::-webkit-file-upload-button{
-	border-radius: 0; // Remove `border-radius` on all browsers
-	font: inherit; // Change font properties to `inherit` in Safari
-	-webkit-appearance: none; // Correct the inability to style clickable types in iOS and Safari
-}
+[type="search"]::-webkit-search-decoration{ -webkit-appearance: none; } // Remove the inner padding in Chrome and Safari on macOS.
 
-output{ display: inline-block } // Add the correct display in all browsers
+::-webkit-file-upload-button { font: inherit; } // Change font properties to `inherit` in Safari
+
+output{ display: inline-block; } // Add the correct display in all browsers
 
 summary{
 	display: list-item; // Add the correct display in all browsers
 	cursor: pointer; // Add the correct cursor in all browsers
 }
 
-template{ display: none } // Add the correct display in IE
-
-// Always hide an element with the `hidden` HTML attribute (from PureCSS)
-// Needed for proper display in IE 10-
-[hidden]{ display: none !important }
+template{ display: none; } // Add the correct display in IE
 
 blockquote{
 	margin: 0; // Remove margin, use grid spacing / margin-padding instead
 	>footer{ // Naming a source
 		opacity: .5;
-		&::before{ content: "\2014 \00A0" }
+		&::before{ content: "\2014 \00A0"; }
 	}
 }
 
-ul{ padding-left: 25px }
-ol{ padding-left: 35px }
-dd{ margin-left: 25px }
+ul{ padding-left: 25px; }
+ol{ padding-left: 35px; }
+dd{ margin-left: 25px; }
 
 // Append link URL when printing
-@media print{
-	a[href]:not([role])::after,
-	a[href][role="link"]::after{
-		content: " - " attr(href);
-		font-size: smaller;
-		font-weight: normal;
-	}
-}
+// @media print{
+// 	a[href]:not([role])::after,
+// 	a[href][role="link"]::after{
+// 		content: " - " attr(href);
+// 		font-size: smaller;
+// 		font-weight: normal;
+// 	}
+// }
+
+// Always hide an element with the `hidden` HTML attribute (from PureCSS)
+// Needed for proper display in IE 10-
+[hidden]{ display: none !important; }
 
 @import "typography";
 @import "forms";

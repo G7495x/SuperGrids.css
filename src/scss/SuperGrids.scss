@@ -5,7 +5,8 @@
 
 // TODO
 // Cite bootstrap, easings.net (licensing)
-// Forms Component (button groups, radio groups, etc.)
+// Separate Mixins
+// Forms Component (button groups, radio groups, etc.) + separate from reboot
 // Spacing.scss - Customizable Aspect Ratio, .square
 // Reboot.scss - Flag for print links
 // grid rules
@@ -28,7 +29,7 @@
 // SuperGrids.scss
 // ├─ reboot.scss
 // │  ├─ typography.scss *
-// │  └─ reboot.scss *
+// │  └─ forms.scss *
 // │
 // ├─ grid OR grid-legacy.scss *
 // │
@@ -57,5 +58,3 @@
 @import "components/spacing";
 @import "components/position";
 @import "components/display";
-
-// @import "components/custom-tags"; // Optional
