@@ -12,11 +12,11 @@
 	align-content: flex-start;
 	&[class*=spc-]{
 		padding:    calc(var(--rowGap) / 2) calc(var(--colGap) / 2);
-		>*{ margin: calc(var(--rowGap) / 2) calc(var(--colGap) / 2) }
+		>*{ margin: calc(var(--rowGap) / 2) calc(var(--colGap) / 2); }
 
 		// Extrude: Use this class to extrude content when spc- is enabled for the parent row
 		// Useful in places like nested grids, etc.
-		>.col-extrude{ margin: calc(var(--rowGap) / -2) calc(var(--colGap) / -2) }
+		>.col-extrude{ margin: calc(var(--rowGap) / -2) calc(var(--colGap) / -2); }
 	}
 	@each $breakpoint in map-keys($breakpoints){
 		$suffix: breakpoint-suffix($breakpoint,$breakpoints);
@@ -76,9 +76,9 @@
 	}
 	@each $breakpoint in map-keys($breakpoints){
 		@if breakpoint-min($breakpoint,$breakpoints){
-			>*.w-100#{breakpoint-suffix($breakpoint,$breakpoints)}{ display: none }
+			>*.w-100#{breakpoint-suffix($breakpoint,$breakpoints)}{ display: none; }
 		}
-		>*.w-100-#{$breakpoint}-o{ display: none }
+		>*.w-100-#{$breakpoint}-o{ display: none; }
 	}
 	@include responsive(">*.w-100"){
 		display: block;
@@ -94,7 +94,7 @@
 	}
 }
 
-.row{ @include row }
+.row{ @include row; }
 
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
