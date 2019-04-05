@@ -1,0 +1,201 @@
+// Bezier values forked from easings.net licensed GNU GPLv3. https://github.com/ai/easings.net
+
+$easeInSine:   cubic-bezier(0.47,0,0.745,0.715);
+$easeOutSine:  cubic-bezier(0.39,0.575,0.565,1);
+$easeSine:     cubic-bezier(0.445,0.05,0.55,0.95);
+$easeInQuad:   cubic-bezier(0.55,0.085,0.68,0.53);
+$easeOutQuad:  cubic-bezier(0.25,0.46,0.45,0.94);
+$easeQuad:     cubic-bezier(0.455,0.03,0.515,0.955);
+$easeInCubic:  cubic-bezier(0.55,0.055,0.675,0.19);
+$easeOutCubic: cubic-bezier(0.215,0.61,0.355,1);
+$easeCubic:    cubic-bezier(0.645,0.045,0.355,1);
+$easeInQuart:  cubic-bezier(0.895,0.03,0.685,0.22);
+$easeOutQuart: cubic-bezier(0.165,0.84,0.44,1);
+$easeQuart:    cubic-bezier(0.77,0,0.175,1);
+$easeInQuint:  cubic-bezier(0.755,0.05,0.855,0.06);
+$easeOutQuint: cubic-bezier(0.23,1,0.32,1);
+$easeQuint:    cubic-bezier(0.86,0,0.07,1);
+$easeInExpo:   cubic-bezier(0.95,0.05,0.795,0.035);
+$easeOutExpo:  cubic-bezier(0.19,1,0.22,1);
+$easeExpo:     cubic-bezier(1,0,0,1);
+$easeInCirc:   cubic-bezier(0.6,0.04,0.98,0.335);
+$easeOutCirc:  cubic-bezier(0.075,0.82,0.165,1);
+$easeCirc:     cubic-bezier(0.785,0.135,0.15,0.86);
+$easeInBack:   cubic-bezier(0.6,-0.28,0.735,0.045);
+$easeOutBack:  cubic-bezier(0.175,0.885,0.32,1.275);
+$easeBack:     cubic-bezier(0.68,-0.55,0.265,1.55);
+
+@mixin ease($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: ease !important;
+		animation-timing-function: ease !important;
+	}
+}
+@mixin ease-in($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: ease-in !important;
+		animation-timing-function: ease-in !important;
+	}
+}
+@mixin ease-out($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: ease-out !important;
+		animation-timing-function: ease-out !important;
+	}
+}
+@mixin ease-inout($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: ease-in-out !important;
+		animation-timing-function: ease-in-out !important;
+	}
+}
+@mixin ease-linear($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: linear !important;
+		animation-timing-function: linear !important;
+	}
+}
+@mixin ease-in-sine($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeInSine !important;
+		animation-timing-function: $easeInSine !important;
+	}
+}
+@mixin ease-out-sine($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeOutSine !important;
+		animation-timing-function: $easeOutSine !important;
+	}
+}
+@mixin ease-sine($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeSine !important;
+		animation-timing-function: $easeSine !important;
+	}
+}
+@mixin ease-in-quad($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeInQuad !important;
+		animation-timing-function: $easeInQuad !important;
+	}
+}
+@mixin ease-out-quad($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeOutQuad !important;
+		animation-timing-function: $easeOutQuad !important;
+	}
+}
+@mixin ease-quad($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeQuad !important;
+		animation-timing-function: $easeQuad !important;
+	}
+}
+@mixin ease-in-cubic($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeInCubic !important;
+		animation-timing-function: $easeInCubic !important;
+	}
+}
+@mixin ease-out-cubic($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeOutCubic !important;
+		animation-timing-function: $easeOutCubic !important;
+	}
+}
+@mixin ease-cubic($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeCubic !important;
+		animation-timing-function: $easeCubic !important;
+	}
+}
+@mixin ease-in-quart($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeInQuart !important;
+		animation-timing-function: $easeInQuart !important;
+	}
+}
+@mixin ease-out-quart($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeOutQuart !important;
+		animation-timing-function: $easeOutQuart !important;
+	}
+}
+@mixin ease-quart($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeQuart !important;
+		animation-timing-function: $easeQuart !important;
+	}
+}
+@mixin ease-in-quint($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeInQuint !important;
+		animation-timing-function: $easeInQuint !important;
+	}
+}
+@mixin ease-out-quint($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeOutQuint !important;
+		animation-timing-function: $easeOutQuint !important;
+	}
+}
+@mixin ease-quint($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeQuint !important;
+		animation-timing-function: $easeQuint !important;
+	}
+}
+@mixin ease-in-expo($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeInExpo !important;
+		animation-timing-function: $easeInExpo !important;
+	}
+}
+@mixin ease-out-expo($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeOutExpo !important;
+		animation-timing-function: $easeOutExpo !important;
+	}
+}
+@mixin ease-expo($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeExpo !important;
+		animation-timing-function: $easeExpo !important;
+	}
+}
+@mixin ease-in-circ($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeInCirc !important;
+		animation-timing-function: $easeInCirc !important;
+	}
+}
+@mixin ease-out-circ($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeOutCirc !important;
+		animation-timing-function: $easeOutCirc !important;
+	}
+}
+@mixin ease-circ($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeCirc !important;
+		animation-timing-function: $easeCirc !important;
+	}
+}
+@mixin ease-in-back($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeInBack !important;
+		animation-timing-function: $easeInBack !important;
+	}
+}
+@mixin ease-out-back($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeOutBack !important;
+		animation-timing-function: $easeOutBack !important;
+	}
+}
+@mixin ease-back($up: null,$down: null,$breakpoints: $grid-breakpoints){
+	@include resp($up,$down,$breakpoints){
+		transition-timing-function: $easeBack !important;
+		animation-timing-function: $easeBack !important;
+	}
+}

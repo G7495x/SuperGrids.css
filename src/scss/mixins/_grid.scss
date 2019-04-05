@@ -1,0 +1,92 @@
+@mixin row(
+	$columns: $grid-columns, // Number of columns (Adjustable)
+	$breakpoints: $grid-breakpoints, // Custom breakpoints, default: $grid-breakpoints
+	$spacing-step: $spacing-step-size, // Size of step by which spc values are incremented (in px)
+	$spacing-steps: $grid-spacing-steps // No. of spc increments. Eg. - 4 steps of 5px each gives spc-0, spc-5, spc-10, spc-15, spc-20
+){
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	&[class*=spc-]{
+		padding:    calc(var(--rowGap) / 2) calc(var(--colGap) / 2);
+		>*{ margin: calc(var(--rowGap) / 2) calc(var(--colGap) / 2); }
+
+		// Extrude: Use this class to extrude content when spc- is enabled for the parent row
+		// Useful in places like nested grids, etc.
+		>.col-extrude{ margin: calc(var(--rowGap) / -2) calc(var(--colGap) / -2); }
+	}
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint,$breakpoints);
+		@include media-breakpoint-up($breakpoint,$breakpoints){
+			>.col#{$suffix}{
+				flex: 1;
+				min-width: 0;
+				max-width: none;
+			}
+			>.col-auto#{$suffix}{
+				flex: 0 auto;
+				min-width: 0;
+				max-width: none;
+			}
+			@for $i from 1 through $columns{
+				>.col-#{$i}#{$suffix}{
+					--colCount: #{$columns};
+					min-width: calc(#{100%*$i} / var(--colCount));
+					max-width: calc(#{100%*$i} / var(--colCount));
+				}
+			}
+			@for $spacing from 0 through $spacing-steps{
+				$spacing: $spacing*$spacing-step;
+				&.spc-#{$spacing}#{$suffix}{
+					--rowGap: #{$spacing*1px};
+					--colGap: #{$spacing*1px};
+				}
+			}
+			@for $spacing from 0 through $spacing-steps{
+				$spacing: $spacing*$spacing-step;
+				&.spc-x-#{$spacing}#{$suffix}{ --colGap: #{$spacing*1px}; }
+				&.spc-y-#{$spacing}#{$suffix}{ --rowGap: #{$spacing*1px}; }
+			}
+			&[class*=spc-]{
+				>.col#{$suffix}{
+					flex: 1;
+					min-width: 0;
+					max-width: none;
+				}
+				>.col-auto#{$suffix}{
+					flex: 0 auto;
+					min-width: 0;
+					max-width: none;
+				}
+				@for $i from 1 through $columns{
+					>.col-#{$i}#{$suffix}{
+						min-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
+						max-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
+						&.col-extrude{
+							min-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
+							max-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
+						}
+					}
+				}
+			}
+		}
+	}
+	@each $breakpoint in map-keys($breakpoints){
+		@if breakpoint-min($breakpoint,$breakpoints){
+			>*.w-100#{breakpoint-suffix($breakpoint,$breakpoints)}{ display: none; }
+		}
+		>*.w-100-#{$breakpoint}-o{ display: none; }
+	}
+	@include responsive(">*.w-100"){
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	@include responsive-only(">*.w-100"){
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}

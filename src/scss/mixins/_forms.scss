@@ -1,0 +1,44 @@
+@mixin outline-inputs{
+	input[type="color"],
+	input[type="date"],
+	input[type="datetime-local"],
+	input[type="email"],
+	input[type="month"],
+	input[type="number"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="text"],
+	input[type="time"],
+	input[type="url"],
+	input[type="week"],
+	select,
+	textarea{ @content; }
+}
+
+@mixin button-inputs{
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	button,
+	.button{ @content; }
+	input::-webkit-file-upload-button{ @content; }
+}
+
+@mixin input-range-thumb{
+	&::-webkit-slider-thumb{ @content; }
+	&::-moz-range-thumb{ @content; }
+}
+@mixin input-range-track{
+	&::-webkit-slider-runnable-track{ @content; }
+	&::-moz-range-track{ @content; }
+}
+
+@mixin input-color-swatch{
+	&::-webkit-color-swatch{ @content; }
+	&::-moz-color-swatch{ @content; }
+}
+@mixin input-color-swatch-wrapper{
+	&::-webkit-color-swatch-wrapper{ @content; }
+	&::-moz-focus-inner{ @content; }
+}

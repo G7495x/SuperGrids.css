@@ -1,0 +1,18 @@
+// Grid and spacing properties
+
+$grid-columns: 12 !default; // Number of grid columns (Adjustable)
+
+// Breakpoints are defined as a map of (name: min-width), order from small to large:
+$grid-breakpoints:(
+	xs: 0px,   // Extra small devices (phones) (Used purely for internal looping purpose. No suffix will be generated. MUST be equal to 0)
+	sm: 576px, // Small devices (landscape phones, 576px and up)
+	md: 768px, // Medium devices (tablets, 768px and up)
+	lg: 992px, // Large devices (landscape tablets, small laptops, 992px and up)
+	xl: 1200px // Extra large devices (large desktops, 1200px and up)
+) !default;
+
+// Spacing variables
+// Eg. - 4 steps of 5px each gives spc-5, spc-10, spc-15, spc-20
+$spacing-step-size:  5  !default; // Size in px of step by which spacing values are incremented (No need to include px)
+$grid-spacing-steps: 5  !default; // No. of spacing steps (for spc classes in rows)
+$spacing-steps:      10 !default; // No. of spacing steps (for margin, padding classes etc.)

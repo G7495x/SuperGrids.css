@@ -1,0 +1,42 @@
+// Mixins - Contains all variables and mixins
+
+// COMPONENTS MAP
+
+// mixins
+// ├─ variables/colors
+// ├─ variables/typography
+// ├─ variables/layout
+// ├─ variables/layering
+// │
+// ├─ mixins/breakpoints
+// ├─ mixins/typography
+// ├─ mixins/forms
+// ├─ mixins/grid
+// ├─ mixins/flex
+// ├─ mixins/v-align
+// ├─ mixins/scroll
+// ├─ mixins/easing
+// ├─ mixins/spacing
+// ├─ mixins/position
+// └─ mixins/display
+
+// VARIABLES
+
+@import 'variables/colors';     // Colors used within the framework
+@import 'variables/typography'; // Font related properties
+@import 'variables/layout';     // Grid and spacing properties
+@import 'variables/layering';   // Z-index master list
+
+// MIXINS
+
+@import 'mixins/breakpoints';
+@import 'mixins/typography';
+@import 'mixins/forms';
+@import 'mixins/grid';
+@import 'mixins/flex';
+@import 'mixins/v-align';
+@import 'mixins/scroll';
+@import 'mixins/easing';
+@import 'mixins/spacing';
+@import 'mixins/position';
+@import 'mixins/display';
