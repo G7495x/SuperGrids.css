@@ -1,40 +1,30 @@
 // Reboot - CSS Reset
-
-// CSS Reset ensures that websites look consistent across browsers while complying to modern HTML standards.
-// This CSS Reset style-sheet is specifically optimized for SuperGrids.css.
 //
-// Forked & modified from Bootstrap Reboot (Normalize.css) - Rev. Mar 12, 2019
+// Forked & modified from Bootstrap Reboot (github.com/twbs/bootstrap/blob/master/scss/_reboot.scss) - Rev. Mar 12, 2019
 // Normalize is licensed MIT. https://github.com/necolas/normalize.css
 
 
 // COMPONENTS MAP
 
-// reboot.scss
-// ├─ typography.scss *
-// └─ forms.scss *
-// * - Depends variables.scss & breakpoints.scss
-
-$background-color: white;
-$text-color: #333;
-$font-family: sans-serif;
-$font-family-monospace: monospace;
-$font-size: 16px;
-$font-weight: initial	;
-$line-height: 1.25;
+// reboot
+// ├─ typography
+// └─ forms
 
 *,
 *::before,
 *::after{
-	flex-shrink: 0; // Prevent shrinking of flex elements by default in some browsers
+	flex-shrink: 0;         // Prevent shrinking of flex elements by default in some browsers
 	box-sizing: border-box; // `width` is now not affected by `padding` or `border`
 	background-size: cover; // prevent background image distortion
-	font-size: inherit; // Make `font-size` an inherited property
+	font-size: inherit;     // Make `font-size` an inherited property
 }
 
 html{
-	font-family: sans-serif; // Change the default font family in all browsers
-	line-height: 1.25; // Correct the line height in all browsers
-	-webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
+	font-family: sans-serif;                  // Change the default font family in all browsers
+	font-size: $font-size;                    // Initial font size of document
+	font-weight: $font-weight;                // Initial font weight of document
+	line-height: $line-height;                // Correct the line height in all browsers
+	-webkit-text-size-adjust: 100%;           // Prevent adjustments of font size after orientation changes in iOS
 	-webkit-tap-highlight-color: transparent; // Change the default tap highlight to be completely transparent in iOS
 }
 
@@ -50,14 +40,10 @@ nav,
 section{ display: block; } // Shim for "new" HTML5 structural elements to display correctly
 
 body{
-	margin: 0; // Remove body margin in all browsers
+	margin: 0;                           // Remove body margin in all browsers
 	background-color: $background-color; // As a best practice, apply a default `background-color`
-	color: $text-color; // As a best practice, apply a default `color`
-	font-family: $font-family;
-	font-size: $font-size;
-	font-weight: $font-weight;
-	line-height: $line-height;
-	text-align: left; // Set an explicit initial text-align value so that we can later use the `inherit` value on things like `<th>` elements.
+	color: $text-color;                  // As a best practice, apply a default `color`
+	text-align: left;                    // Set an explicit initial text-align value so that we can later use the `inherit` value on things like `<th>` elements.
 }
 
 // Future-proof rule: in browsers that support :focus-visible, suppress the focus outline on elements that programmatically receive focus but wouldn't normally show a visible focus outline. In general, this would mean that the outline is only applied if the interaction that led to the element receiving programmatic focus was a keyboard interaction, or the browser has somehow determined that the user is primarily a keyboard user and/or wants focus outlines to always be presented.
@@ -66,9 +52,9 @@ body{
 [tabindex="-1"]:focus:not(:focus-visible){ outline: 0 !important; }
 
 hr{
-	height: 1px; // Make height 1 px
-	margin: 0; // Remove margin, use grid spacing / margin-padding instead
-	border: 0; // Remove borders
+	height: 1px;                    // Make height 1 px
+	margin: 0;                      // Remove margin, use grid spacing / margin-padding instead
+	border: 0;                      // Remove borders
 	background-color: currentcolor; // Set background color to text color
 }
 
@@ -88,14 +74,14 @@ h2,
 h3,
 h4,
 h5,
-h6{ font-weight: normal; } // Set headings to normal weight
+h6{ font-weight: unset; } // Set headings to normal weight
 
 abbr[title],
 abbr[data-original-title]{
-	border-bottom: 0; // Remove the bottom border in Firefox 39-
-	font-weight: bold; // Font weight to bold
+	border-bottom: 0;      // Remove the bottom border in Firefox 39-
+	font-weight: bold;     // Font weight to bold
 	text-decoration: none; // Remove dotted underline
-	cursor: help; // Add explicit cursor to indicate changed behavior
+	cursor: help;          // Add explicit cursor to indicate changed behavior
 }
 
 address{
@@ -103,13 +89,10 @@ address{
 	line-height: inherit;
 }
 
-dfn{ font-style: italic; } // Add the correct font style in Android 4.3-
-
-b{ font-weight: bold; } // Add the correct font weight in Chrome, Edge, and Safari
-
+dfn{ font-style: italic; }     // Add the correct font style in Android 4.3-
+b{ font-weight: bold; }        // Add the correct font weight in Chrome, Edge, and Safari
 strong{ font-weight: bolder; } // Add the correct font weight in Chrome, Edge, and Safari
-
-small{ font-size: 75%; } // Add the correct font size in all browsers
+small{ font-size: 75%; }       // Add the correct font size in all browsers
 
 // Prevent `sub` and `sup` elements from affecting the line height in all browsers
 sub,
@@ -124,7 +107,7 @@ sub{ bottom: -.25em; }
 sup{ top: -.5em; }
 
 a{
-	text-decoration: none; // Remove underline for links
+	text-decoration: none;         // Remove underline for links
 	background-color: transparent; // Remove the gray background on active links in IE 10
 }
 
@@ -148,12 +131,12 @@ pre,
 code,
 kbd,
 samp{
-	font-family: $font-family-monospace; // Set monospace font for relevant tags
-	font-size: 1em; // Correct the odd `em` font sizing in all browsers
+	font-family: monospace; // Set monospace font for relevant tags
+	font-size: 1em;         // Correct the odd `em` font sizing in all browsers
 }
 
 pre{
-	margin: 0; // Remove margin, use grid spacing / margin-padding instead
+	margin: 0;      // Remove margin, use grid spacing / margin-padding instead
 	overflow: auto; // Don't allow content to break outside
 }
 
@@ -161,8 +144,8 @@ figure{ margin: 0; } // Remove margin, use grid spacing / margin-padding instead
 
 img{
 	vertical-align: middle;
-	display: block; // Using `display: block` for grid compatability
-	border: 0; // Remove border for `img` elements
+	display: block;    // Using `display: block` for grid compatability
+	border: 0;         // Remove border for `img` elements
 	object-fit: cover; // By default, set `object-fit: cover` to prevent image distortion
 }
 
@@ -190,13 +173,13 @@ optgroup,
 textarea,
 label,
 progress{
-	display: block; // Using `display: block` for grid compatability
-	min-width: 0; // Remove default min-width
-	margin: 0; // Remove the margin in Firefox and Safari
-	border-radius: 0; // Remove `border-radius` on all browsers
-	font-family: inherit; // Inherit font properties
-	font-size: inherit; // Inherit font properties
-	line-height: inherit; // Inherit font properties
+	display: block;           // Using `display: block` for grid compatability
+	min-width: 0;             // Remove default min-width
+	margin: 0;                // Remove the margin in Firefox and Safari
+	border-radius: 0;         // Remove `border-radius` on all browsers
+	font-family: inherit;     // Inherit font properties
+	font-size: inherit;       // Inherit font properties
+	line-height: inherit;     // Inherit font properties
 	-webkit-appearance: none; // For consistent custom styling across all browsers
 }
 
@@ -206,8 +189,8 @@ select,
 progress{ vertical-align: middle; } // Add the correct vertical alignment in Chrome, Firefox, and Opera
 
 ::-webkit-file-upload-button{
-	border-radius: 0; // Remove `border-radius` on all browsers
-	font: inherit; // Change font properties to `inherit` in Safari
+	border-radius: 0;         // Remove `border-radius` on all browsers
+	font: inherit;            // Change font properties to `inherit` in Safari
 	-webkit-appearance: none; // Correct the inability to style clickable types in iOS and Safari
 }
 
@@ -230,7 +213,7 @@ button::-moz-focus-inner,
 input[type="radio"],
 input[type="checkbox"]{
 	box-sizing: border-box; // Add the correct box sizing in IE 10-
-	padding: 0; // Remove the padding in IE 10-
+	padding: 0;             // Remove the padding in IE 10-
 }
 
 input[type="date"],
@@ -283,7 +266,7 @@ input[type="range"]{
 }
 
 textarea{
-	overflow: auto; // Remove the default vertical scrollbar in IE
+	overflow: auto;   // Remove the default vertical scrollbar in IE
 	resize: vertical; // Textareas should really only resize vertically so they don't break their (horizontal) containers
 }
 
@@ -301,10 +284,10 @@ fieldset{
 legend{
 	display: block;
 	width: 100%;
-	max-width: 100%; // Correct the text wrapping in Edge and IE
+	max-width: 100%;     // Correct the text wrapping in Edge and IE
 	padding: 0;
 	line-height: inherit;
-	color: inherit; // Correct the color inheritance from `fieldset` elements in IE
+	color: inherit;      // Correct the color inheritance from `fieldset` elements in IE
 	white-space: normal; // Correct the text wrapping in Edge and IE
 }
 
@@ -319,14 +302,14 @@ output{ display: inline-block; } // Add the correct display in all browsers
 
 summary{
 	display: list-item; // Add the correct display in all browsers
-	cursor: pointer; // Add the correct cursor in all browsers
+	cursor: pointer;    // Add the correct cursor in all browsers
 }
 
 template{ display: none; } // Add the correct display in IE
 
 blockquote{
 	margin: 0; // Remove margin, use grid spacing / margin-padding instead
-	>footer{ // Naming a source
+	>footer{   // Naming a source
 		opacity: .5;
 		&::before{ content: "\2014 \00A0"; }
 	}

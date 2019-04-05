@@ -1,11 +1,13 @@
-/* https://github.com/G7495x/SuperGrids.css v0.9.6 */
+/*!
+ * SuperGrids.css v0.9.7 (https://g7495x.github.io/SuperGrids.css)
+ * Licensed under Apache License 2.0 (https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE)
+ */
 
 // WONT FIX
 // suffix to infix (bootstrap compatibility) - Not possible because of responsive rules (breakpoints.scss)
 
 // TODO
-// Cite bootstrap, easings.net (licensing)
-// Forms Component (button groups, radio groups, etc.) + separate from reboot
+// Forms Component (button groups, radio groups, etc.) + accent color variable
 // Spacing.scss - Customizable Aspect Ratio, .square
 // css-grid rules
 // cursor rules
@@ -17,7 +19,6 @@
 // !important (time consuming change, only benefit is if user uses sass mixins)
 // SCSS to CSS Variables?
 // breakpoints.scss - responsive-down??
-// Reboot.scss - Variables to Variables.scss??
 // initial inherit unset??
 
 // TESTS

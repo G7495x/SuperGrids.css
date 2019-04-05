@@ -1,4 +1,7 @@
-/* https://github.com/G7495x/SuperGrids.css v0.9.6 */
+/*!
+ * SuperGrids.css v0.9.7 (https://g7495x.github.io/SuperGrids.css)
+ * Licensed under Apache License 2.0 (https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE)
+ */
 *,
 *::before,
 *::after {
@@ -9,6 +12,8 @@
 
 html {
   font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.25;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent; }
@@ -29,10 +34,6 @@ body {
   margin: 0;
   background-color: white;
   color: #333;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: initial;
-  line-height: 1.25;
   text-align: left; }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -62,7 +63,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal; }
+  font-weight: unset; }
 
 abbr[title],
 abbr[data-original-title] {
@@ -660,9 +661,6 @@ dd {
     padding-left: 0;
     list-style: none; } }
 
-:root {
-  font-size: 16px; }
-
 blockquote {
   font-size: 20px; }
   blockquote > footer {
@@ -799,6 +797,7 @@ input[type="search"] {
   background-size: 14px; }
 
 select {
+  padding-right: 30px;
   background-image: url("../svg/caret-down.svg");
   background-size: 10px;
   cursor: pointer; }

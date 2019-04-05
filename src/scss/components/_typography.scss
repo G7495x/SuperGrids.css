@@ -39,8 +39,6 @@
 	}
 }
 
-:root{ @include h6 }
-
 blockquote{
 	@include h5;
 	>footer{ @include h6 }
