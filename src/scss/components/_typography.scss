@@ -1,37 +1,37 @@
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
-		.h1#{$suffix}{ @include h1 }
-		.h2#{$suffix}{ @include h2 }
-		.h3#{$suffix}{ @include h3 }
-		.h4#{$suffix}{ @include h4 }
-		.h5#{$suffix}{ @include h5 }
-		.h6#{$suffix}{ @include h6 }
-		.h7#{$suffix}{ @include h7 }
-		.h8#{$suffix}{ @include h8 }
+		.h1#{$suffix}{ @include h1($imp: true) }
+		.h2#{$suffix}{ @include h2($imp: true) }
+		.h3#{$suffix}{ @include h3($imp: true) }
+		.h4#{$suffix}{ @include h4($imp: true) }
+		.h5#{$suffix}{ @include h5($imp: true) }
+		.h6#{$suffix}{ @include h6($imp: true) }
+		.h7#{$suffix}{ @include h7($imp: true) }
+		.h8#{$suffix}{ @include h8($imp: true) }
 
-		.text-left#{$suffix}{ @include text-left }
-		.text-center#{$suffix}{ @include text-center }
-		.text-right#{$suffix}{ @include text-right }
-		.text-justify#{$suffix}{ @include text-justify }
+		.text-left#{$suffix}{ @include text-left($imp: true) }
+		.text-center#{$suffix}{ @include text-center($imp: true) }
+		.text-right#{$suffix}{ @include text-right($imp: true) }
+		.text-justify#{$suffix}{ @include text-justify($imp: true) }
 
-		.lowercase#{$suffix}{ @include lowercase }
-		.uppercase#{$suffix}{ @include uppercase }
-		.capitalize#{$suffix}{ @include capitalize }
-		.text-normal#{$suffix}{ @include text-normal }
+		.lowercase#{$suffix}{ @include lowercase($imp: true) }
+		.uppercase#{$suffix}{ @include uppercase($imp: true) }
+		.capitalize#{$suffix}{ @include capitalize($imp: true) }
+		.text-normal#{$suffix}{ @include text-normal($imp: true) }
 
-		.small-caps#{$suffix}{ @include small-caps }
-		.font-variant-normal#{$suffix}{ @include font-variant-normal }
+		.small-caps#{$suffix}{ @include small-caps($imp: true) }
+		.font-variant-normal#{$suffix}{ @include font-variant-normal($imp: true) }
 
-		.b-100#{$suffix}{ @include b-100 }
-		.b-200#{$suffix}{ @include b-200 }
-		.b-300#{$suffix}{ @include b-300 }
-		.b-400#{$suffix}{ @include b-400 }
-		.b-500#{$suffix}{ @include b-500 }
-		.b-600#{$suffix}{ @include b-600 }
-		.b-700#{$suffix}{ @include b-700 }
-		.b-800#{$suffix}{ @include b-800 }
-		.b-900#{$suffix}{ @include b-900 }
+		.b-100#{$suffix}{ @include b-100($imp: true) }
+		.b-200#{$suffix}{ @include b-200($imp: true) }
+		.b-300#{$suffix}{ @include b-300($imp: true) }
+		.b-400#{$suffix}{ @include b-400($imp: true) }
+		.b-500#{$suffix}{ @include b-500($imp: true) }
+		.b-600#{$suffix}{ @include b-600($imp: true) }
+		.b-700#{$suffix}{ @include b-700($imp: true) }
+		.b-800#{$suffix}{ @include b-800($imp: true) }
+		.b-900#{$suffix}{ @include b-900($imp: true) }
 
 		.one-line#{$suffix}{ @include one-line }
 		.text-hide#{$suffix}{ @include text-hide }
@@ -44,9 +44,9 @@ blockquote{
 	>footer{ @include h6 }
 }
 
-h1{ @extend .h1 }
-h2{ @extend .h2 }
-h3{ @extend .h3 }
-h4{ @extend .h4 }
-h5{ @extend .h5 }
-h6{ @extend .h6 }
+h1{ @include h1 }
+h2{ @include h2 }
+h3{ @include h3 }
+h4{ @include h4 }
+h5{ @include h5 }
+h6{ @include h6 }

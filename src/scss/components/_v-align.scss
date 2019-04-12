@@ -1,11 +1,11 @@
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
-		.v-align-baseline#{$suffix}{ @include v-align-baseline }
-		.v-align-top#{$suffix}{ @include v-align-top }
-		.v-align-middle#{$suffix}{ @include v-align-middle }
-		.v-align-bottom#{$suffix}{ @include v-align-bottom }
-		.v-align-text-bottom#{$suffix}{ @include v-align-text-bottom }
-		.v-align-text-top#{$suffix}{ @include v-align-text-top }
+		.v-align-baseline#{$suffix}{ @include v-align-baseline($imp: true) }
+		.v-align-top#{$suffix}{ @include v-align-top($imp: true) }
+		.v-align-middle#{$suffix}{ @include v-align-middle($imp: true) }
+		.v-align-bottom#{$suffix}{ @include v-align-bottom($imp: true) }
+		.v-align-text-bottom#{$suffix}{ @include v-align-text-bottom($imp: true) }
+		.v-align-text-top#{$suffix}{ @include v-align-text-top($imp: true) }
 	}
 }

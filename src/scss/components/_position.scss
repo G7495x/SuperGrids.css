@@ -1,11 +1,11 @@
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
-		.pos-sta#{$suffix}{ @include pos-sta }
-		.pos-rel#{$suffix}{ @include pos-rel }
-		.pos-abs#{$suffix}{ @include pos-abs }
-		.pos-fix#{$suffix}{ @include pos-fix }
-		.pos-sty#{$suffix}{ @include pos-sty }
+		.pos-sta#{$suffix}{ @include pos-sta($imp: true) }
+		.pos-rel#{$suffix}{ @include pos-rel($imp: true) }
+		.pos-abs#{$suffix}{ @include pos-abs($imp: true) }
+		.pos-fix#{$suffix}{ @include pos-fix($imp: true) }
+		.pos-sty#{$suffix}{ @include pos-sty($imp: true) }
 
 		.stretch-to-fit#{$suffix}{ @include stretch-to-fit }
 	}

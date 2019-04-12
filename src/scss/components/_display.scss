@@ -1,29 +1,29 @@
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
-		.inline#{$suffix}{ @include inline }
-		.in-block#{$suffix}{ @include in-block }
-		.block#{$suffix}{ @include block }
-		.table#{$suffix}{ @include table }
-		.t-row#{$suffix}{ @include t-row }
-		.t-cell#{$suffix}{ @include t-cell }
-		.flex#{$suffix}{ @include flex }
-		.in-flex#{$suffix}{ @include in-flex }
-		.grid#{$suffix}{ @include grid }
-		.in-grid#{$suffix}{ @include in-grid }
-		.hide#{$suffix}{ @include hide }
+		.inline#{$suffix}{ @include inline($imp: true) }
+		.in-block#{$suffix}{ @include in-block($imp: true) }
+		.block#{$suffix}{ @include block($imp: true) }
+		.table#{$suffix}{ @include table($imp: true) }
+		.t-row#{$suffix}{ @include t-row($imp: true) }
+		.t-cell#{$suffix}{ @include t-cell($imp: true) }
+		.flex#{$suffix}{ @include flex($imp: true) }
+		.in-flex#{$suffix}{ @include in-flex($imp: true) }
+		.grid#{$suffix}{ @include grid($imp: true) }
+		.in-grid#{$suffix}{ @include in-grid($imp: true) }
+		.hide#{$suffix}{ @include hide($imp: true) }
 	}
 	@include media-breakpoint-only($breakpoint){
-		.inline-#{$breakpoint}-o{ @include inline }
-		.in-block-#{$breakpoint}-o{ @include in-block }
-		.block-#{$breakpoint}-o{ @include block }
-		.table-#{$breakpoint}-o{ @include table }
-		.t-row-#{$breakpoint}-o{ @include t-row }
-		.t-cell-#{$breakpoint}-o{ @include t-cell }
-		.flex-#{$breakpoint}-o{ @include flex }
-		.in-flex-#{$breakpoint}-o{ @include in-flex }
-		.grid-#{$breakpoint}-o{ @include grid }
-		.in-grid-#{$breakpoint}-o{ @include in-grid }
-		.hide-#{$breakpoint}-o{ @include hide }
+		.inline-#{$breakpoint}-o{ @include inline($imp: true) }
+		.in-block-#{$breakpoint}-o{ @include in-block($imp: true) }
+		.block-#{$breakpoint}-o{ @include block($imp: true) }
+		.table-#{$breakpoint}-o{ @include table($imp: true) }
+		.t-row-#{$breakpoint}-o{ @include t-row($imp: true) }
+		.t-cell-#{$breakpoint}-o{ @include t-cell($imp: true) }
+		.flex-#{$breakpoint}-o{ @include flex($imp: true) }
+		.in-flex-#{$breakpoint}-o{ @include in-flex($imp: true) }
+		.grid-#{$breakpoint}-o{ @include grid($imp: true) }
+		.in-grid-#{$breakpoint}-o{ @include in-grid($imp: true) }
+		.hide-#{$breakpoint}-o{ @include hide($imp: true) }
 	}
 }

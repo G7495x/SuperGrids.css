@@ -1,7 +1,14 @@
-@mixin pos-sta($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: static !important } }
-@mixin pos-rel($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: relative !important } }
-@mixin pos-abs($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: absolute !important } }
-@mixin pos-fix($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: fixed !important } }
-@mixin pos-sty($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ position: sticky !important } }
+@mixin pos-sta($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ position: static if($imp,!important,null) } }
+@mixin pos-rel($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ position: relative if($imp,!important,null) } }
+@mixin pos-abs($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ position: absolute if($imp,!important,null) } }
+@mixin pos-fix($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ position: fixed if($imp,!important,null) } }
+@mixin pos-sty($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ position: sticky if($imp,!important,null) } }
 
-@mixin stretch-to-fit($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ top: 0; right: 0; bottom: 0; left: 0 } }
+@mixin stretch-to-fit($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
+	@include resp($up,$down,$breakpoints){
+		top: 0 if($imp,!important,null);
+		right: 0 if($imp,!important,null);
+		bottom: 0 if($imp,!important,null);
+		left: 0 if($imp,!important,null)
+	}
+}
