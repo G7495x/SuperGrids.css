@@ -20,6 +20,8 @@
 }
 
 html{
+	--accentColorRgb: #{$accent-rgb};
+
 	font-family: sans-serif;                  // Change the default font family in all browsers
 	font-size: $font-size;                    // Initial font size of document
 	font-weight: $font-weight;                // Initial font weight of document
