@@ -7,6 +7,17 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
+
+	// .horz & .vert are a part of flex component
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint,$breakpoints);
+		@include media-breakpoint-up($breakpoint,$breakpoints){
+			&.horz#{$suffix}{ align-content: flex-start; }
+			&.horz-rev#{$suffix}{ align-content: flex-start; }
+			&.vert#{$suffix}{ align-content: stretch; }
+			&.vert-rev#{$suffix}{ align-content: stretch; }
+		}
+	}
 	&[class*=spc-]{
 		padding:    calc(var(--rowGap) / 2) calc(var(--colGap) / 2);
 		>*{ margin: calc(var(--rowGap) / 2) calc(var(--colGap) / 2); }
@@ -14,6 +25,8 @@
 		// Extrude: Use this class to extrude content when spc- is enabled for the parent row
 		// Useful in places like nested grids, etc.
 		>.col-extrude{ margin: calc(var(--rowGap) / -2) calc(var(--colGap) / -2); }
+		>.col-extrude-x{ margin-right: calc(var(--colGap) / -2); margin-left: calc(var(--colGap) / -2); }
+		>.col-extrude-y{ margin-top: calc(var(--rowGap) / -2); margin-bottom: calc(var(--rowGap) / -2); }
 	}
 	@each $breakpoint in map-keys($breakpoints){
 		$suffix: breakpoint-suffix($breakpoint,$breakpoints);
@@ -62,7 +75,8 @@
 					>.col-#{$i}#{$suffix}{
 						min-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
 						max-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
-						&.col-extrude{
+						&.col-extrude,
+						&.col-extrude-x{
 							min-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
 							max-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
 						}
@@ -71,19 +85,21 @@
 			}
 		}
 	}
+
+	// .w-100 (divider) classes
 	@each $breakpoint in map-keys($breakpoints){
 		@if breakpoint-min($breakpoint,$breakpoints){
 			>*.w-100#{breakpoint-suffix($breakpoint,$breakpoints)}{ display: none; }
 		}
 		>*.w-100-#{$breakpoint}-o{ display: none; }
 	}
-	@include responsive(">*.w-100"){
+	@include responsive(">*.w-100",$breakpoints){
 		display: block;
 		width: 100%;
 		margin: 0;
 		padding: 0;
 	}
-	@include responsive-only(">*.w-100"){
+	@include responsive-only(">*.w-100",$breakpoints){
 		display: block;
 		width: 100%;
 		margin: 0;

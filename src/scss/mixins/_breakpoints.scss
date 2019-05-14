@@ -85,7 +85,7 @@
 // No minimum for the smallest breakpoint, and no maximum for the largest one.
 // Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
 @mixin media-breakpoint-only($name,$breakpoints: $grid-breakpoints){
-	@include media-breakpoint-between($name,$name){ @content }
+	@include media-breakpoint-between($name,$name,$breakpoints){ @content }
 }
 
 // Combined mixin for media-breakpoint-up, media-breakpoint-down, media-breakpoint-between.
