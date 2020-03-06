@@ -13,9 +13,11 @@ $grid-breakpoints:(
 
 // Spacing variables
 // Eg. - 4 steps of 5px each gives spc-5, spc-10, spc-15, spc-20
-$spacing-step-size:  5  !default; // Size in px of step by which spacing values are incremented (No need to include px)
-$grid-spacing-steps: 5  !default; // No. of spacing steps (for spc classes in rows)
+$spacing-step-size:  2  !default; // Size in px of step by which spacing values are incremented (No need to include px)
 $spacing-steps:      10 !default; // No. of spacing steps (for margin, padding classes etc.)
+
+$grid-step-size:     4  !default; // Size in px of step by which spacing values are incremented (No need to include px)
+$grid-spacing-steps: 5  !default; // No. of spacing steps (for spc classes in rows)
 
 // Input elements' height
 $input-height: 30px;

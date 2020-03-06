@@ -1,7 +1,7 @@
 @mixin row(
-	$columns: $grid-columns, // Number of columns (Adjustable)
-	$breakpoints: $grid-breakpoints, // Custom breakpoints, default: $grid-breakpoints
-	$spacing-step: $spacing-step-size, // Size of step by which spc values are incremented (in px)
+	$columns: $grid-columns,            // Number of columns (Adjustable)
+	$breakpoints: $grid-breakpoints,    // Custom breakpoints, default: $grid-breakpoints
+	$spacing-step: $grid-step-size,     // Size of step by which spc values are incremented (in px)
 	$spacing-steps: $grid-spacing-steps // No. of spc increments. Eg. - 4 steps of 5px each gives spc-0, spc-5, spc-10, spc-15, spc-20
 ){
 	display: flex;
@@ -19,7 +19,7 @@
 		}
 	}
 	&[class*=spc-]{
-		padding:    calc(var(--rowGap) / 2) calc(var(--colGap) / 2);
+		padding: calc(var(--rowGap) / 2) calc(var(--colGap) / 2);
 		>*{ margin: calc(var(--rowGap) / 2) calc(var(--colGap) / 2); }
 
 		// Extrude: Use this class to extrude content when spc- is enabled for the parent row
@@ -33,19 +33,20 @@
 		@include media-breakpoint-up($breakpoint,$breakpoints){
 			>.col#{$suffix}{
 				flex: 1;
-				min-width: 0;
-				max-width: none;
+				// min-width: 0;
+				// max-width: none;
 			}
 			>.col-auto#{$suffix}{
 				flex: 0 auto;
-				min-width: 0;
-				max-width: none;
+				// min-width: 0;
+				// max-width: none;
 			}
 			@for $i from 1 through $columns{
 				>.col-#{$i}#{$suffix}{
 					--colCount: #{$columns};
-					min-width: calc(#{100%*$i} / var(--colCount));
-					max-width: calc(#{100%*$i} / var(--colCount));
+					width: calc(#{100%*$i} / var(--colCount));
+					// min-width: calc(#{100%*$i} / var
+					// max-width: calc(#{100%*$i} / var(--colCount));
 				}
 			}
 			@for $spacing from 0 through $spacing-steps{
@@ -63,22 +64,24 @@
 			&[class*=spc-]{
 				>.col#{$suffix}{
 					flex: 1;
-					min-width: 0;
-					max-width: none;
+					// min-width: 0;
+					// max-width: none;
 				}
 				>.col-auto#{$suffix}{
 					flex: 0 auto;
-					min-width: 0;
-					max-width: none;
+					// min-width: 0;
+					// max-width: none;
 				}
 				@for $i from 1 through $columns{
 					>.col-#{$i}#{$suffix}{
-						min-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
-						max-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
+						width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
+						// min-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
+						// max-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
 						&.col-extrude,
 						&.col-extrude-x{
-							min-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
-							max-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
+							width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
+							// min-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
+							// max-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
 						}
 					}
 				}

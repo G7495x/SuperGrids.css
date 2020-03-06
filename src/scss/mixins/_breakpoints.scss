@@ -1,26 +1,33 @@
-// Breakpoints - Viewport sizes and media queries.
-//
-// Forked & modified from Bootstrap (github.com/twbs/bootstrap/blob/master/scss/mixins/_breakpoints.scss) - Rev. Nov 4, 2018
+// Breakpoints - Media queries, Viewport sizes, etc.
+
+// Forked & modified (mostly formatting + minor tweaks) from Bootstrap.
+// https://github.com/twbs/bootstrap/blob/master/scss/mixins/_breakpoints.scss
+// Rev. Jun 16, 2019 11:00 PM PDT - c5b1919
 // Bootstrap is licensed MIT. https://github.com/twbs/bootstrap
 
+// Breakpoints are a map of (name: minimum width), order from small to large (mobile-first approach). Ex:
+//   (
+//     xs: 0,
+//     sm: 576px,
+//     md: 768px,
+//     lg: 992px,
+//     xl: 1200px
+//   )
+// The map defined as the `$grid-breakpoints` global variable is used as the `$breakpoints` argument by default.
 
-// Breakpoints are defined as a map of (name: minimum width), order from small to large (mobile-first approach):
-//   (xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px)
-// The map defined in the `$grid-breakpoints` global variable is used as the `$breakpoints` argument by default.
-
-// Name of the next breakpoint, or null for the last breakpoint.
+// Name of the next breakpoint (null for the largest (last) breakpoint).
 //   >> breakpoint-next(sm)
 //   md
 //   >> breakpoint-next(sm,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
 //   md
-//   >> breakpoint-next(sm,$breakpoint-names: (xs sm md lg xl))
-//   md
-@function breakpoint-next($name,$breakpoints: $grid-breakpoints,$breakpoint-names: map-keys($breakpoints)){
+@function breakpoint-next($name,$breakpoints: $grid-breakpoints){
+	$breakpoint-names: map-keys($breakpoints);
 	$n: index($breakpoint-names,$name);
-	@return if($n!=null and $n<length($breakpoint-names),nth($breakpoint-names,$n+1),null);
+	@if not $n{ @error "breakpoint `#{$name}` not found in `#{$breakpoints}`" }
+	@return if($n<length($breakpoint-names),nth($breakpoint-names,$n+1),null);
 }
 
-// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+// Minimum of breakpoint width (lower bound of breakpoint, null for the smallest (first) breakpoint).
 //   >> breakpoint-min(sm,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
 //   576px
 @function breakpoint-min($name,$breakpoints: $grid-breakpoints){
@@ -28,10 +35,11 @@
 	@return if($min!=0,$min,null);
 }
 
-// Maximum breakpoint width. Null for the largest (last) breakpoint.
-// The maximum value is calculated as the minimum of the next one less 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports with fractional widths.
+// Maximum of breakpoint width (upper bound of breakpoint, null for the largest (last) breakpoint).
+// Value is the minimum of the next breakpoint minus 0.02px.
+// Needed to work around the limitations of `min-` and `max-` prefixes and viewports with fractional widths.
 // See https://www.w3.org/TR/mediaqueries-4/#mq-min-max
-// Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.
+// Use 0.02px rather than 0.01px to work around a current rounding bug in Safari.
 // See https://bugs.webkit.org/show_bug.cgi?id=178261
 //   >> breakpoint-max(sm,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
 //   767.98px
@@ -40,9 +48,9 @@
 	@return if($next,breakpoint-min($next,$breakpoints)-.02,null);
 }
 
-// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash infront.
+// Breakpoint name with a dash infront (Blank if smallest (first) breakpoint).
 // Useful for making responsive utilities.
-//   >> breakpoint-suffix(xs,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
+//   >> breakpoint-suffix(xs)
 //   ""  (Returns a blank string)
 //   >> breakpoint-suffix(sm,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
 //   "-sm"
@@ -50,24 +58,30 @@
 	@return if(breakpoint-min($name,$breakpoints),"-#{$name}","");
 }
 
-// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Media query with min-width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
+//   >> media-breakpoint-up(sm){ @content }
+//   @media (min-width: 576px){ @content }
 @mixin media-breakpoint-up($name,$breakpoints: $grid-breakpoints){
 	$min: breakpoint-min($name,$breakpoints);
 	@if $min{ @media (min-width: $min){ @content }}
 	@else{ @content }
 }
 
-// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Media query with max-width. No query for the largest breakpoint. (rarely used in mobile-first approach)
 // Makes the @content apply to the given breakpoint and narrower.
+//   >> media-breakpoint-down(sm){ @content }
+//   @media (max-width: 767.98px){ @content }
 @mixin media-breakpoint-down($name,$breakpoints: $grid-breakpoints){
 	$max: breakpoint-max($name,$breakpoints);
 	@if $max{ @media (max-width: $max){ @content }}
 	@else{ @content }
 }
 
-// Media that spans multiple breakpoint widths.
-// Makes the @content apply between the min and max breakpoints
+// Media query with min-width and max-width (spans multiple breakpoints).
+// Makes the @content apply for all breakpoints from $lower to $upper
+//   >> media-breakpoint-between(sm,md){ @content }
+//   @media (min-width: 576px) and (max-width: 991.98px){ @content }
 @mixin media-breakpoint-between($lower,$upper,$breakpoints: $grid-breakpoints){
 	$min: breakpoint-min($lower,$breakpoints);
 	$max: breakpoint-max($upper,$breakpoints);
@@ -78,16 +92,17 @@
 		@include media-breakpoint-up($lower,$breakpoints){ @content }
 	}@else if $min==null{
 		@include media-breakpoint-down($upper,$breakpoints){ @content }
-	}
+	}@else{ @content }
 }
 
-// Media between the breakpoint's minimum and maximum widths.
-// No minimum for the smallest breakpoint, and no maximum for the largest one.
-// Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+// Similar to media-breakpoint-between when $lower = $upper (spanning only one breakpoint)
+//   >> media-breakpoint-only(sm){ @content }
+//   @media (min-width: 576px) and (max-width: 767.98px){ @content }
 @mixin media-breakpoint-only($name,$breakpoints: $grid-breakpoints){
 	@include media-breakpoint-between($name,$name,$breakpoints){ @content }
 }
 
+/// TODO: Maybe redundant with media-breakpoint-between
 // Combined mixin for media-breakpoint-up, media-breakpoint-down, media-breakpoint-between.
 @mixin resp($lower: null,$upper: null,$breakpoints: $grid-breakpoints){
 	@if $lower!=null and $upper!=null{ @include media-breakpoint-between($lower,$upper,$breakpoints){ @content }}
@@ -96,7 +111,7 @@
 	@else{ @content }
 }
 
-// Make a custom class/etc. responsive (Mobile Up)
+// Make a custom class/etc. responsive (mobile-first approach)
 //   >> @include responsive(".cc"){ custom: rule }
 //   .cc{ custom: rule }
 //   @media (min-width: 576px){ .cc-sm{ custom: rule } }
@@ -111,13 +126,13 @@
 	}
 }
 
-// Make a custom class/etc. responsive (For each form-factor)
+// Make a custom class/etc. responsive (For each breakpoint only)
 //   >> @include responsive-only(".cc"){ custom: rule }
-//   @media (max-width: 575.98px) { .cc-xs-o { custom: rule; } }
-//   @media (min-width: 576px) and (max-width: 767.98px) { .cc-sm-o { custom: rule; } }
-//   @media (min-width: 768px) and (max-width: 991.98px) { .cc-md-o { custom: rule; } }
-//   @media (min-width: 992px) and (max-width: 1199.98px) { .cc-lg-o { custom: rule; } }
-//   @media (min-width: 1200px) { .cc-xl-o { custom: rule; } }
+//   @media (max-width: 575.98px) { .cc-xs-o { custom: rule } }
+//   @media (min-width: 576px) and (max-width: 767.98px) { .cc-sm-o { custom: rule } }
+//   @media (min-width: 768px) and (max-width: 991.98px) { .cc-md-o { custom: rule } }
+//   @media (min-width: 992px) and (max-width: 1199.98px) { .cc-lg-o { custom: rule } }
+//   @media (min-width: 1200px) { .cc-xl-o { custom: rule } }
 @mixin responsive-only($selector,$breakpoints: $grid-breakpoints){
 	@each $breakpoint in map-keys($breakpoints){
 		@include media-breakpoint-only($breakpoint,$breakpoints){
@@ -125,3 +140,5 @@
 		}
 	}
 }
+
+/// MAYBE: responsive-down + breakpoint-suffix-down (haven't come across an useful scenario)
