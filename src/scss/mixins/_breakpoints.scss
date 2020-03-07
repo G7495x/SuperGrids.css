@@ -7,11 +7,11 @@
 
 // Breakpoints are a map of (name: minimum width), order from small to large (mobile-first approach). Ex:
 //   (
-//     xs: 0,
-//     sm: 576px,
-//     md: 768px,
-//     lg: 992px,
-//     xl: 1200px
+//     xs: 0,     - Phones  (portrait)  [0px   ,576px)
+//     sm: 576px, - Phones  (landscape) [576px ,768px)
+//     md: 768px, - Tablets (portrait)  [768px ,992px)
+//     lg: 992px, - Tablets (landscape) [992px ,1200px)
+//     xl: 1200px - Computers           [1200px,infinity)
 //   )
 // The map defined as the `$grid-breakpoints` global variable is used as the `$breakpoints` argument by default.
 
@@ -107,6 +107,9 @@
 //   >> media-breakpoint-only(sm){ @content }
 //   @media (min-width: 576px) and (max-width: 767.98px){ @content }
 @mixin media-breakpoint-only($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint($name,$name,$breakpoints){ @content } }
+
+/// TODO: More media features - https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+/// TODO: Orientation, hover
 
 // Make a custom class/etc. responsive (mobile-first approach)
 //   >> @include responsive(".cc"){ custom: rule }

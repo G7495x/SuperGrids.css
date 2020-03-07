@@ -1,8 +1,11 @@
 // Reboot - CSS Reset
-//
-// Forked & modified from Bootstrap Reboot (github.com/twbs/bootstrap/blob/master/scss/_reboot.scss) - Rev. Mar 12, 2019
+
+// Forked & modified from Bootstrap Reboot.
+// https://github.com/twbs/bootstrap/blob/master/scss/_reboot.scss
+// Rev. Mar 12, 2019 6:16 AM PDT - 3e05d01
 // Normalize is licensed MIT. https://github.com/necolas/normalize.css
 
+/// TODO: Revise again
 
 // COMPONENTS MAP
 
@@ -19,9 +22,14 @@
 	font-size: inherit;     // Make `font-size` an inherited property
 }
 
-html{
-	--accentColorRgb: #{$accent-rgb};
+/// TODO: Check if really needed
+:root{
+	--accentRgb:  #{$accent-rgb};
+	--mutedRgb:   #{$muted-rgb};
+	--mutedAlpha: #{$muted-alpha};
+}
 
+html{
 	font-family: sans-serif;                  // Change the default font family in all browsers
 	font-size: $font-size;                    // Initial font size of document
 	font-weight: $font-weight;                // Initial font weight of document
@@ -39,7 +47,7 @@ header,
 hgroup,
 main,
 nav,
-section{ display: block; } // Shim for "new" HTML5 structural elements to display correctly
+section{ display: block } // Shim for "new" HTML5 structural elements to display correctly
 
 body{
 	margin: 0;                           // Remove body margin in all browsers
@@ -51,7 +59,7 @@ body{
 // Future-proof rule: in browsers that support :focus-visible, suppress the focus outline on elements that programmatically receive focus but wouldn't normally show a visible focus outline. In general, this would mean that the outline is only applied if the interaction that led to the element receiving programmatic focus was a keyboard interaction, or the browser has somehow determined that the user is primarily a keyboard user and/or wants focus outlines to always be presented.
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
 // https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/
-[tabindex="-1"]:focus:not(:focus-visible){ outline: 0 !important; }
+[tabindex="-1"]:focus:not(:focus-visible){ outline: 0 !important }
 
 hr{
 	height: 1px;                    // Make height 1 px
@@ -69,14 +77,16 @@ h6,
 p,
 ul,
 ol,
-dl{ margin: 0; } // Remove margin to heading, paragraph, list elements. Use grid spacing / margin-padding instead
+dl{ margin: 0 } // Remove margin to heading, paragraph, list elements. Use grid spacing / margin-padding instead
+
+p{ margin-bottom: 1em }
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6{ font-weight: unset; } // Set headings to normal weight
+h6{ font-weight: unset } // Set headings to normal weight
 
 abbr[title],
 abbr[data-original-title]{
@@ -91,10 +101,10 @@ address{
 	line-height: inherit;
 }
 
-dfn{ font-style: italic; }     // Add the correct font style in Android 4.3-
-b{ font-weight: bold; }        // Add the correct font weight in Chrome, Edge, and Safari
-strong{ font-weight: bolder; } // Add the correct font weight in Chrome, Edge, and Safari
-small{ font-size: 75%; }       // Add the correct font size in all browsers
+dfn{ font-style: italic }     // Add the correct font style in Android 4.3-
+b{ font-weight: bold }        // Add the correct font weight in Chrome, Edge, and Safari
+strong{ font-weight: bolder } // Add the correct font weight in Chrome, Edge, and Safari
+small{ font-size: 75% }       // Add the correct font size in all browsers
 
 // Prevent `sub` and `sup` elements from affecting the line height in all browsers
 sub,
@@ -105,8 +115,8 @@ sup{
 	vertical-align: baseline;
 }
 
-sub{ bottom: -.25em; }
-sup{ top: -.5em; }
+sub{ bottom: -.25em }
+sup{ top: -.5em }
 
 a{
 	text-decoration: none;         // Remove underline for links
@@ -126,7 +136,7 @@ a:not([href]):not([tabindex]){
 		text-decoration: none;
 	}
 
-	&:focus{ outline: 0; }
+	&:focus{ outline: 0 }
 }
 
 pre,
@@ -142,7 +152,7 @@ pre{
 	overflow: auto; // Don't allow content to break outside
 }
 
-figure{ margin: 0; } // Remove margin, use grid spacing / margin-padding instead
+figure{ margin: 0 } // Remove margin, use grid spacing / margin-padding instead
 
 img{
 	vertical-align: middle;
@@ -158,7 +168,7 @@ svg{
 	vertical-align: middle;
 }
 
-table{ border-collapse: collapse; } // Prevent double borders
+table{ border-collapse: collapse } // Prevent double borders
 
 caption{
 	padding: 0;
@@ -166,7 +176,7 @@ caption{
 	caption-side: bottom;
 }
 
-th{ text-align: inherit; } // Matches default `<td>` alignment by inheriting from the `<body>`, or the closest parent with a set `text-align`
+th{ text-align: inherit } // Matches default `<td>` alignment by inheriting from the `<body>`, or the closest parent with a set `text-align`
 
 input,
 button,
@@ -188,7 +198,7 @@ progress{
 input,
 button,
 select,
-progress{ vertical-align: middle; } // Add the correct vertical alignment in Chrome, Firefox, and Opera
+progress{ vertical-align: middle } // Add the correct vertical alignment in Chrome, Firefox, and Opera
 
 ::-webkit-file-upload-button{
 	border-radius: 0;         // Remove `border-radius` on all browsers
@@ -197,11 +207,11 @@ progress{ vertical-align: middle; } // Add the correct vertical alignment in Chr
 }
 
 button,
-select{ text-transform: none; } // Remove the inheritance of text transform in Firefox
+select{ text-transform: none } // Remove the inheritance of text transform in Firefox
 
 // Remove the inheritance of word-wrap in Safari.
 // Details at https://github.com/twbs/bootstrap/issues/24990
-select{ word-wrap: normal; }
+select{ word-wrap: normal }
 
 // Remove inner border and padding from Firefox, but don't restore the outline like Normalize
 button::-moz-focus-inner,
@@ -231,19 +241,19 @@ input[type="file"]{
 
 input[type="color"]{
 	@mixin swatch-wrapper{
-		&::-webkit-color-swatch-wrapper{ @content; }
-		&::-moz-focus-inner{ @content; }
+		&::-webkit-color-swatch-wrapper{ @content }
+		&::-moz-focus-inner{ @content }
 	}
 	@mixin swatch{
-		&::-webkit-color-swatch{ @content; }
-		&::-moz-color-swatch{ @content; }
+		&::-webkit-color-swatch{ @content }
+		&::-moz-color-swatch{ @content }
 	}
-	@include swatch-wrapper{ padding: 0; }
+	@include swatch-wrapper{ padding: 0 }
 	@include swatch{
-		width: calc(100% + 10px);
-		margin: 0 -5px;
+		width: calc(100% + 8px);
+		margin: 0 -4px;
 		border: 1px solid rgba(black,.15);
-		border-radius: 2.5px;
+		border-radius: 4px;
 	}
 }
 
@@ -264,7 +274,7 @@ input[type="range"]{
 		display: flex;
 		align-items: center;
 	}
-	&::-moz-focus-outer{ border: 0; }
+	&::-moz-focus-outer{ border: 0 }
 }
 
 textarea{
@@ -294,32 +304,32 @@ legend{
 }
 
 [type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button{ height: auto; } // Correct the style of increment and decrement buttons in Chrome
+[type="number"]::-webkit-outer-spin-button{ height: auto } // Correct the style of increment and decrement buttons in Chrome
 
-[type="search"]::-webkit-search-decoration{ -webkit-appearance: none; } // Remove the inner padding in Chrome and Safari on macOS.
+[type="search"]::-webkit-search-decoration{ -webkit-appearance: none } // Remove the inner padding in Chrome and Safari on macOS.
 
-::-webkit-file-upload-button { font: inherit; } // Change font properties to `inherit` in Safari
+::-webkit-file-upload-button { font: inherit } // Change font properties to `inherit` in Safari
 
-output{ display: inline-block; } // Add the correct display in all browsers
+output{ display: inline-block } // Add the correct display in all browsers
 
 summary{
 	display: list-item; // Add the correct display in all browsers
 	cursor: pointer;    // Add the correct cursor in all browsers
 }
 
-template{ display: none; } // Add the correct display in IE
+template{ display: none } // Add the correct display in IE
 
 blockquote{
 	margin: 0; // Remove margin, use grid spacing / margin-padding instead
 	>footer{   // Naming a source
 		opacity: .5;
-		&::before{ content: "\2014 \00A0"; }
+		&::before{ content: "\2014 \00A0" }
 	}
 }
 
-ul{ padding-left: 25px; }
-ol{ padding-left: 35px; }
-dd{ margin-left: 25px; }
+ul{ padding-left: $list-indent }
+ol{ padding-left: $list-indent }
+dd{ margin-left:  $list-indent }
 
 // Append link URL when printing
 // @media print{
@@ -333,7 +343,7 @@ dd{ margin-left: 25px; }
 
 // Always hide an element with the `hidden` HTML attribute (from PureCSS)
 // Needed for proper display in IE 10-
-[hidden]{ display: none !important; }
+[hidden]{ display: none !important }
 
 @import "typography";
 @import "forms";

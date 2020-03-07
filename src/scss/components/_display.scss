@@ -1,29 +1,53 @@
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
-		.inline#{$suffix}{ @include inline($imp: true) }
-		.in-block#{$suffix}{ @include in-block($imp: true) }
-		.block#{$suffix}{ @include block($imp: true) }
-		.table#{$suffix}{ @include table($imp: true) }
-		.t-row#{$suffix}{ @include t-row($imp: true) }
-		.t-cell#{$suffix}{ @include t-cell($imp: true) }
-		.flex#{$suffix}{ @include flex($imp: true) }
-		.in-flex#{$suffix}{ @include in-flex($imp: true) }
-		.grid#{$suffix}{ @include grid($imp: true) }
-		.in-grid#{$suffix}{ @include in-grid($imp: true) }
-		.hide#{$suffix}{ @include hide($imp: true) }
+		.d-inline#{$suffix}     { @include d-inline($imp: true)      }
+		.d-block#{$suffix}      { @include d-block($imp: true)       }
+		.d-contents#{$suffix}   { @include d-contents($imp: true)    }
+		.d-flex#{$suffix}       { @include d-flex($imp: true)        }
+		.d-grid#{$suffix}       { @include d-grid($imp: true)        }
+		.d-iblock#{$suffix}     { @include d-iblock($imp: true)      }
+		.d-iflex#{$suffix}      { @include d-iflex($imp: true)       }
+		.d-igrid#{$suffix}      { @include d-igrid($imp: true)       }
+		.d-itable#{$suffix}     { @include d-itable($imp: true)      }
+		.d-listitem#{$suffix}   { @include d-listitem($imp: true)    }
+		.d-runin#{$suffix}      { @include d-runin($imp: true)       }
+		.d-table#{$suffix}      { @include d-table($imp: true)       }
+		.d-tcaption#{$suffix}   { @include d-tcaption($imp: true)    }
+		.d-tcol-group#{$suffix} { @include d-tcol-group($imp: true)  }
+		.d-thead-group#{$suffix}{ @include d-thead-group($imp: true) }
+		.d-tfoot-group#{$suffix}{ @include d-tfoot-group($imp: true) }
+		.d-trow-group#{$suffix} { @include d-trow-group($imp: true)  }
+		.d-tcell#{$suffix}      { @include d-tcell($imp: true)       }
+		.d-tcol#{$suffix}       { @include d-tcol($imp: true)        }
+		.d-trow#{$suffix}       { @include d-trow($imp: true)        }
+		.d-none#{$suffix}       { @include d-none($imp: true)        }
+
+		.hide#{$suffix}         { @include d-none($imp: true)        }
 	}
 	@include media-breakpoint-only($breakpoint){
-		.inline-#{$breakpoint}-o{ @include inline($imp: true) }
-		.in-block-#{$breakpoint}-o{ @include in-block($imp: true) }
-		.block-#{$breakpoint}-o{ @include block($imp: true) }
-		.table-#{$breakpoint}-o{ @include table($imp: true) }
-		.t-row-#{$breakpoint}-o{ @include t-row($imp: true) }
-		.t-cell-#{$breakpoint}-o{ @include t-cell($imp: true) }
-		.flex-#{$breakpoint}-o{ @include flex($imp: true) }
-		.in-flex-#{$breakpoint}-o{ @include in-flex($imp: true) }
-		.grid-#{$breakpoint}-o{ @include grid($imp: true) }
-		.in-grid-#{$breakpoint}-o{ @include in-grid($imp: true) }
-		.hide-#{$breakpoint}-o{ @include hide($imp: true) }
+		.d-inline-#{$breakpoint}-o     { @include d-inline($imp: true)      }
+		.d-block-#{$breakpoint}-o      { @include d-block($imp: true)       }
+		.d-contents-#{$breakpoint}-o   { @include d-contents($imp: true)    }
+		.d-flex-#{$breakpoint}-o       { @include d-flex($imp: true)        }
+		.d-grid-#{$breakpoint}-o       { @include d-grid($imp: true)        }
+		.d-iblock-#{$breakpoint}-o     { @include d-iblock($imp: true)      }
+		.d-iflex-#{$breakpoint}-o      { @include d-iflex($imp: true)       }
+		.d-igrid-#{$breakpoint}-o      { @include d-igrid($imp: true)       }
+		.d-itable-#{$breakpoint}-o     { @include d-itable($imp: true)      }
+		.d-listitem-#{$breakpoint}-o   { @include d-listitem($imp: true)    }
+		.d-runin-#{$breakpoint}-o      { @include d-runin($imp: true)       }
+		.d-table-#{$breakpoint}-o      { @include d-table($imp: true)       }
+		.d-tcaption-#{$breakpoint}-o   { @include d-tcaption($imp: true)    }
+		.d-tcol-group-#{$breakpoint}-o { @include d-tcol-group($imp: true)  }
+		.d-thead-group-#{$breakpoint}-o{ @include d-thead-group($imp: true) }
+		.d-tfoot-group-#{$breakpoint}-o{ @include d-tfoot-group($imp: true) }
+		.d-trow-group-#{$breakpoint}-o { @include d-trow-group($imp: true)  }
+		.d-tcell-#{$breakpoint}-o      { @include d-tcell($imp: true)       }
+		.d-tcol-#{$breakpoint}-o       { @include d-tcol($imp: true)        }
+		.d-trow-#{$breakpoint}-o       { @include d-trow($imp: true)        }
+		.d-none-#{$breakpoint}-o       { @include d-none($imp: true)        }
+
+		.hide-#{$breakpoint}-o         { @include d-none($imp: true)        }
 	}
 }

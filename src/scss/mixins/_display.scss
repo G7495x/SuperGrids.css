@@ -1,12 +1,23 @@
-/// TODO: Rename + new display attributes
-@mixin inline  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: inline       if($imp,!important,null) } }
-@mixin in-block($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: inline-block if($imp,!important,null) } }
-@mixin block   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: block        if($imp,!important,null) } }
-@mixin table   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table        if($imp,!important,null) } }
-@mixin t-row   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-row    if($imp,!important,null) } }
-@mixin t-cell  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-cell   if($imp,!important,null) } }
-@mixin flex    ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex         if($imp,!important,null) } }
-@mixin in-flex ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: inline-flex  if($imp,!important,null) } }
-@mixin grid    ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: grid         if($imp,!important,null) } }
-@mixin in-grid ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: inline-grid  if($imp,!important,null) } }
-@mixin hide    ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: none         if($imp,!important,null) } }
+// Ref - https://www.w3schools.com/cssref/pr_class_display.asp
+
+@mixin d-inline     ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: inline             if($imp,!important,null) } }
+@mixin d-block      ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: block              if($imp,!important,null) } }
+@mixin d-contents   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: contents           if($imp,!important,null) } }
+@mixin d-flex       ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex               if($imp,!important,null) } }
+@mixin d-grid       ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: grid               if($imp,!important,null) } }
+@mixin d-iblock     ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: inline-block       if($imp,!important,null) } }
+@mixin d-iflex      ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: inline-flex        if($imp,!important,null) } }
+@mixin d-igrid      ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: inline-grid        if($imp,!important,null) } }
+@mixin d-itable     ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: inline-table       if($imp,!important,null) } }
+@mixin d-listitem   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: list-item          if($imp,!important,null) } }
+@mixin d-runin      ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: run-in             if($imp,!important,null) } }
+@mixin d-table      ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table              if($imp,!important,null) } }
+@mixin d-tcaption   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-caption      if($imp,!important,null) } }
+@mixin d-tcol-group ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-column-group if($imp,!important,null) } }
+@mixin d-thead-group($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-header-group if($imp,!important,null) } }
+@mixin d-tfoot-group($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-footer-group if($imp,!important,null) } }
+@mixin d-trow-group ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-row-group    if($imp,!important,null) } }
+@mixin d-tcell      ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-cell         if($imp,!important,null) } }
+@mixin d-tcol       ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-column       if($imp,!important,null) } }
+@mixin d-trow       ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: table-row          if($imp,!important,null) } }
+@mixin d-none       ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: none               if($imp,!important,null) } }

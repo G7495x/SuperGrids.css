@@ -1,8 +1,11 @@
 // Easing Functions - Bezier Curve values
-//
-// Forked from easings.net (github.com/ai/easings.net/blob/master/src/easings.yml) - Rev. Mar 25, 2019
+
+// Forked from easings.net
+// https://github.com/ai/easings.net/blob/master/src/easings.yml
+// Rev. Mar 25, 2019
 // easings.net is licensed GNU GPLv3. https://github.com/ai/easings.net
 
+/// TODO: Separate transition and animation
 $easeInSine:   cubic-bezier(0.47,0,0.745,0.715);
 $easeOutSine:  cubic-bezier(0.39,0.575,0.565,1);
 $easeSine:     cubic-bezier(0.445,0.05,0.55,0.95);

@@ -45,8 +45,8 @@ button{
 *:focus{
 	outline: none;
 	box-shadow:
-		inset 0 0 0 1px rgba(var(--accentColorRgb),.5),
-		$focus-shadow rgba(var(--accentColorRgb),.25);
+		inset 0 0 0 1px rgba(var(--accentRgb),.5),
+		$focus-shadow rgba(var(--accentRgb),.25);
 }
 
 @include outline-inputs{
@@ -56,26 +56,26 @@ button{
 	box-shadow: inset 0 0 0 1px rgba(black,.15);
 	// &:read-only{ background-color: transparent; }
 	&:focus{
-		background-color: rgba(var(--accentColorRgb),.025);
+		background-color: rgba(var(--accentRgb),.025);
 		box-shadow:
-			inset 0 0 0 1px rgba(var(--accentColorRgb),.5),
-			$focus-shadow rgba(var(--accentColorRgb),.25);
+			inset 0 0 0 1px rgba(var(--accentRgb),.5),
+			$focus-shadow rgba(var(--accentRgb),.25);
 	}
 }
 
 textarea{ height: auto; }
 
 @include button-inputs{
-	$shadow: 0 5px 20px rgba(var(--accentColorRgb),.375);
+	$shadow: 0 5px 20px rgba(var(--accentRgb),.375);
 	padding: 5px 15px;
-	background-color: rgba(var(--accentColorRgb),1);
+	background-color: rgba(var(--accentRgb),1);
 	color: white;
 	box-shadow: $shadow;
 	cursor: pointer;
 	&:focus{
 		box-shadow:
 			$shadow,
-			$focus-shadow rgba(var(--accentColorRgb),.5);
+			$focus-shadow rgba(var(--accentRgb),.5);
 	}
 }
 
@@ -112,13 +112,13 @@ input[type="radio"]{
 		inset 0 0 0 1px rgba(black,.05);
 	cursor: pointer;
 	&:checked{
-		background-color: rgba(var(--accentColorRgb),1);
+		background-color: rgba(var(--accentRgb),1);
 		box-shadow: none;
 	}
 	&:focus{
 		box-shadow:
-			0 0 0 1px rgba(var(--accentColorRgb),.5),
-			$focus-shadow rgba(var(--accentColorRgb),.25);
+			0 0 0 1px rgba(var(--accentRgb),.5),
+			$focus-shadow rgba(var(--accentRgb),.25);
 	}
 }
 input[type="checkbox"]{
@@ -165,18 +165,18 @@ input[type="range"]{
 			border: transparent;
 			border-radius: 50% 50% 2.5px 50%;
 			box-shadow:
-				inset 0 0 0 2px rgba(var(--accentColorRgb),.5),
-				$focus-shadow rgba(var(--accentColorRgb),.15);
+				inset 0 0 0 2px rgba(var(--accentRgb),.5),
+				$focus-shadow rgba(var(--accentRgb),.15);
 		}
 	}
 	&:active{
 		@include input-range-thumb{
 			border-color: transparent;
 			border-radius: 50% 50% 2.5px 50%;
-			background-color: rgba(var(--accentColorRgb),1);
+			background-color: rgba(var(--accentRgb),1);
 			box-shadow:
-				0 5px 20px rgba(var(--accentColorRgb),.375),
-				0 0 rgba(var(--accentColorRgb),.25);
+				0 5px 20px rgba(var(--accentRgb),.375),
+				0 0 rgba(var(--accentRgb),.25);
 		}
 	}
 }

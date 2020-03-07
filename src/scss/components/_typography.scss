@@ -1,6 +1,8 @@
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
+		.text-show#{$suffix}{ @include text-show($imp: true) } // This must be on top
+
 		.h1#{$suffix}{ @include h1($imp: true) }
 		.h2#{$suffix}{ @include h2($imp: true) }
 		.h3#{$suffix}{ @include h3($imp: true) }
@@ -18,10 +20,14 @@
 		.lowercase#{$suffix}{ @include lowercase($imp: true) }
 		.uppercase#{$suffix}{ @include uppercase($imp: true) }
 		.capitalize#{$suffix}{ @include capitalize($imp: true) }
-		.text-normal#{$suffix}{ @include text-normal($imp: true) }
+		.normalcase#{$suffix}{ @include normalcase($imp: true) }
 
 		.small-caps#{$suffix}{ @include small-caps($imp: true) }
-		.font-variant-normal#{$suffix}{ @include font-variant-normal($imp: true) }
+		.normal-caps#{$suffix}{ @include normal-caps($imp: true) }
+
+		.nums-tabular#{$suffix}{ @include nums-tabular($imp: true) }
+		.nums-oldstyle#{$suffix}{ @include nums-oldstyle($imp: true) }
+		.nums-normal#{$suffix}{ @include nums-normal($imp: true) }
 
 		.b-100#{$suffix}{ @include b-100($imp: true) }
 		.b-200#{$suffix}{ @include b-200($imp: true) }
@@ -33,9 +39,16 @@
 		.b-800#{$suffix}{ @include b-800($imp: true) }
 		.b-900#{$suffix}{ @include b-900($imp: true) }
 
-		.one-line#{$suffix}{ @include one-line }
-		.text-hide#{$suffix}{ @include text-hide }
-		.list-unstyled#{$suffix}{ @include list-unstyled }
+		.one-line#{$suffix}{ @include one-line($imp: true) }
+		.multi-line#{$suffix}{ @include multi-line($imp: true) }
+
+		.list-unstyled#{$suffix}{ @include list-unstyled($imp: true) }
+		.list-styled#{$suffix}{ @include list-styled($imp: true) }
+
+		.text-muted#{$suffix}{ @include text-muted($imp: true) }
+		.text-unmuted#{$suffix}{ @include text-unmuted($imp: true) }
+
+		.text-hide#{$suffix}{ @include text-hide($imp: true) }
 	}
 }
 
