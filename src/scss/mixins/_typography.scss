@@ -1,35 +1,35 @@
-@mixin h1($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-size: 40px if($imp,!important,null) } }
-@mixin h2($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-size: 32px if($imp,!important,null) } }
-@mixin h3($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-size: 28px if($imp,!important,null) } }
-@mixin h4($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-size: 24px if($imp,!important,null) } }
-@mixin h5($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-size: 20px if($imp,!important,null) } }
-@mixin h6($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-size: 16px if($imp,!important,null) } }
-@mixin h7($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-size: 12px if($imp,!important,null) } }
-@mixin h8($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-size: 9.6px if($imp,!important,null) } }
+@mixin h1($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-size: 40px if($imp,!important,null) } }
+@mixin h2($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-size: 32px if($imp,!important,null) } }
+@mixin h3($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-size: 28px if($imp,!important,null) } }
+@mixin h4($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-size: 24px if($imp,!important,null) } }
+@mixin h5($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-size: 20px if($imp,!important,null) } }
+@mixin h6($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-size: 16px if($imp,!important,null) } }
+@mixin h7($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-size: 12px if($imp,!important,null) } }
+@mixin h8($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-size: 9.6px if($imp,!important,null) } }
 
-@mixin text-left($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ text-align: left if($imp,!important,null) } }
-@mixin text-center($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ text-align: center if($imp,!important,null) } }
-@mixin text-right($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ text-align: right if($imp,!important,null) } }
-@mixin text-justify($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ text-align: justify if($imp,!important,null) } }
+@mixin text-left($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ text-align: left if($imp,!important,null) } }
+@mixin text-center($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ text-align: center if($imp,!important,null) } }
+@mixin text-right($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ text-align: right if($imp,!important,null) } }
+@mixin text-justify($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ text-align: justify if($imp,!important,null) } }
 
-@mixin lowercase($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ text-transform: lowercase if($imp,!important,null) } }
-@mixin uppercase($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ text-transform: uppercase if($imp,!important,null) } }
-@mixin capitalize($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ text-transform: capitalize if($imp,!important,null) } }
-@mixin text-normal($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ text-transform: none if($imp,!important,null) } }
+@mixin lowercase($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ text-transform: lowercase if($imp,!important,null) } }
+@mixin uppercase($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ text-transform: uppercase if($imp,!important,null) } }
+@mixin capitalize($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ text-transform: capitalize if($imp,!important,null) } }
+@mixin text-normal($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ text-transform: none if($imp,!important,null) } }
 
-@mixin small-caps($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-variant: small-caps if($imp,!important,null) } }
-@mixin font-variant-normal($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-variant: normal if($imp,!important,null) } }
+@mixin small-caps($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-variant: small-caps if($imp,!important,null) } }
+@mixin font-variant-normal($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-variant: normal if($imp,!important,null) } }
 
-@mixin b-100($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-weight: 100 if($imp,!important,null) } }
-@mixin b-200($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-weight: 200 if($imp,!important,null) } }
-@mixin b-300($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-weight: 300 if($imp,!important,null) } }
-@mixin b-400($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-weight: 400 if($imp,!important,null) } }
-@mixin b-500($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-weight: 500 if($imp,!important,null) } }
-@mixin b-600($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-weight: 600 if($imp,!important,null) } }
-@mixin b-700($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-weight: 700 if($imp,!important,null) } }
-@mixin b-800($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-weight: 800 if($imp,!important,null) } }
-@mixin b-900($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ font-weight: 900 if($imp,!important,null) } }
+@mixin b-100($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-weight: 100 if($imp,!important,null) } }
+@mixin b-200($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-weight: 200 if($imp,!important,null) } }
+@mixin b-300($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-weight: 300 if($imp,!important,null) } }
+@mixin b-400($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-weight: 400 if($imp,!important,null) } }
+@mixin b-500($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-weight: 500 if($imp,!important,null) } }
+@mixin b-600($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-weight: 600 if($imp,!important,null) } }
+@mixin b-700($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-weight: 700 if($imp,!important,null) } }
+@mixin b-800($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-weight: 800 if($imp,!important,null) } }
+@mixin b-900($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ font-weight: 900 if($imp,!important,null) } }
 
-@mixin one-line($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ overflow-x: hidden; text-overflow: ellipsis; white-space: nowrap } }
-@mixin text-hide($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ font: 0/0 a; color: transparent; text-shadow: none } }
-@mixin list-unstyled($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include resp($up,$down,$breakpoints){ padding-left: 0; list-style: none } }
+@mixin one-line($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){ overflow-x: hidden; text-overflow: ellipsis; white-space: nowrap } }
+@mixin text-hide($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){ font: 0/0 a; color: transparent; text-shadow: none } }
+@mixin list-unstyled($up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){ padding-left: 0; list-style: none } }

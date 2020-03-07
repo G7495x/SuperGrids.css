@@ -12,7 +12,7 @@ $grid-breakpoints:(
 ) !default;
 
 // Spacing variables
-// Eg. - 4 steps of 5px each gives spc-5, spc-10, spc-15, spc-20
+// Ex: 4 steps of 5px each gives spc-5, spc-10, spc-15, spc-20
 $spacing-step-size:  2  !default; // Size in px of step by which spacing values are incremented (No need to include px)
 $spacing-steps:      10 !default; // No. of spacing steps (for margin, padding classes etc.)
 

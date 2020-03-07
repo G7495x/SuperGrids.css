@@ -15,6 +15,10 @@
 //   )
 // The map defined as the `$grid-breakpoints` global variable is used as the `$breakpoints` argument by default.
 
+// ----------------------------------------------------------------------------
+
+// 01 - FUNCTIONS
+
 // Name of the next breakpoint (null for the largest (last) breakpoint).
 //   >> breakpoint-next(sm)
 //   md
@@ -23,8 +27,7 @@
 @function breakpoint-next($name,$breakpoints: $grid-breakpoints){
 	$breakpoint-names: map-keys($breakpoints);
 	$n: index($breakpoint-names,$name);
-	@if not $n{ @error "breakpoint `#{$name}` not found in `#{$breakpoints}`" }
-	@return if($n<length($breakpoint-names),nth($breakpoint-names,$n+1),null);
+	@return if($n and $n<length($breakpoint-names),nth($breakpoint-names,$n+1),null);
 }
 
 // Minimum of breakpoint width (lower bound of breakpoint, null for the smallest (first) breakpoint).
@@ -54,62 +57,56 @@
 //   ""  (Returns a blank string)
 //   >> breakpoint-suffix(sm,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
 //   "-sm"
-@function breakpoint-suffix($name,$breakpoints: $grid-breakpoints){
-	@return if(breakpoint-min($name,$breakpoints),"-#{$name}","");
+@function breakpoint-suffix($name,$breakpoints: $grid-breakpoints){ @return if(breakpoint-min($name,$breakpoints),"-#{$name}",""); }
+
+// ----------------------------------------------------------------------------
+
+// 02 - MIXINS
+
+// Media query from parameters.
+// Makes the @content apply for all breakpoints from $lower to $upper
+//   >> media-breakpoint(sm){ @content }
+//   @media (min-width: 576px){ @content }
+//   >> media-breakpoint(sm,md){ @content }
+//   @media (min-width: 576px) and (max-width: 991.98px){ @content }
+//   >> media-breakpoint(null,md){ @content } or media-breakpoint($upper: md){ @content }
+//   @media (max-width: 991.98px){ @content }
+@mixin media-breakpoint($lower: null,$upper: null,$breakpoints: $grid-breakpoints){
+	$min: breakpoint-min($lower,$breakpoints);
+	$max: if($upper,breakpoint-max($upper,$breakpoints),null);
+
+	@if $min and $max{
+		@if $min>$max{ @warn "Breakpoint #{$lower} > #{$upper}: @media (min-width: #{$min}) and (max-width: #{$max}){ @content } is invalid."; }
+		@media (min-width: $min) and (max-width: $max){ @content }
+	}@else if $min{
+		@media (min-width: $min){ @content }
+	}@else if $max{
+		@media (max-width: $max){ @content }
+	}@else{ @content }
 }
 
 // Media query with min-width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
 //   >> media-breakpoint-up(sm){ @content }
 //   @media (min-width: 576px){ @content }
-@mixin media-breakpoint-up($name,$breakpoints: $grid-breakpoints){
-	$min: breakpoint-min($name,$breakpoints);
-	@if $min{ @media (min-width: $min){ @content }}
-	@else{ @content }
-}
+@mixin media-breakpoint-up($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint($name,null,$breakpoints){ @content } }
 
 // Media query with max-width. No query for the largest breakpoint. (rarely used in mobile-first approach)
 // Makes the @content apply to the given breakpoint and narrower.
 //   >> media-breakpoint-down(sm){ @content }
 //   @media (max-width: 767.98px){ @content }
-@mixin media-breakpoint-down($name,$breakpoints: $grid-breakpoints){
-	$max: breakpoint-max($name,$breakpoints);
-	@if $max{ @media (max-width: $max){ @content }}
-	@else{ @content }
-}
+@mixin media-breakpoint-down($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint(null,$name,$breakpoints){ @content } }
 
 // Media query with min-width and max-width (spans multiple breakpoints).
 // Makes the @content apply for all breakpoints from $lower to $upper
 //   >> media-breakpoint-between(sm,md){ @content }
 //   @media (min-width: 576px) and (max-width: 991.98px){ @content }
-@mixin media-breakpoint-between($lower,$upper,$breakpoints: $grid-breakpoints){
-	$min: breakpoint-min($lower,$breakpoints);
-	$max: breakpoint-max($upper,$breakpoints);
-
-	@if $min!=null and $max!=null{
-		@media (min-width: $min) and (max-width: $max){ @content }
-	}@else if $max==null{
-		@include media-breakpoint-up($lower,$breakpoints){ @content }
-	}@else if $min==null{
-		@include media-breakpoint-down($upper,$breakpoints){ @content }
-	}@else{ @content }
-}
+@mixin media-breakpoint-between($lower,$upper,$breakpoints: $grid-breakpoints){ @include media-breakpoint($lower,$upper,$breakpoints){ @content } }
 
 // Similar to media-breakpoint-between when $lower = $upper (spanning only one breakpoint)
 //   >> media-breakpoint-only(sm){ @content }
 //   @media (min-width: 576px) and (max-width: 767.98px){ @content }
-@mixin media-breakpoint-only($name,$breakpoints: $grid-breakpoints){
-	@include media-breakpoint-between($name,$name,$breakpoints){ @content }
-}
-
-/// TODO: Maybe redundant with media-breakpoint-between
-// Combined mixin for media-breakpoint-up, media-breakpoint-down, media-breakpoint-between.
-@mixin resp($lower: null,$upper: null,$breakpoints: $grid-breakpoints){
-	@if $lower!=null and $upper!=null{ @include media-breakpoint-between($lower,$upper,$breakpoints){ @content }}
-	@else if $lower!=null{ @include media-breakpoint-up($lower,$breakpoints){ @content }}
-	@else if $upper!=null{ @include media-breakpoint-down($upper,$breakpoints){ @content }}
-	@else{ @content }
-}
+@mixin media-breakpoint-only($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint($name,$name,$breakpoints){ @content } }
 
 // Make a custom class/etc. responsive (mobile-first approach)
 //   >> @include responsive(".cc"){ custom: rule }
@@ -126,7 +123,7 @@
 	}
 }
 
-// Make a custom class/etc. responsive (For each breakpoint only)
+// Make a custom class/etc. responsive (for a particular breakpoint only) (single breakpoints)
 //   >> @include responsive-only(".cc"){ custom: rule }
 //   @media (max-width: 575.98px) { .cc-xs-o { custom: rule } }
 //   @media (min-width: 576px) and (max-width: 767.98px) { .cc-sm-o { custom: rule } }
@@ -141,4 +138,4 @@
 	}
 }
 
-/// MAYBE: responsive-down + breakpoint-suffix-down (haven't come across an useful scenario)
+/// MAYBE: responsive-down (not advised for mobile-first approach)

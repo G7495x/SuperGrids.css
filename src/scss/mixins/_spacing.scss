@@ -1,32 +1,32 @@
-@mixin m($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ margin: $size if($imp,!important,null) } }
-@mixin mt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ margin-top: $size if($imp,!important,null) } }
-@mixin mr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ margin-right: $size if($imp,!important,null) } }
-@mixin mb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ margin-bottom: $size if($imp,!important,null) } }
-@mixin ml($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ margin-left: $size if($imp,!important,null) } }
-@mixin mx($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ @include mr($size,$imp: $imp); @include ml($size,$imp: $imp) } }
-@mixin my($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ @include mt($size,$imp: $imp); @include mb($size,$imp: $imp) } }
+@mixin m($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ margin: $size if($imp,!important,null) } }
+@mixin mt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ margin-top: $size if($imp,!important,null) } }
+@mixin mr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ margin-right: $size if($imp,!important,null) } }
+@mixin mb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ margin-bottom: $size if($imp,!important,null) } }
+@mixin ml($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ margin-left: $size if($imp,!important,null) } }
+@mixin mx($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include mr($size,$imp: $imp); @include ml($size,$imp: $imp) } }
+@mixin my($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include mt($size,$imp: $imp); @include mb($size,$imp: $imp) } }
 
-@mixin b($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ border: $size solid transparent if($imp,!important,null) } }
-@mixin bt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ border-top: $size solid transparent if($imp,!important,null) } }
-@mixin br($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ border-right: $size solid transparent if($imp,!important,null) } }
-@mixin bb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ border-bottom: $size solid transparent if($imp,!important,null) } }
-@mixin bl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ border-left: $size solid transparent if($imp,!important,null) } }
-@mixin bx($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ @include br($size,$imp: $imp); @include bl($size,$imp: $imp) } }
-@mixin by($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ @include bt($size,$imp: $imp); @include bb($size,$imp: $imp) } }
+@mixin b($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border: $size solid transparent if($imp,!important,null) } }
+@mixin bt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border-top: $size solid transparent if($imp,!important,null) } }
+@mixin br($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border-right: $size solid transparent if($imp,!important,null) } }
+@mixin bb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border-bottom: $size solid transparent if($imp,!important,null) } }
+@mixin bl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border-left: $size solid transparent if($imp,!important,null) } }
+@mixin bx($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include br($size,$imp: $imp); @include bl($size,$imp: $imp) } }
+@mixin by($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include bt($size,$imp: $imp); @include bb($size,$imp: $imp) } }
 
-@mixin p($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ padding: $size if($imp,!important,null) } }
-@mixin pt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ padding-top: $size if($imp,!important,null) } }
-@mixin pr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ padding-right: $size if($imp,!important,null) } }
-@mixin pb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ padding-bottom: $size if($imp,!important,null) } }
-@mixin pl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ padding-left: $size if($imp,!important,null) } }
-@mixin px($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ @include pr($size,$imp: $imp); @include pl($size,$imp: $imp) } }
-@mixin py($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ @include pt($size,$imp: $imp); @include pb($size,$imp: $imp) } }
+@mixin p($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ padding: $size if($imp,!important,null) } }
+@mixin pt($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ padding-top: $size if($imp,!important,null) } }
+@mixin pr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ padding-right: $size if($imp,!important,null) } }
+@mixin pb($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ padding-bottom: $size if($imp,!important,null) } }
+@mixin pl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ padding-left: $size if($imp,!important,null) } }
+@mixin px($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include pr($size,$imp: $imp); @include pl($size,$imp: $imp) } }
+@mixin py($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include pt($size,$imp: $imp); @include pb($size,$imp: $imp) } }
 
-@mixin spb-x($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ >*:not(:last-child){ margin-right: $size if($imp,!important,null) } } }
-@mixin spb-y($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ >*:not(:last-child){ margin-bottom: $size if($imp,!important,null) } } }
+@mixin spb-x($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ >*:not(:last-child){ margin-right: $size if($imp,!important,null) } } }
+@mixin spb-y($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ >*:not(:last-child){ margin-bottom: $size if($imp,!important,null) } } }
 
 @mixin fix-aspect($aspect: 1,$up: null,$down: null,$breakpoints: $grid-breakpoints){
-	@include resp($up,$down,$breakpoints){
+	@include media-breakpoint($up,$down,$breakpoints){
 		--aspectRatio: #{$aspect};
 		&::after{
 			content: "";

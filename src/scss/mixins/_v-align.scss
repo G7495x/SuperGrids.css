@@ -1,6 +1,6 @@
-@mixin v-align-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ vertical-align: baseline if($imp,!important,null) } }
-@mixin v-align-top($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ vertical-align: top if($imp,!important,null) } }
-@mixin v-align-middle($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ vertical-align: middle if($imp,!important,null) } }
-@mixin v-align-bottom($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ vertical-align: bottom if($imp,!important,null) } }
-@mixin v-align-text-bottom($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ vertical-align: text-bottom if($imp,!important,null) } }
-@mixin v-align-text-top($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include resp($up,$down,$breakpoints){ vertical-align: text-top if($imp,!important,null) } }
+@mixin v-align-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ vertical-align: baseline if($imp,!important,null) } }
+@mixin v-align-top($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ vertical-align: top if($imp,!important,null) } }
+@mixin v-align-middle($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ vertical-align: middle if($imp,!important,null) } }
+@mixin v-align-bottom($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ vertical-align: bottom if($imp,!important,null) } }
+@mixin v-align-text-bottom($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ vertical-align: text-bottom if($imp,!important,null) } }
+@mixin v-align-text-top($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ vertical-align: text-top if($imp,!important,null) } }
