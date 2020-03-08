@@ -1,10 +1,89 @@
-.row{ @include row; }
+/// TODO: everything mixin
 
-@each $breakpoint in map-keys($grid-breakpoints){
-	$suffix: breakpoint-suffix($breakpoint);
-	@include media-breakpoint-up($breakpoint){
-		@for $i from 1 through $grid-columns{
-			.row-#{$i}#{$suffix}>[class*=col-]{ --colCount: #{$i}; }
+/* Grid Component */
+
+@mixin grid-package(
+	$columns: $grid-columns,            // Number of columns (Adjustable)
+	$breakpoints: $grid-breakpoints,    // Custom breakpoints, default: $grid-breakpoints
+	$spacing-step: $grid-step-size,     // Size of step by which spc values are incremented (in px)
+	$spacing-steps: $grid-spacing-steps // No. of spc increments. Ex: 4 steps of 5px each gives spc-0, spc-5, spc-10, spc-15, spc-20
+){
+	*,
+	*::before,
+	*::after{
+		--colCount:    #{$columns};
+		--colMarginX:  0px;
+		--colMarginY:  0px;
+		--colSize:     initial;
+		--colWidth:    initial;
+		--rowPaddingX: 0px;
+		--rowPaddingY: 0px;
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint);
+		.row#{$suffix}{ @include row($breakpoint,$imp: true) }
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint);
+		@include media-breakpoint-up($breakpoint){
+			@for $i from 0 through $spacing-steps{
+				$gap: $i*$spacing-step;
+				.spc-#{$gap}#{$suffix}{ @include spc($gap*1px) }
+			}
+			@for $i from 0 through $spacing-steps{
+				$gap: $i*$spacing-step;
+				.spc-x-#{$gap}#{$suffix}{ @include spc-x($gap*1px) }
+				.spc-y-#{$gap}#{$suffix}{ @include spc-y($gap*1px) }
+			}
 		}
 	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint);
+		@include media-breakpoint-up($breakpoint){
+			.col#{$suffix}{ @include col($imp: true) }
+			.col-auto#{$suffix}{ @include col(auto,$imp: true) }
+			@for $i from 1 through $columns{ .col-#{$i}#{$suffix}{ @include col($i,$imp: true) }}
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint);
+		.col-extrude#{$suffix},.col-ext#{$suffix}{ @include col-extrude($breakpoint,$imp: true) }
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint);
+		@include media-breakpoint-up($breakpoint){
+			.col-extrude-x#{$suffix},.col-ext-x#{$suffix}{ @include col-extrude-x($imp: true) }
+			.col-extrude-y#{$suffix},.col-ext-y#{$suffix}{ @include col-extrude-y($imp: true) }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint);
+		@include media-breakpoint-up($breakpoint){
+			.col-extrude-t#{$suffix},.col-ext-t#{$suffix}{ @include col-extrude-t($imp: true) }
+			.col-extrude-r#{$suffix},.col-ext-r#{$suffix}{ @include col-extrude-r($imp: true) }
+			.col-extrude-b#{$suffix},.col-ext-b#{$suffix}{ @include col-extrude-b($imp: true) }
+			.col-extrude-l#{$suffix},.col-ext-l#{$suffix}{ @include col-extrude-l($imp: true) }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint);
+		@include media-breakpoint-up($breakpoint){
+			@for $i from 1 through $columns{ .row-#{$i}#{$suffix}{ @include row-size($i) }}
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$suffix: breakpoint-suffix($breakpoint);
+		.row-divider#{$suffix}{ @include row-divider($breakpoint,$imp: true) }
+		.row-divider#{$suffix}-o{ @include row-divider($breakpoint,$breakpoint,$imp: true) }
+	}
 }
+
+@include grid-package

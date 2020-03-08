@@ -12,22 +12,22 @@
 		.h7#{$suffix}{ @include h7($imp: true) }
 		.h8#{$suffix}{ @include h8($imp: true) }
 
-		.text-left#{$suffix}{ @include text-left($imp: true) }
-		.text-center#{$suffix}{ @include text-center($imp: true) }
-		.text-right#{$suffix}{ @include text-right($imp: true) }
+		.text-left#{$suffix}{    @include text-left($imp: true)    }
+		.text-center#{$suffix}{  @include text-center($imp: true)  }
+		.text-right#{$suffix}{   @include text-right($imp: true)   }
 		.text-justify#{$suffix}{ @include text-justify($imp: true) }
 
-		.lowercase#{$suffix}{ @include lowercase($imp: true) }
-		.uppercase#{$suffix}{ @include uppercase($imp: true) }
+		.lowercase#{$suffix}{  @include lowercase($imp: true)  }
+		.uppercase#{$suffix}{  @include uppercase($imp: true)  }
 		.capitalize#{$suffix}{ @include capitalize($imp: true) }
 		.normalcase#{$suffix}{ @include normalcase($imp: true) }
 
-		.small-caps#{$suffix}{ @include small-caps($imp: true) }
+		.small-caps#{$suffix}{  @include small-caps($imp: true)  }
 		.normal-caps#{$suffix}{ @include normal-caps($imp: true) }
 
-		.nums-tabular#{$suffix}{ @include nums-tabular($imp: true) }
+		.nums-tabular#{$suffix}{  @include nums-tabular($imp: true)  }
 		.nums-oldstyle#{$suffix}{ @include nums-oldstyle($imp: true) }
-		.nums-normal#{$suffix}{ @include nums-normal($imp: true) }
+		.nums-normal#{$suffix}{   @include nums-normal($imp: true)   }
 
 		.b-100#{$suffix}{ @include b-100($imp: true) }
 		.b-200#{$suffix}{ @include b-200($imp: true) }
@@ -39,13 +39,13 @@
 		.b-800#{$suffix}{ @include b-800($imp: true) }
 		.b-900#{$suffix}{ @include b-900($imp: true) }
 
-		.one-line#{$suffix}{ @include one-line($imp: true) }
+		.one-line#{$suffix}{   @include one-line($imp: true)   }
 		.multi-line#{$suffix}{ @include multi-line($imp: true) }
 
 		.list-unstyled#{$suffix}{ @include list-unstyled($imp: true) }
-		.list-styled#{$suffix}{ @include list-styled($imp: true) }
+		.list-styled#{$suffix}{   @include list-styled($imp: true)   }
 
-		.text-muted#{$suffix}{ @include text-muted($imp: true) }
+		.text-muted#{$suffix}{   @include text-muted($imp: true)   }
 		.text-unmuted#{$suffix}{ @include text-unmuted($imp: true) }
 
 		.text-hide#{$suffix}{ @include text-hide($imp: true) }

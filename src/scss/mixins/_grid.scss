@@ -1,111 +1,93 @@
-@mixin row(
-	$columns: $grid-columns,            // Number of columns (Adjustable)
-	$breakpoints: $grid-breakpoints,    // Custom breakpoints, default: $grid-breakpoints
-	$spacing-step: $grid-step-size,     // Size of step by which spc values are incremented (in px)
-	$spacing-steps: $grid-spacing-steps // No. of spc increments. Ex: 4 steps of 5px each gives spc-0, spc-5, spc-10, spc-15, spc-20
-){
-	display: flex;
-	flex-wrap: wrap;
-	align-content: flex-start;
+/// TODO: flex-tl, flex-tc, flex-tr, etc.
 
-	// .horz & .vert are a part of flex component
-	@each $breakpoint in map-keys($breakpoints){
-		$suffix: breakpoint-suffix($breakpoint,$breakpoints);
-		@include media-breakpoint-up($breakpoint,$breakpoints){
-			&.horz#{$suffix}{ align-content: flex-start; }
-			&.horz-rev#{$suffix}{ align-content: flex-start; }
-			&.vert#{$suffix}{ align-content: stretch; }
-			&.vert-rev#{$suffix}{ align-content: stretch; }
-		}
-	}
-	&[class*=spc-]{
-		padding: calc(var(--rowGap) / 2) calc(var(--colGap) / 2);
-		>*{ margin: calc(var(--rowGap) / 2) calc(var(--colGap) / 2); }
+/// MAYBE: --gap-x, --gap-y for understandability
 
-		// Extrude: Use this class to extrude content when spc- is enabled for the parent row
-		// Useful in places like nested grids, etc.
-		>.col-extrude{ margin: calc(var(--rowGap) / -2) calc(var(--colGap) / -2); }
-		>.col-extrude-x{ margin-right: calc(var(--colGap) / -2); margin-left: calc(var(--colGap) / -2); }
-		>.col-extrude-y{ margin-top: calc(var(--rowGap) / -2); margin-bottom: calc(var(--rowGap) / -2); }
-	}
-	@each $breakpoint in map-keys($breakpoints){
-		$suffix: breakpoint-suffix($breakpoint,$breakpoints);
-		@include media-breakpoint-up($breakpoint,$breakpoints){
-			>.col#{$suffix}{
-				flex: 1;
-				// min-width: 0;
-				// max-width: none;
-			}
-			>.col-auto#{$suffix}{
-				flex: 0 auto;
-				// min-width: 0;
-				// max-width: none;
-			}
-			@for $i from 1 through $columns{
-				>.col-#{$i}#{$suffix}{
-					--colCount: #{$columns};
-					width: calc(#{100%*$i} / var(--colCount));
-					// min-width: calc(#{100%*$i} / var
-					// max-width: calc(#{100%*$i} / var(--colCount));
-				}
-			}
-			@for $spacing from 0 through $spacing-steps{
-				$spacing: $spacing*$spacing-step;
-				&.spc-#{$spacing}#{$suffix}{
-					--rowGap: #{$spacing*1px};
-					--colGap: #{$spacing*1px};
-				}
-			}
-			@for $spacing from 0 through $spacing-steps{
-				$spacing: $spacing*$spacing-step;
-				&.spc-x-#{$spacing}#{$suffix}{ --colGap: #{$spacing*1px}; }
-				&.spc-y-#{$spacing}#{$suffix}{ --rowGap: #{$spacing*1px}; }
-			}
-			&[class*=spc-]{
-				>.col#{$suffix}{
-					flex: 1;
-					// min-width: 0;
-					// max-width: none;
-				}
-				>.col-auto#{$suffix}{
-					flex: 0 auto;
-					// min-width: 0;
-					// max-width: none;
-				}
-				@for $i from 1 through $columns{
-					>.col-#{$i}#{$suffix}{
-						width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
-						// min-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
-						// max-width: calc(#{100%*$i} / var(--colCount) - var(--colGap));
-						&.col-extrude,
-						&.col-extrude-x{
-							width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
-							// min-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
-							// max-width: calc(#{100%*$i} / var(--colCount) + var(--colGap));
-						}
-					}
-				}
-			}
-		}
-	}
+@mixin row($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	display: flex                                    if($imp,!important,null);
+	flex-wrap: wrap                                  if($imp,!important,null);
+	padding: var(--rowPaddingY) var(--rowPaddingX)   if($imp,!important,null);
+	&>*{ margin: var(--colMarginY) var(--colMarginX) if($imp,!important,null) }
+}}
 
-	// .w-100 (divider) classes
-	@each $breakpoint in map-keys($breakpoints){
-		@if breakpoint-min($breakpoint,$breakpoints){
-			>*.w-100#{breakpoint-suffix($breakpoint,$breakpoints)}{ display: none; }
-		}
-		>*.w-100-#{$breakpoint}-o{ display: none; }
+@mixin spc($gap,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
+	--rowPaddingX: #{$gap/2};
+	--rowPaddingY: #{$gap/2};
+	&>*{
+		--colMarginX: #{$gap/2};
+		--colMarginY: #{$gap/2};
 	}
-	@include responsive(">*.w-100",$breakpoints){
-		display: block;
-		width: 100%;
-		margin: 0;
-		padding: 0;
+}}
+
+@mixin spc-x($gap-x,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
+	--rowPaddingX:     #{$gap-x/2};
+	&>*{ --colMarginX: #{$gap-x/2}}
+}}
+
+@mixin spc-y($gap-y,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
+	--rowPaddingY:     #{$gap-y/2};
+	&>*{ --colMarginY: #{$gap-y/2}}
+}}
+
+@mixin spc-xy($gap-x,$gap-y,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
+	--rowPaddingX: #{$gap-x/2};
+	--rowPaddingY: #{$gap-y/2};
+	&>*{
+		--colMarginX: #{$gap-x/2};
+		--colMarginY: #{$gap-y/2};
 	}
-	@include responsive-only(">*.w-100",$breakpoints){
-		display: block;
-		width: 100%;
-		margin: 0;
-		padding: 0;
+}}
+
+@mixin col($parameter: null,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	@if $parameter==auto{
+		flex: 0 auto if($imp,!important,null);
+		width: auto  if($imp,!important,null);
+	}@else if $parameter{
+		--colSize: #{$parameter};
+		--colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
+		flex: 0 auto           if($imp,!important,null);
+		width: var(--colWidth) if($imp,!important,null);
+	}@else{
+		flex: 1     if($imp,!important,null);
+		width: auto if($imp,!important,null);
+	}
+}}
+
+@mixin col-extrude($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	--colWidth: calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
+	margin:     calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) if($imp,!important,null);
+}}
+@mixin col-extrude-x($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	--colWidth:   calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
+	margin-right: calc(var(--colMarginX) * -1) if($imp,!important,null);
+	margin-left:  calc(var(--colMarginX) * -1) if($imp,!important,null);
+}}
+@mixin col-extrude-y($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	margin-top:    calc(var(--colMarginY) * -1) if($imp,!important,null);
+	margin-bottom: calc(var(--colMarginY) * -1) if($imp,!important,null);
+}}
+@mixin col-extrude-t($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	margin-top: calc(var(--colMarginY) * -1) if($imp,!important,null);
+}}
+@mixin col-extrude-r($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	--colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+	margin-right: calc(var(--colMarginX) * -1) if($imp,!important,null);
+}}
+@mixin col-extrude-b($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	margin-bottom: calc(var(--colMarginY) * -1) if($imp,!important,null);
+}}
+@mixin col-extrude-l($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	--colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+	margin-left: calc(var(--colMarginX) * -1) if($imp,!important,null);
+}}
+
+@mixin row-size($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){ &>*{ --colCount: #{$size} } }}
+
+@mixin row-divider($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
+	display: none if($imp,!important,null);
+	@include media-breakpoint($up,$down,$breakpoints){
+		display: block                                                    if($imp,!important,null);
+		flex: 0 auto                                                      if($imp,!important,null);
+		width: calc(100% + var(--colMarginX) * 2)                         if($imp,!important,null);
+		margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) if($imp,!important,null);
 	}
 }

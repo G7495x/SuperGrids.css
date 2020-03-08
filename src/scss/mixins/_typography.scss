@@ -61,16 +61,16 @@
 	text-shadow: none  if($imp,!important,null);
 } }
 @mixin text-show    ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
-	font-size: inherit   if($imp,!important,null);
-	line-height: inherit if($imp,!important,null);
-	color: unset         if($imp,!important,null);
-	text-shadow: unset   if($imp,!important,null);
+	font-size: inherit if($imp,!important,null); // font-size is now inherited (reboot.scss)
+	line-height: unset if($imp,!important,null);
+	color: unset       if($imp,!important,null);
+	text-shadow: unset if($imp,!important,null);
 } }
 
 @mixin text-muted  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ color: rgba(var(--mutedRgb),var(--mutedAlpha)) if($imp,!important,null) } }
 @mixin text-unmuted($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ color: unset                                   if($imp,!important,null) } }
 
-@mixin text-stroke($value){
-	text-stroke: $value;
-	-webkit-text-stroke: $value;
+@mixin text-stroke($value,$imp: false){
+	text-stroke:         $value if($imp,!important,null);
+	-webkit-text-stroke: $value if($imp,!important,null);
 }
