@@ -1,5 +1,5 @@
 /*!
- * SuperGrids.css v0.9.17            - https://g7495x.github.io/SuperGrids.css
+ * SuperGrids.css v0.9.18            - https://g7495x.github.io/SuperGrids.css
  * Licensed under Apache License 2.0 - https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE
  */
 *,
@@ -2091,6 +2091,57 @@ input[type="file"] {
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 
+.super-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-content: center !important; }
+
+.flex-tl {
+  display: flex !important;
+  align-content: flex-start !important;
+  justify-content: flex-start !important; }
+
+.flex-tc {
+  display: flex !important;
+  align-content: flex-start !important;
+  justify-content: center !important; }
+
+.flex-tr {
+  display: flex !important;
+  align-content: flex-start !important;
+  justify-content: flex-end !important; }
+
+.flex-cl {
+  display: flex !important;
+  align-content: center !important;
+  justify-content: flex-start !important; }
+
+.flex-cc {
+  display: flex !important;
+  align-content: center !important;
+  justify-content: center !important; }
+
+.flex-cr {
+  display: flex !important;
+  align-content: center !important;
+  justify-content: flex-end !important; }
+
+.flex-bl {
+  display: flex !important;
+  align-content: flex-end !important;
+  justify-content: flex-start !important; }
+
+.flex-bc {
+  display: flex !important;
+  align-content: flex-end !important;
+  justify-content: center !important; }
+
+.flex-br {
+  display: flex !important;
+  align-content: flex-end !important;
+  justify-content: flex-end !important; }
+
 .f-horz {
   display: flex !important;
   flex-direction: row !important; }
@@ -2190,12 +2241,6 @@ input[type="file"] {
 .f-content-stretch {
   display: flex !important;
   align-content: stretch !important; }
-
-.super-center {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  align-content: center !important; }
 
 .f-self-auto {
   align-self: auto !important; }
@@ -2414,6 +2459,47 @@ input[type="file"] {
   order: 13 !important; }
 
 @media (min-width: 576px) {
+  .super-center-sm {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-content: center !important; }
+  .flex-tl-sm {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: flex-start !important; }
+  .flex-tc-sm {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: center !important; }
+  .flex-tr-sm {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: flex-end !important; }
+  .flex-cl-sm {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: flex-start !important; }
+  .flex-cc-sm {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: center !important; }
+  .flex-cr-sm {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: flex-end !important; }
+  .flex-bl-sm {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: flex-start !important; }
+  .flex-bc-sm {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: center !important; }
+  .flex-br-sm {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: flex-end !important; }
   .f-horz-sm {
     display: flex !important;
     flex-direction: row !important; }
@@ -2489,11 +2575,6 @@ input[type="file"] {
   .f-content-stretch-sm {
     display: flex !important;
     align-content: stretch !important; }
-  .super-center-sm {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    align-content: center !important; }
   .f-self-auto-sm {
     align-self: auto !important; }
   .f-self-start-sm {
@@ -2640,6 +2721,47 @@ input[type="file"] {
     order: 13 !important; } }
 
 @media (min-width: 768px) {
+  .super-center-md {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-content: center !important; }
+  .flex-tl-md {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: flex-start !important; }
+  .flex-tc-md {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: center !important; }
+  .flex-tr-md {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: flex-end !important; }
+  .flex-cl-md {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: flex-start !important; }
+  .flex-cc-md {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: center !important; }
+  .flex-cr-md {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: flex-end !important; }
+  .flex-bl-md {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: flex-start !important; }
+  .flex-bc-md {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: center !important; }
+  .flex-br-md {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: flex-end !important; }
   .f-horz-md {
     display: flex !important;
     flex-direction: row !important; }
@@ -2715,11 +2837,6 @@ input[type="file"] {
   .f-content-stretch-md {
     display: flex !important;
     align-content: stretch !important; }
-  .super-center-md {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    align-content: center !important; }
   .f-self-auto-md {
     align-self: auto !important; }
   .f-self-start-md {
@@ -2866,6 +2983,47 @@ input[type="file"] {
     order: 13 !important; } }
 
 @media (min-width: 992px) {
+  .super-center-lg {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-content: center !important; }
+  .flex-tl-lg {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: flex-start !important; }
+  .flex-tc-lg {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: center !important; }
+  .flex-tr-lg {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: flex-end !important; }
+  .flex-cl-lg {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: flex-start !important; }
+  .flex-cc-lg {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: center !important; }
+  .flex-cr-lg {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: flex-end !important; }
+  .flex-bl-lg {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: flex-start !important; }
+  .flex-bc-lg {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: center !important; }
+  .flex-br-lg {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: flex-end !important; }
   .f-horz-lg {
     display: flex !important;
     flex-direction: row !important; }
@@ -2941,11 +3099,6 @@ input[type="file"] {
   .f-content-stretch-lg {
     display: flex !important;
     align-content: stretch !important; }
-  .super-center-lg {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    align-content: center !important; }
   .f-self-auto-lg {
     align-self: auto !important; }
   .f-self-start-lg {
@@ -3092,6 +3245,47 @@ input[type="file"] {
     order: 13 !important; } }
 
 @media (min-width: 1200px) {
+  .super-center-xl {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-content: center !important; }
+  .flex-tl-xl {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: flex-start !important; }
+  .flex-tc-xl {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: center !important; }
+  .flex-tr-xl {
+    display: flex !important;
+    align-content: flex-start !important;
+    justify-content: flex-end !important; }
+  .flex-cl-xl {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: flex-start !important; }
+  .flex-cc-xl {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: center !important; }
+  .flex-cr-xl {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: flex-end !important; }
+  .flex-bl-xl {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: flex-start !important; }
+  .flex-bc-xl {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: center !important; }
+  .flex-br-xl {
+    display: flex !important;
+    align-content: flex-end !important;
+    justify-content: flex-end !important; }
   .f-horz-xl {
     display: flex !important;
     flex-direction: row !important; }
@@ -3167,11 +3361,6 @@ input[type="file"] {
   .f-content-stretch-xl {
     display: flex !important;
     align-content: stretch !important; }
-  .super-center-xl {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    align-content: center !important; }
   .f-self-auto-xl {
     align-self: auto !important; }
   .f-self-start-xl {

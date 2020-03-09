@@ -1,8 +1,18 @@
-/// TODO: f-tl, f-tc, f-tr, etc.
-
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
+		.super-center#{$suffix}{ @include super-center($imp: true) }
+
+		.flex-tl#{$suffix}{ @include flex-tl($imp: true) }
+		.flex-tc#{$suffix}{ @include flex-tc($imp: true) }
+		.flex-tr#{$suffix}{ @include flex-tr($imp: true) }
+		.flex-cl#{$suffix}{ @include flex-cl($imp: true) }
+		.flex-cc#{$suffix}{ @include flex-cc($imp: true) }
+		.flex-cr#{$suffix}{ @include flex-cr($imp: true) }
+		.flex-bl#{$suffix}{ @include flex-bl($imp: true) }
+		.flex-bc#{$suffix}{ @include flex-bc($imp: true) }
+		.flex-br#{$suffix}{ @include flex-br($imp: true) }
+
 		.f-horz#{$suffix}{     @include f-horz($imp: true)     }
 		.f-vert#{$suffix}{     @include f-vert($imp: true)     }
 		.f-horz-rev#{$suffix}{ @include f-horz-rev($imp: true) }
@@ -32,8 +42,6 @@
 		.f-content-space-around#{$suffix}{  @include f-content-space-around($imp: true)  }
 		.f-content-space-evenly#{$suffix}{  @include f-content-space-evenly($imp: true)  }
 		.f-content-stretch#{$suffix}{       @include f-content-stretch($imp: true)       }
-
-		.super-center#{$suffix}{ @include super-center($imp: true) }
 
 		.f-self-auto#{$suffix}{     @include f-self-auto($imp: true)     }
 		.f-self-start#{$suffix}{    @include f-self-start($imp: true)    }
