@@ -1,55 +1,56 @@
+/// TODO: f-tl, f-tc, f-tr, etc.
+
 @each $breakpoint in map-keys($grid-breakpoints){
 	$suffix: breakpoint-suffix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
-		.horz#{$suffix}{ @include horz($imp: true) }
-		.vert#{$suffix}{ @include vert($imp: true) }
-		.horz-rev#{$suffix}{ @include horz-rev($imp: true) }
-		.vert-rev#{$suffix}{ @include vert-rev($imp: true) }
+		.f-horz#{$suffix}{     @include f-horz($imp: true)     }
+		.f-vert#{$suffix}{     @include f-vert($imp: true)     }
+		.f-horz-rev#{$suffix}{ @include f-horz-rev($imp: true) }
+		.f-vert-rev#{$suffix}{ @include f-vert-rev($imp: true) }
 
-		.f-wrap#{$suffix}{ @include f-wrap($imp: true) }
+		.f-wrap#{$suffix}{     @include f-wrap($imp: true)     }
 		.f-wrap-rev#{$suffix}{ @include f-wrap-rev($imp: true) }
-		.f-nowrap#{$suffix}{ @include f-nowrap($imp: true) }
+		.f-nowrap#{$suffix}{   @include f-nowrap($imp: true)   }
 
-		.f-start#{$suffix}{ @include f-start($imp: true) }
-		.f-end#{$suffix}{ @include f-end($imp: true) }
-		.f-center#{$suffix}{ @include f-center($imp: true) }
+		.f-start#{$suffix}{    @include f-start($imp: true)    }
+		.f-end#{$suffix}{      @include f-end($imp: true)      }
+		.f-center#{$suffix}{   @include f-center($imp: true)   }
 		.f-baseline#{$suffix}{ @include f-baseline($imp: true) }
-		.f-stretch#{$suffix}{ @include f-stretch($imp: true) }
+		.f-stretch#{$suffix}{  @include f-stretch($imp: true)  }
 
-		.justify-start#{$suffix}{ @include justify-start($imp: true) }
-		.justify-end#{$suffix}{ @include justify-end($imp: true) }
-		.justify-center#{$suffix}{ @include justify-center($imp: true) }
-		.justify-space-between#{$suffix}{ @include justify-space-between($imp: true) }
-		.justify-space-around#{$suffix}{ @include justify-space-around($imp: true) }
-		.justify-space-evenly#{$suffix}{ @include justify-space-evenly($imp: true) }
+		.f-justify-start#{$suffix}{         @include f-justify-start($imp: true)         }
+		.f-justify-end#{$suffix}{           @include f-justify-end($imp: true)           }
+		.f-justify-center#{$suffix}{        @include f-justify-center($imp: true)        }
+		.f-justify-space-between#{$suffix}{ @include f-justify-space-between($imp: true) }
+		.f-justify-space-around#{$suffix}{  @include f-justify-space-around($imp: true)  }
+		.f-justify-space-evenly#{$suffix}{  @include f-justify-space-evenly($imp: true)  }
 
-		.content-start#{$suffix}{ @include content-start($imp: true) }
-		.content-end#{$suffix}{ @include content-end($imp: true) }
-		.content-center#{$suffix}{ @include content-center($imp: true) }
-		.content-space-between#{$suffix}{ @include content-space-between($imp: true) }
-		.content-space-around#{$suffix}{ @include content-space-around($imp: true) }
-		.content-space-evenly#{$suffix}{ @include content-space-evenly($imp: true) }
-		.content-stretch#{$suffix}{ @include content-stretch($imp: true) }
+		.f-content-start#{$suffix}{         @include f-content-start($imp: true)         }
+		.f-content-end#{$suffix}{           @include f-content-end($imp: true)           }
+		.f-content-center#{$suffix}{        @include f-content-center($imp: true)        }
+		.f-content-space-between#{$suffix}{ @include f-content-space-between($imp: true) }
+		.f-content-space-around#{$suffix}{  @include f-content-space-around($imp: true)  }
+		.f-content-space-evenly#{$suffix}{  @include f-content-space-evenly($imp: true)  }
+		.f-content-stretch#{$suffix}{       @include f-content-stretch($imp: true)       }
 
 		.super-center#{$suffix}{ @include super-center($imp: true) }
 
-		.self-auto#{$suffix}{ @include self-auto($imp: true) }
-		.self-start#{$suffix}{ @include self-start($imp: true) }
-		.self-end#{$suffix}{ @include self-end($imp: true) }
-		.self-center#{$suffix}{ @include self-center($imp: true) }
-		.self-baseline#{$suffix}{ @include self-baseline($imp: true) }
-		.self-stretch#{$suffix}{ @include self-stretch($imp: true) }
+		.f-self-auto#{$suffix}{     @include f-self-auto($imp: true)     }
+		.f-self-start#{$suffix}{    @include f-self-start($imp: true)    }
+		.f-self-end#{$suffix}{      @include f-self-end($imp: true)      }
+		.f-self-center#{$suffix}{   @include f-self-center($imp: true)   }
+		.f-self-baseline#{$suffix}{ @include f-self-baseline($imp: true) }
+		.f-self-stretch#{$suffix}{  @include f-self-stretch($imp: true)  }
 
-		.fill#{$suffix}{ @include fill($imp: true) }
-		.nofill#{$suffix}{ @include nofill($imp: true) }
-		.grow-0#{$suffix}{ @include grow-0($imp: true) }
-		.grow-1#{$suffix}{ @include grow-1($imp: true) }
-		.shrink-0#{$suffix}{ @include shrink-0($imp: true) }
-		.shrink-1#{$suffix}{ @include shrink-1($imp: true) }
+		@for $i from 0 through $grid-columns{ .f-flex-#{$i}#{$suffix}{ @include f-flex($i,$imp: true) }}
+		@for $i from 0 through $grid-columns{
+			.f-grow-#{$i}#{$suffix}{   @include f-grow($i,$imp: true)   }
+			.f-shrink-#{$i}#{$suffix}{ @include f-shrink($i,$imp: true) }
+		}
 
-		@for $n from -1*$grid-columns through -1{ .order-m#{-1*$n}#{$suffix}{ @include order($n,$imp: true) } }
-		@for $n from 0 through $grid-columns{ .order-#{$n}#{$suffix}{ @include order($n,$imp: true) } }
-		.order-first#{$suffix}{ @include order-first($imp: true) }
-		.order-last#{$suffix}{ @include order-last($imp: true) }
+		@for $i from -1*$grid-columns through -1{ .f-order-m#{-1*$i}#{$suffix}{ @include f-order($i,$imp: true) }}
+		@for $i from 0 through $grid-columns{     .f-order-#{$i}#{$suffix}{     @include f-order($i,$imp: true) }}
+		.f-order-first#{$suffix}{ @include f-order-first($imp: true) }
+		.f-order-last#{$suffix}{  @include f-order-last($imp: true)  }
 	}
 }

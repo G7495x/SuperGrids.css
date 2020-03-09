@@ -1,49 +1,46 @@
-@mixin horz($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; flex-direction: row if($imp,!important,null) } }
-@mixin vert($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; flex-direction: column if($imp,!important,null) } }
-@mixin horz-rev($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; flex-direction: row-reverse if($imp,!important,null) } }
-@mixin vert-rev($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; flex-direction: column-reverse if($imp,!important,null) } }
+@mixin f-horz    ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); flex-direction: row if($imp,!important,null)            }}
+@mixin f-vert    ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); flex-direction: column if($imp,!important,null)         }}
+@mixin f-horz-rev($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); flex-direction: row-reverse if($imp,!important,null)    }}
+@mixin f-vert-rev($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); flex-direction: column-reverse if($imp,!important,null) }}
 
-@mixin f-wrap($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; flex-wrap: wrap if($imp,!important,null) } }
-@mixin f-wrap-rev($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; flex-wrap: wrap-reverse if($imp,!important,null) } }
-@mixin f-nowrap($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; flex-wrap: nowrap if($imp,!important,null) } }
+@mixin f-wrap    ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); flex-wrap: wrap if($imp,!important,null)         }}
+@mixin f-wrap-rev($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); flex-wrap: wrap-reverse if($imp,!important,null) }}
+@mixin f-nowrap  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); flex-wrap: nowrap if($imp,!important,null)       }}
 
-@mixin f-start($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-items: flex-start if($imp,!important,null) } }
-@mixin f-end($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-items: flex-end if($imp,!important,null) } }
-@mixin f-center($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-items: center if($imp,!important,null) } }
-@mixin f-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-items: baseline if($imp,!important,null) } }
-@mixin f-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-items: stretch if($imp,!important,null) } }
+@mixin f-start   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-items: flex-start if($imp,!important,null) }}
+@mixin f-end     ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-items: flex-end if($imp,!important,null)   }}
+@mixin f-center  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-items: center if($imp,!important,null)     }}
+@mixin f-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-items: baseline if($imp,!important,null)   }}
+@mixin f-stretch ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-items: stretch if($imp,!important,null)    }}
 
-@mixin justify-start($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; justify-content: flex-start if($imp,!important,null) } }
-@mixin justify-end($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; justify-content: flex-end if($imp,!important,null) } }
-@mixin justify-center($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; justify-content: center if($imp,!important,null) } }
-@mixin justify-space-between($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; justify-content: space-between if($imp,!important,null) } }
-@mixin justify-space-around($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; justify-content: space-around if($imp,!important,null) } }
-@mixin justify-space-evenly($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; justify-content: space-evenly if($imp,!important,null) } }
+@mixin f-justify-start        ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); justify-content: flex-start if($imp,!important,null)    }}
+@mixin f-justify-end          ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); justify-content: flex-end if($imp,!important,null)      }}
+@mixin f-justify-center       ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); justify-content: center if($imp,!important,null)        }}
+@mixin f-justify-space-between($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); justify-content: space-between if($imp,!important,null) }}
+@mixin f-justify-space-around ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); justify-content: space-around if($imp,!important,null)  }}
+@mixin f-justify-space-evenly ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); justify-content: space-evenly if($imp,!important,null)  }}
 
-@mixin content-start($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-content: flex-start if($imp,!important,null) } }
-@mixin content-end($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-content: flex-end if($imp,!important,null) } }
-@mixin content-center($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-content: center if($imp,!important,null) } }
-@mixin content-space-between($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-content: space-between if($imp,!important,null) } }
-@mixin content-space-around($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-content: space-around if($imp,!important,null) } }
-@mixin content-space-evenly($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-content: space-evenly if($imp,!important,null) } }
-@mixin content-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex; align-content: stretch if($imp,!important,null) } }
+@mixin f-content-start        ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-content: flex-start if($imp,!important,null)    }}
+@mixin f-content-end          ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-content: flex-end if($imp,!important,null)      }}
+@mixin f-content-center       ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-content: center if($imp,!important,null)        }}
+@mixin f-content-space-between($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-content: space-between if($imp,!important,null) }}
+@mixin f-content-space-around ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-content: space-around if($imp,!important,null)  }}
+@mixin f-content-space-evenly ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-content: space-evenly if($imp,!important,null)  }}
+@mixin f-content-stretch      ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ display: flex if($imp,!important,null); align-content: stretch if($imp,!important,null)       }}
 
-@mixin super-center($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include f-center($imp: $imp); justify-content: center if($imp,!important,null); align-content: center if($imp,!important,null) } }
+@mixin super-center($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include f-center($imp: $imp); justify-content: center if($imp,!important,null); align-content: center if($imp,!important,null) }}
 
-@mixin self-auto($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: auto if($imp,!important,null) } }
-@mixin self-start($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: flex-start if($imp,!important,null) } }
-@mixin self-end($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: flex-end if($imp,!important,null) } }
-@mixin self-center($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: center if($imp,!important,null) } }
-@mixin self-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: baseline if($imp,!important,null) } }
-@mixin self-stretch($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: stretch if($imp,!important,null) } }
+@mixin f-self-auto    ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: auto if($imp,!important,null)       }}
+@mixin f-self-start   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: flex-start if($imp,!important,null) }}
+@mixin f-self-end     ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: flex-end if($imp,!important,null)   }}
+@mixin f-self-center  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: center if($imp,!important,null)     }}
+@mixin f-self-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: baseline if($imp,!important,null)   }}
+@mixin f-self-stretch ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: stretch if($imp,!important,null)    }}
 
-@mixin fill($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex: 1 if($imp,!important,null) } }
-@mixin nofill($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex: 0 auto if($imp,!important,null) } }
-@mixin grow-0($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-grow: 0 if($imp,!important,null) } }
-@mixin grow-1($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-grow: 1 if($imp,!important,null) } }
-@mixin shrink-0($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-shrink: 0 if($imp,!important,null) } }
-@mixin shrink-1($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-shrink: 1 if($imp,!important,null) } }
+@mixin f-flex  ($n,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-flex: $n   if($imp,!important,null) }}
+@mixin f-grow  ($n,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-grow: $n   if($imp,!important,null) }}
+@mixin f-shrink($n,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-shrink: $n if($imp,!important,null) }}
 
-@mixin order($n,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ order: $n if($imp,!important,null) } }
-@mixin order-first($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ order: -1*($grid-columns+1) if($imp,!important,null) } }
-@mixin order-last($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ order: $grid-columns+1 if($imp,!important,null) } }
+@mixin f-order      ($n,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ order: $n if($imp,!important,null)                }}
+@mixin f-order-first($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ order: -1*($grid-columns+1) if($imp,!important,null) }}
+@mixin f-order-last ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ order: $grid-columns+1 if($imp,!important,null)      }}

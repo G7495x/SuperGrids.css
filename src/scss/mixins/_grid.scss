@@ -1,12 +1,15 @@
-/// TODO: flex-tl, flex-tc, flex-tr, etc.
-
 /// MAYBE: --gap-x, --gap-y for understandability
 
-@mixin row($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
-	display: flex                                    if($imp,!important,null);
-	flex-wrap: wrap                                  if($imp,!important,null);
-	padding: var(--rowPaddingY) var(--rowPaddingX)   if($imp,!important,null);
+@mixin _row($imp: false){
+	display: flex                                  if($imp,!important,null);
+	flex-wrap: wrap                                if($imp,!important,null);
+	padding: var(--rowPaddingY) var(--rowPaddingX) if($imp,!important,null);
 	&>*{ margin: var(--colMarginY) var(--colMarginX) if($imp,!important,null) }
+}
+
+@mixin row($size: null,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	@include _row($imp);
+	@if $size{ &>*{ --colCount: #{$size} }}
 }}
 
 @mixin spc($gap,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
@@ -17,17 +20,14 @@
 		--colMarginY: #{$gap/2};
 	}
 }}
-
 @mixin spc-x($gap-x,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
 	--rowPaddingX:     #{$gap-x/2};
 	&>*{ --colMarginX: #{$gap-x/2}}
 }}
-
 @mixin spc-y($gap-y,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
 	--rowPaddingY:     #{$gap-y/2};
 	&>*{ --colMarginY: #{$gap-y/2}}
 }}
-
 @mixin spc-xy($gap-x,$gap-y,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
 	--rowPaddingX: #{$gap-x/2};
 	--rowPaddingY: #{$gap-y/2};
@@ -37,15 +37,19 @@
 	}
 }}
 
+@mixin _col($imp: false){
+	--colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
+	flex: 0 auto           if($imp,!important,null);
+	width: var(--colWidth) if($imp,!important,null);
+}
+
 @mixin col($parameter: null,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
 	@if $parameter==auto{
 		flex: 0 auto if($imp,!important,null);
 		width: auto  if($imp,!important,null);
 	}@else if $parameter{
 		--colSize: #{$parameter};
-		--colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
-		flex: 0 auto           if($imp,!important,null);
-		width: var(--colWidth) if($imp,!important,null);
+		@include _col($imp);
 	}@else{
 		flex: 1     if($imp,!important,null);
 		width: auto if($imp,!important,null);
@@ -79,8 +83,6 @@
 	--colWidth:  calc(var(--colSize) * 100% / var(--colCount));
 	margin-left: calc(var(--colMarginX) * -1) if($imp,!important,null);
 }}
-
-@mixin row-size($size,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){ &>*{ --colCount: #{$size} } }}
 
 @mixin row-divider($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	display: none if($imp,!important,null);

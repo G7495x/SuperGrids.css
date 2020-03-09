@@ -22,7 +22,14 @@
 
 	@each $breakpoint in map-keys($breakpoints){
 		$suffix: breakpoint-suffix($breakpoint);
-		.row#{$suffix}{ @include row($breakpoint,$imp: true) }
+		@include media-breakpoint-up($breakpoint){
+			$list: ".row#{$suffix}";
+			@for $i from 1 through $columns{
+				$list: $list+",.row-#{$i}#{$suffix}";
+				.row-#{$i}#{$suffix}>*{ --colCount: #{$i} }
+			}
+			#{$list}{ @include _row($imp: true) }
+		}
 	}
 
 	@each $breakpoint in map-keys($breakpoints){
@@ -45,7 +52,12 @@
 		@include media-breakpoint-up($breakpoint){
 			.col#{$suffix}{ @include col($imp: true) }
 			.col-auto#{$suffix}{ @include col(auto,$imp: true) }
-			@for $i from 1 through $columns{ .col-#{$i}#{$suffix}{ @include col($i,$imp: true) }}
+			$list: "";
+			@for $i from 1 through $columns{
+				$list: $list+".col-#{$i}#{$suffix},";
+				.col-#{$i}#{$suffix}{ --colSize: #{$i}; }
+			}
+			#{$list}{ @include _col($imp: true) }
 		}
 	}
 
@@ -69,13 +81,6 @@
 			.col-extrude-r#{$suffix},.col-ext-r#{$suffix}{ @include col-extrude-r($imp: true) }
 			.col-extrude-b#{$suffix},.col-ext-b#{$suffix}{ @include col-extrude-b($imp: true) }
 			.col-extrude-l#{$suffix},.col-ext-l#{$suffix}{ @include col-extrude-l($imp: true) }
-		}
-	}
-
-	@each $breakpoint in map-keys($breakpoints){
-		$suffix: breakpoint-suffix($breakpoint);
-		@include media-breakpoint-up($breakpoint){
-			@for $i from 1 through $columns{ .row-#{$i}#{$suffix}{ @include row-size($i) }}
 		}
 	}
 
