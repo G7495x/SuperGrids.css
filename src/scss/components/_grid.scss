@@ -86,8 +86,8 @@
 
 	@each $breakpoint in map-keys($breakpoints){
 		$suffix: breakpoint-suffix($breakpoint);
-		.row-divider#{$suffix}{ @include row-divider($breakpoint,$imp: true) }
-		.row-divider#{$suffix}-o{ @include row-divider($breakpoint,$breakpoint,$imp: true) }
+		.row-breaker#{$suffix}{ @include row-breaker($breakpoint,$imp: true) }
+		.row-breaker#{$suffix}-o{ @include row-breaker($breakpoint,$breakpoint,$imp: true) }
 	}
 }
 

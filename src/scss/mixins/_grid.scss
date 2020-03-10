@@ -84,7 +84,7 @@
 	margin-left: calc(var(--colMarginX) * -1) if($imp,!important,null);
 }}
 
-@mixin row-divider($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
+@mixin row-breaker($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	display: none if($imp,!important,null);
 	@include media-breakpoint($up,$down,$breakpoints){
 		display: block                                                    if($imp,!important,null);

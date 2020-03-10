@@ -1,7 +1,10 @@
+/// TODO: Fix colors
+/// TODO: Add css variables in separate file in components
+
 // Colors used within the framework
 
-$background-color: white !default;   // Background color of body
-$text-color:       #333 !default;    // Text color
+$background-color: white   !default; // Background color of body
+$text-color:       #333    !default; // Text color
 $accent-rgb:       55,155,255 !default; // Accent color
-$muted-rgb:        0,0,0 !default;      // Muted color
-$muted-alpha:      .5 !default;         // Muted alpha
+$muted-rgb:        0,0,0      !default; // Muted color
+$muted-alpha:      .5         !default; // Muted alpha
