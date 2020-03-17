@@ -58,7 +58,7 @@
 
 @mixin col-extrude($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
 	--colWidth: calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
-	margin:     calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) if($imp,!important,null);
+	margin:     calc(var(--colMarginY) * -1) calc(var(--colMarginX) * -1) if($imp,!important,null);
 }}
 @mixin col-extrude-x($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
 	--colWidth:   calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);

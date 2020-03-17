@@ -1,5 +1,5 @@
 /*!
- * SuperGrids.css v0.9.20            - https://g7495x.github.io/SuperGrids.css
+ * SuperGrids.css v0.9.21            - https://g7495x.github.io/SuperGrids.css
  * Licensed under Apache License 2.0 - https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE
  */
 *,
@@ -2239,27 +2239,27 @@ input[type="file"] {
 
 .col-extrude, .col-ext {
   --colWidth: calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
-  margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; }
+  margin: calc(var(--colMarginY) * -1) calc(var(--colMarginX) * -1) !important; }
 
 @media (min-width: 576px) {
   .col-extrude-sm, .col-ext-sm {
     --colWidth: calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
-    margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
+    margin: calc(var(--colMarginY) * -1) calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 768px) {
   .col-extrude-md, .col-ext-md {
     --colWidth: calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
-    margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
+    margin: calc(var(--colMarginY) * -1) calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 992px) {
   .col-extrude-lg, .col-ext-lg {
     --colWidth: calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
-    margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
+    margin: calc(var(--colMarginY) * -1) calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 1200px) {
   .col-extrude-xl, .col-ext-xl {
     --colWidth: calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
-    margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
+    margin: calc(var(--colMarginY) * -1) calc(var(--colMarginX) * -1) !important; } }
 
 .col-extrude-x, .col-ext-x {
   --colWidth:   calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
