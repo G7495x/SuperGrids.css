@@ -1,0 +1,14 @@
+@function rgb-split($color){
+	$color: rgba($color,1);
+	@return "#{red($color)},#{green($color)},#{blue($color)}";
+}
+
+@mixin bg-color($color){
+	--bgRGB: #{rgb-split($color)};
+	background-color: rgba(var(--bgRGB),1);
+}
+
+@mixin text-color($color){
+	--textRGB: #{rgb-split($color)};
+	color: rgba(var(--textRGB),1);
+}

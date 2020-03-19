@@ -22,6 +22,7 @@
 
 // VARIABLES
 
+@import 'variables/general';    // General variables
 @import 'variables/colors';     // Colors used within the framework
 @import 'variables/typography'; // Font related properties
 @import 'variables/layout';     // Grid and spacing properties
@@ -40,3 +41,4 @@
 @import 'mixins/spacing';
 @import 'mixins/position';
 @import 'mixins/display';
+@import 'mixins/colors';

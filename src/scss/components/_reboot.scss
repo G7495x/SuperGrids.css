@@ -24,8 +24,9 @@
 
 /// TODO: Check if really needed
 :root{
-	--accentRgb:  #{$accent-rgb};
-	--mutedRgb:   #{$muted-rgb};
+	--bgRGB:      #{rgb-split($bg-color)};
+	--textRGB:    #{rgb-split($text-color)};
+	--accentRGB:  #{rgb-split($accent-color)};
 	--mutedAlpha: #{$muted-alpha};
 }
 
@@ -50,10 +51,12 @@ nav,
 section{ display: block } // Shim for "new" HTML5 structural elements to display correctly
 
 body{
-	margin: 0;                           // Remove body margin in all browsers
-	background-color: $background-color; // As a best practice, apply a default `background-color`
-	color: $text-color;                  // As a best practice, apply a default `color`
-	text-align: left;                    // Set an explicit initial text-align value so that we can later use the `inherit` value on things like `<th>` elements.
+	margin: 0;                              // Remove body margin in all browsers
+	background-color: $bg-color;            // As a best practice, apply a default `background-color`
+	background-color: rgba(var(--bgRGB),1);
+	color: $text-color;                     // As a best practice, apply a default `color`
+	color: rgba(var(--textRGB),1);
+	text-align: left;                       // Set an explicit initial text-align value so that we can later use the `inherit` value on things like `<th>` elements.
 }
 
 // Future-proof rule: in browsers that support :focus-visible, suppress the focus outline on elements that programmatically receive focus but wouldn't normally show a visible focus outline. In general, this would mean that the outline is only applied if the interaction that led to the element receiving programmatic focus was a keyboard interaction, or the browser has somehow determined that the user is primarily a keyboard user and/or wants focus outlines to always be presented.
