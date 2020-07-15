@@ -3,12 +3,12 @@
 	@return "#{red($color)},#{green($color)},#{blue($color)}";
 }
 
-@mixin bg-color($color){
+@mixin bg-color($color,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
 	--bgRGB: #{rgb-split($color)};
-	background-color: rgba(var(--bgRGB),1);
-}
+	background-color: rgba(var(--bgRGB),1) if($imp,!important,null);
+}}
 
-@mixin text-color($color){
+@mixin text-color($color,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
 	--textRGB: #{rgb-split($color)};
-	color: rgba(var(--textRGB),1);
-}
+	color: rgba(var(--textRGB),1) if($imp,!important,null);
+}}

@@ -84,6 +84,14 @@
 	margin-left: calc(var(--colMarginX) * -1) if($imp,!important,null);
 }}
 
+@mixin col-ext  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include col-extrude  ($up,$down,$breakpoints,$imp) }
+@mixin col-ext-x($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include col-extrude-x($up,$down,$breakpoints,$imp) }
+@mixin col-ext-y($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include col-extrude-y($up,$down,$breakpoints,$imp) }
+@mixin col-ext-t($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include col-extrude-t($up,$down,$breakpoints,$imp) }
+@mixin col-ext-r($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include col-extrude-r($up,$down,$breakpoints,$imp) }
+@mixin col-ext-b($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include col-extrude-b($up,$down,$breakpoints,$imp) }
+@mixin col-ext-l($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include col-extrude-l($up,$down,$breakpoints,$imp) }
+
 @mixin row-breaker($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	display: none if($imp,!important,null);
 	@include media-breakpoint($up,$down,$breakpoints){
