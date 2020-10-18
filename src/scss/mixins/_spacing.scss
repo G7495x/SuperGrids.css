@@ -40,25 +40,20 @@
 // Container is used for centering webpage content on big displays.
 // NOT THE SAME AS BOOTSTRAP CONTAINER.
 @mixin container($name: xl,$breakpoints: $grid-breakpoints,$imp: false){
-	@include media-breakpoint-up($name,$breakpoints){
-		margin-right: calc(50% - #{breakpoint-min($name,$breakpoints)/2}) if($imp,!important,null);
-		margin-left: calc(50% - #{breakpoint-min($name,$breakpoints)/2}) if($imp,!important,null);
-	}
+	max-width: breakpoint-min($name,$breakpoints) if($imp,!important,null);
+	margin-right: auto if($imp,!important,null);
+	margin-left: auto if($imp,!important,null);
 }
 
 // Same as container, but with border instead of margin
 // Caution: Should be used only with overlay scrollbars
 @mixin container-b($name: xl,$breakpoints: $grid-breakpoints,$imp: false){
-	@include media-breakpoint-up($name,$breakpoints){
-		border-right: calc(50vw - #{breakpoint-min($name,$breakpoints)/2}) solid transparent if($imp,!important,null);
-		border-left: calc(50vw - #{breakpoint-min($name,$breakpoints)/2}) solid transparent if($imp,!important,null);
-	}
+	border-right: calc(50vw - #{breakpoint-min($name,$breakpoints)/2}) solid transparent if($imp,!important,null);
+	border-left: calc(50vw - #{breakpoint-min($name,$breakpoints)/2}) solid transparent if($imp,!important,null);
 }
 
 // Same as container, but with padding instead of margin
 @mixin container-p($name: xl,$breakpoints: $grid-breakpoints,$imp: false){
-	@include media-breakpoint-up($name,$breakpoints){
-		padding-right: calc(50% - #{breakpoint-min($name,$breakpoints)/2}) if($imp,!important,null);
-		padding-left: calc(50% - #{breakpoint-min($name,$breakpoints)/2}) if($imp,!important,null);
-	}
+	padding-right: calc(50% - #{breakpoint-min($name,$breakpoints)/2}) if($imp,!important,null);
+	padding-left: calc(50% - #{breakpoint-min($name,$breakpoints)/2}) if($imp,!important,null);
 }

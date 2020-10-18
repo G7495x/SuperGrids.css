@@ -1,5 +1,5 @@
 /*!
- * SuperGrids.css v0.9.24            - https://g7495x.github.io/SuperGrids.css
+ * SuperGrids.css v0.9.25            - https://g7495x.github.io/SuperGrids.css
  * Licensed under Apache License 2.0 - https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE
  */
 *,
@@ -2314,13 +2314,15 @@ input[type="file"] {
 
 .col-extrude-r, .col-ext-r {
   --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-  margin-right: calc(var(--colMarginX) * -1) !important; }
+  margin-right: calc(var(--colMarginX) * -1) !important;
+  margin-left: var(--colMarginX) !important; }
 
 .col-extrude-b, .col-ext-b {
   margin-bottom: calc(var(--colMarginY) * -1) !important; }
 
 .col-extrude-l, .col-ext-l {
-  --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+  --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+  margin-right: var(--colMarginX) !important;
   margin-left: calc(var(--colMarginX) * -1) !important; }
 
 @media (min-width: 576px) {
@@ -2328,11 +2330,13 @@ input[type="file"] {
     margin-top: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-r-sm, .col-ext-r-sm {
     --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-    margin-right: calc(var(--colMarginX) * -1) !important; }
+    margin-right: calc(var(--colMarginX) * -1) !important;
+    margin-left: var(--colMarginX) !important; }
   .col-extrude-b-sm, .col-ext-b-sm {
     margin-bottom: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-l-sm, .col-ext-l-sm {
-    --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+    --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+    margin-right: var(--colMarginX) !important;
     margin-left: calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 768px) {
@@ -2340,11 +2344,13 @@ input[type="file"] {
     margin-top: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-r-md, .col-ext-r-md {
     --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-    margin-right: calc(var(--colMarginX) * -1) !important; }
+    margin-right: calc(var(--colMarginX) * -1) !important;
+    margin-left: var(--colMarginX) !important; }
   .col-extrude-b-md, .col-ext-b-md {
     margin-bottom: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-l-md, .col-ext-l-md {
-    --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+    --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+    margin-right: var(--colMarginX) !important;
     margin-left: calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 992px) {
@@ -2352,11 +2358,13 @@ input[type="file"] {
     margin-top: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-r-lg, .col-ext-r-lg {
     --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-    margin-right: calc(var(--colMarginX) * -1) !important; }
+    margin-right: calc(var(--colMarginX) * -1) !important;
+    margin-left: var(--colMarginX) !important; }
   .col-extrude-b-lg, .col-ext-b-lg {
     margin-bottom: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-l-lg, .col-ext-l-lg {
-    --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+    --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+    margin-right: var(--colMarginX) !important;
     margin-left: calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 1200px) {
@@ -2364,11 +2372,13 @@ input[type="file"] {
     margin-top: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-r-xl, .col-ext-r-xl {
     --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-    margin-right: calc(var(--colMarginX) * -1) !important; }
+    margin-right: calc(var(--colMarginX) * -1) !important;
+    margin-left: var(--colMarginX) !important; }
   .col-extrude-b-xl, .col-ext-b-xl {
     margin-bottom: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-l-xl, .col-ext-l-xl {
-    --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+    --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+    margin-right: var(--colMarginX) !important;
     margin-left: calc(var(--colMarginX) * -1) !important; } }
 
 @media (max-width: 575.98px) {
@@ -2446,11 +2456,13 @@ input[type="file"] {
     margin-top: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-r-xs-o, .col-ext-r-xs-o {
     --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-    margin-right: calc(var(--colMarginX) * -1) !important; }
+    margin-right: calc(var(--colMarginX) * -1) !important;
+    margin-left: var(--colMarginX) !important; }
   .col-extrude-b-xs-o, .col-ext-b-xs-o {
     margin-bottom: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-l-xs-o, .col-ext-l-xs-o {
-    --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+    --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+    margin-right: var(--colMarginX) !important;
     margin-left: calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -2458,11 +2470,13 @@ input[type="file"] {
     margin-top: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-r-sm-o, .col-ext-r-sm-o {
     --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-    margin-right: calc(var(--colMarginX) * -1) !important; }
+    margin-right: calc(var(--colMarginX) * -1) !important;
+    margin-left: var(--colMarginX) !important; }
   .col-extrude-b-sm-o, .col-ext-b-sm-o {
     margin-bottom: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-l-sm-o, .col-ext-l-sm-o {
-    --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+    --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+    margin-right: var(--colMarginX) !important;
     margin-left: calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -2470,11 +2484,13 @@ input[type="file"] {
     margin-top: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-r-md-o, .col-ext-r-md-o {
     --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-    margin-right: calc(var(--colMarginX) * -1) !important; }
+    margin-right: calc(var(--colMarginX) * -1) !important;
+    margin-left: var(--colMarginX) !important; }
   .col-extrude-b-md-o, .col-ext-b-md-o {
     margin-bottom: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-l-md-o, .col-ext-l-md-o {
-    --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+    --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+    margin-right: var(--colMarginX) !important;
     margin-left: calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -2482,11 +2498,13 @@ input[type="file"] {
     margin-top: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-r-lg-o, .col-ext-r-lg-o {
     --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-    margin-right: calc(var(--colMarginX) * -1) !important; }
+    margin-right: calc(var(--colMarginX) * -1) !important;
+    margin-left: var(--colMarginX) !important; }
   .col-extrude-b-lg-o, .col-ext-b-lg-o {
     margin-bottom: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-l-lg-o, .col-ext-l-lg-o {
-    --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+    --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+    margin-right: var(--colMarginX) !important;
     margin-left: calc(var(--colMarginX) * -1) !important; } }
 
 @media (min-width: 1200px) {
@@ -2494,11 +2512,13 @@ input[type="file"] {
     margin-top: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-r-xl-o, .col-ext-r-xl-o {
     --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
-    margin-right: calc(var(--colMarginX) * -1) !important; }
+    margin-right: calc(var(--colMarginX) * -1) !important;
+    margin-left: var(--colMarginX) !important; }
   .col-extrude-b-xl-o, .col-ext-b-xl-o {
     margin-bottom: calc(var(--colMarginY) * -1) !important; }
   .col-extrude-l-xl-o, .col-ext-l-xl-o {
-    --colWidth:  calc(var(--colSize) * 100% / var(--colCount));
+    --colWidth:   calc(var(--colSize) * 100% / var(--colCount));
+    margin-right: var(--colMarginX) !important;
     margin-left: calc(var(--colMarginX) * -1) !important; } }
 
 .row-breaker {
@@ -12548,21 +12568,19 @@ input[type="file"] {
     clear: both;
     padding-top: calc(100% / var(--aspectRatio)); }
 
-@media (min-width: 1200px) {
-  .container {
-    margin-right: calc(50% - 600px) !important;
-    margin-left: calc(50% - 600px) !important; } }
+.container {
+  max-width: 1200px !important;
+  margin-right: auto !important;
+  margin-left: auto !important; }
 
 /* CAUTION: Should be used only with overlay scrollbars!!! */
-@media (min-width: 1200px) {
-  .container-b {
-    border-right: calc(50vw - 600px) solid transparent !important;
-    border-left: calc(50vw - 600px) solid transparent !important; } }
+.container-b {
+  border-right: calc(50vw - 600px) solid transparent !important;
+  border-left: calc(50vw - 600px) solid transparent !important; }
 
-@media (min-width: 1200px) {
-  .container-p {
-    padding-right: calc(50% - 600px) !important;
-    padding-left: calc(50% - 600px) !important; } }
+.container-p {
+  padding-right: calc(50% - 600px) !important;
+  padding-left: calc(50% - 600px) !important; }
 
 .pos-sta {
   position: static !important; }
