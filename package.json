@@ -1,7 +1,7 @@
 {
 	"name": "supergrids.css",
-	"version": "0.9.25",
-	"description": "SuperGrids.css - The Definitive Modern Grid-System for the web.",
+	"version": "0.9.26",
+	"description": "SuperGrids.css - Supercharge your layouts.",
 	"main": "",
 	"scripts": {
 		"start": "concurrently \"browser-sync start --config ./bs-config.js\" \"node-sass -w src/scss/ -r -o src/css/build/\""

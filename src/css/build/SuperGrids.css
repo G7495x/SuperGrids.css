@@ -1,5 +1,5 @@
 /*!
- * SuperGrids.css v0.9.25            - https://g7495x.github.io/SuperGrids.css
+ * SuperGrids.css v0.9.26            - https://g7495x.github.io/SuperGrids.css
  * Licensed under Apache License 2.0 - https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE
  */
 *,
@@ -2093,7 +2093,7 @@ input[type="file"] {
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
   --colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
-  flex: 0 auto !important;
+  flex: 0 0 auto !important;
   width: var(--colWidth) !important; }
 
 @media (min-width: 576px) {
@@ -2129,7 +2129,7 @@ input[type="file"] {
     --colSize: 12; }
   .col-1-sm, .col-2-sm, .col-3-sm, .col-4-sm, .col-5-sm, .col-6-sm, .col-7-sm, .col-8-sm, .col-9-sm, .col-10-sm, .col-11-sm, .col-12-sm {
     --colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
-    flex: 0 auto !important;
+    flex: 0 0 auto !important;
     width: var(--colWidth) !important; } }
 
 @media (min-width: 768px) {
@@ -2165,7 +2165,7 @@ input[type="file"] {
     --colSize: 12; }
   .col-1-md, .col-2-md, .col-3-md, .col-4-md, .col-5-md, .col-6-md, .col-7-md, .col-8-md, .col-9-md, .col-10-md, .col-11-md, .col-12-md {
     --colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
-    flex: 0 auto !important;
+    flex: 0 0 auto !important;
     width: var(--colWidth) !important; } }
 
 @media (min-width: 992px) {
@@ -2201,7 +2201,7 @@ input[type="file"] {
     --colSize: 12; }
   .col-1-lg, .col-2-lg, .col-3-lg, .col-4-lg, .col-5-lg, .col-6-lg, .col-7-lg, .col-8-lg, .col-9-lg, .col-10-lg, .col-11-lg, .col-12-lg {
     --colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
-    flex: 0 auto !important;
+    flex: 0 0 auto !important;
     width: var(--colWidth) !important; } }
 
 @media (min-width: 1200px) {
@@ -2237,7 +2237,7 @@ input[type="file"] {
     --colSize: 12; }
   .col-1-xl, .col-2-xl, .col-3-xl, .col-4-xl, .col-5-xl, .col-6-xl, .col-7-xl, .col-8-xl, .col-9-xl, .col-10-xl, .col-11-xl, .col-12-xl {
     --colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
-    flex: 0 auto !important;
+    flex: 0 0 auto !important;
     width: var(--colWidth) !important; } }
 
 .col-extrude, .col-ext {
@@ -2524,7 +2524,7 @@ input[type="file"] {
 .row-breaker {
   display: none !important;
   display: block !important;
-  flex: 0 auto !important;
+  flex: 0 0 auto !important;
   width: calc(100% + var(--colMarginX) * 2) !important;
   margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; }
 
@@ -2533,7 +2533,7 @@ input[type="file"] {
   @media (min-width: 576px) {
     .row-breaker-sm {
       display: block !important;
-      flex: 0 auto !important;
+      flex: 0 0 auto !important;
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 
@@ -2542,7 +2542,7 @@ input[type="file"] {
   @media (min-width: 768px) {
     .row-breaker-md {
       display: block !important;
-      flex: 0 auto !important;
+      flex: 0 0 auto !important;
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 
@@ -2551,7 +2551,7 @@ input[type="file"] {
   @media (min-width: 992px) {
     .row-breaker-lg {
       display: block !important;
-      flex: 0 auto !important;
+      flex: 0 0 auto !important;
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 
@@ -2560,7 +2560,7 @@ input[type="file"] {
   @media (min-width: 1200px) {
     .row-breaker-xl {
       display: block !important;
-      flex: 0 auto !important;
+      flex: 0 0 auto !important;
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 
@@ -2569,7 +2569,7 @@ input[type="file"] {
   @media (max-width: 575.98px) {
     .row-breaker-xs-o {
       display: block !important;
-      flex: 0 auto !important;
+      flex: 0 0 auto !important;
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 
@@ -2578,7 +2578,7 @@ input[type="file"] {
   @media (min-width: 576px) and (max-width: 767.98px) {
     .row-breaker-sm-o {
       display: block !important;
-      flex: 0 auto !important;
+      flex: 0 0 auto !important;
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 
@@ -2587,7 +2587,7 @@ input[type="file"] {
   @media (min-width: 768px) and (max-width: 991.98px) {
     .row-breaker-md-o {
       display: block !important;
-      flex: 0 auto !important;
+      flex: 0 0 auto !important;
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 
@@ -2596,7 +2596,7 @@ input[type="file"] {
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .row-breaker-lg-o {
       display: block !important;
-      flex: 0 auto !important;
+      flex: 0 0 auto !important;
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 
@@ -2605,7 +2605,7 @@ input[type="file"] {
   @media (min-width: 1200px) {
     .row-breaker-xl-o {
       display: block !important;
-      flex: 0 auto !important;
+      flex: 0 0 auto !important;
       width: calc(100% + var(--colMarginX) * 2) !important;
       margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) !important; } }
 

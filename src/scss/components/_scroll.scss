@@ -14,3 +14,70 @@
 		.trim-y#{$suffix}{ @include trim-y }
 	}
 }
+
+// https://css-tricks.com/custom-scrollbars-in-webkit/
+// body{
+// 	@include bg-color(black);
+// 	@include text-color(white);
+// 	background-color: black !important;
+// 	// background-image: linear-gradient(gray,black);
+// 	// width: 1200px;
+// 	// overflow: overlay;
+
+// 	--scrollbarSize: 16px;
+// }
+
+// ::-webkit-scrollbar{
+// 	min-width: var(--scrollbarSize);
+// 	min-height: var(--scrollbarSize);
+// 	opacity: .1;
+// 	&:horizontal{ height: var(--scrollbarSize) }
+// 	&:vertical{ width: var(--scrollbarSize) }
+// }
+
+// ::-webkit-scrollbar-button{
+// 	width: var(--scrollbarSize);
+// 	height: var(--scrollbarSize);
+// 	border-radius: var(--scrollbarSize);
+// 	// background-color: rgba(black,.5);
+// 	background-color: rgba(var(--textRGB),.5);
+// 	// box-shadow: inset 0 0 0 1px rgba(white,.25);
+// 	box-shadow: inset 0 0 0 1px rgba(var(--bgRGB),.5);
+// 	// transition:
+// 	// 	background-color .5s,
+// 	// 	box-shadow .5s;
+// 	// &:hover{
+// 	// 	background-color: rgba(black,.25);
+// 	// 	box-shadow: inset 0 0 0 1px rgba(white,.25);
+// 	// }
+// 	&:vertical{
+// 		&:decrement{}
+// 		&::increment{}
+// 	}
+// 	&:horizontal{
+// 		&:decrement{}
+// 		&::increment{}
+// 	}
+// }
+
+// ::-webkit-scrollbar-track{
+// 	width: 2px;
+// 	height: 2px;
+// 	border-radius: 16px;
+// 	background-color: rgba(var(--textRGB),.5);
+// }
+
+// ::-webkit-scrollbar-thumb{
+// 	min-height: var(--scrollbarSize);
+// 	border-radius: var(--scrollbarSize);
+// 	// background-color: rgba(black,.5);
+// 	// background-color: rgba(var(--textRGB),.5);
+// 	background-color: rgba(var(--bgRGB),.5);
+// 	// box-shadow: inset 0 0 0 1px rgba(white,.25);
+// 	// box-shadow: inset 0 0 0 1px rgba(var(--bgRGB),.5);
+// 	box-shadow: inset 0 0 0 1px rgba(var(--textRGB),.5);
+// }
+
+// ::-webkit-scrollbar-corner{
+// 	background-color: transparent;
+// }

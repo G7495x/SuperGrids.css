@@ -39,7 +39,7 @@
 
 @mixin _col($imp: false){
 	--colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
-	flex: 0 auto           if($imp,!important,null);
+	flex: 0 0 auto         if($imp,!important,null);
 	width: var(--colWidth) if($imp,!important,null);
 }
 
@@ -98,7 +98,7 @@
 	display: none if($imp,!important,null);
 	@include media-breakpoint($up,$down,$breakpoints){
 		display: block                                                    if($imp,!important,null);
-		flex: 0 auto                                                      if($imp,!important,null);
+		flex: 0 0 auto                                                    if($imp,!important,null);
 		width: calc(100% + var(--colMarginX) * 2)                         if($imp,!important,null);
 		margin: calc(var(--colMarginX) * -1) calc(var(--colMarginY) * -1) if($imp,!important,null);
 	}
