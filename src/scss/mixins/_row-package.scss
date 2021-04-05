@@ -1,0 +1,119 @@
+@mixin row-package(
+	$columns:       $row-columns,       // Number of columns
+	$gap-step-size: $row-gap-step-size, // Size of step by which gap values are incremented (in px)
+	$gap-steps:     $row-gap-steps,     // No. of gap increments. Ex: 4 steps of 5px each gives gap-0, gap-5, gap-10, gap-15, gap-20
+	$breakpoints:   $grid-breakpoints,  // Custom breakpoints, default: $grid-breakpoints
+	$imp:           false               // Flag for !important
+){
+
+	@include all-selector{
+		--colCount:    #{$columns};
+		--colMarginX:  0px;
+		--colMarginY:  0px;
+		--colSize:     var(--colCount);
+		--colWidth:    calc(100% - var(--colMarginX) * 2);
+		--rowPaddingX: 0px;
+		--rowPaddingY: 0px;
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$prefix: breakpoint-prefix($breakpoint,$breakpoints);
+		@include media-breakpoint-up($breakpoint,$breakpoints){
+			$list: ".#{$prefix}row";
+			@for $i from 1 through $columns{
+				$list: $list+",.#{$prefix}row-#{$i}";
+				.#{$prefix}row-#{$i}>*{ --colCount: #{$i}}
+			}
+			#{$list}{ @include _row($imp: $imp); }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$prefix: breakpoint-prefix($breakpoint,$breakpoints);
+		@include media-breakpoint-up($breakpoint,$breakpoints){
+			.#{$prefix}gap  { @include gap;   }
+			.#{$prefix}gap-x{ @include gap-x; }
+			.#{$prefix}gap-y{ @include gap-y; }
+			@for $i from 0 through $gap-steps{
+				$gap: $i*$gap-step-size;
+				.#{$prefix}gap-#{$gap}{ @include gap($gap*1px); }
+			}
+			@for $i from 0 through $gap-steps{
+				$gap: $i*$gap-step-size;
+				.#{$prefix}gap-x-#{$gap}{ @include gap-x($gap*1px); }
+				.#{$prefix}gap-y-#{$gap}{ @include gap-y($gap*1px); }
+			}
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$prefix: breakpoint-prefix($breakpoint,$breakpoints);
+		@include media-breakpoint-up($breakpoint,$breakpoints){
+			.#{$prefix}col{ @include col($imp: $imp); }
+			.#{$prefix}col-auto{ @include col(auto,$imp: $imp); }
+			$list: "";
+			@for $i from 1 through $columns{
+				$list: $list+".#{$prefix}col-#{$i},";
+				.#{$prefix}col-#{$i}{ --colSize: #{$i}; }
+			}
+			#{$list}{ @include _col($imp: $imp); }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$prefix: breakpoint-prefix($breakpoint,$breakpoints);
+		@include media-breakpoint-up($breakpoint,$breakpoints){
+			.#{$prefix}col-extrude,.#{$prefix}col-ext{ @include col-extrude($imp: $imp); }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$prefix: breakpoint-prefix($breakpoint,$breakpoints);
+		@include media-breakpoint-up($breakpoint,$breakpoints){
+			.#{$prefix}col-extrude-x,.#{$prefix}col-ext-x{ @include col-extrude-x($imp: $imp); }
+			.#{$prefix}col-extrude-y,.#{$prefix}col-ext-y{ @include col-extrude-y($imp: $imp); }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$prefix: breakpoint-prefix($breakpoint,$breakpoints);
+		@include media-breakpoint-up($breakpoint,$breakpoints){
+			.#{$prefix}col-extrude-t,.#{$prefix}col-ext-t{ @include col-extrude-t($imp: $imp); }
+			.#{$prefix}col-extrude-r,.#{$prefix}col-ext-r{ @include col-extrude-r($imp: $imp); }
+			.#{$prefix}col-extrude-b,.#{$prefix}col-ext-b{ @include col-extrude-b($imp: $imp); }
+			.#{$prefix}col-extrude-l,.#{$prefix}col-ext-l{ @include col-extrude-l($imp: $imp); }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		@include media-breakpoint-only($breakpoint,$breakpoints){
+			.#{$breakpoint}-o\:col-extrude,.#{$breakpoint}-o\:col-ext{ @include col-extrude($imp: $imp); }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		@include media-breakpoint-only($breakpoint,$breakpoints){
+			.#{$breakpoint}-o\:col-extrude-x,.#{$breakpoint}-o\:col-ext-x{ @include col-extrude-x($imp: $imp); }
+			.#{$breakpoint}-o\:col-extrude-y,.#{$breakpoint}-o\:col-ext-y{ @include col-extrude-y($imp: $imp); }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		@include media-breakpoint-only($breakpoint,$breakpoints){
+			.#{$breakpoint}-o\:col-extrude-t,.#{$breakpoint}-o\:col-ext-t{ @include col-extrude-t($imp: $imp); }
+			.#{$breakpoint}-o\:col-extrude-r,.#{$breakpoint}-o\:col-ext-r{ @include col-extrude-r($imp: $imp); }
+			.#{$breakpoint}-o\:col-extrude-b,.#{$breakpoint}-o\:col-ext-b{ @include col-extrude-b($imp: $imp); }
+			.#{$breakpoint}-o\:col-extrude-l,.#{$breakpoint}-o\:col-ext-l{ @include col-extrude-l($imp: $imp); }
+		}
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		$prefix: breakpoint-prefix($breakpoint,$breakpoints);
+		.#{$prefix}row-breaker{ @include row-breaker($breakpoint,$imp: $imp); }
+	}
+
+	@each $breakpoint in map-keys($breakpoints){
+		.#{$breakpoint}-o\:row-breaker{ @include row-breaker($breakpoint,$breakpoint,$imp: $imp); }
+	}
+}
+

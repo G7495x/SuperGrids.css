@@ -1,34 +1,63 @@
+:root{
+	--easeInSine:   #{$easeInSine};
+	--easeOutSine:  #{$easeOutSine};
+	--easeSine:     #{$easeSine};
+	--easeInQuad:   #{$easeInQuad};
+	--easeOutQuad:  #{$easeOutQuad};
+	--easeQuad:     #{$easeQuad};
+	--easeInCubic:  #{$easeInCubic};
+	--easeOutCubic: #{$easeOutCubic};
+	--easeCubic:    #{$easeCubic};
+	--easeInQuart:  #{$easeInQuart};
+	--easeOutQuart: #{$easeOutQuart};
+	--easeQuart:    #{$easeQuart};
+	--easeInQuint:  #{$easeInQuint};
+	--easeOutQuint: #{$easeOutQuint};
+	--easeQuint:    #{$easeQuint};
+	--easeInExpo:   #{$easeInExpo};
+	--easeOutExpo:  #{$easeOutExpo};
+	--easeExpo:     #{$easeExpo};
+	--easeInCirc:   #{$easeInCirc};
+	--easeOutCirc:  #{$easeOutCirc};
+	--easeCirc:     #{$easeCirc};
+	--easeInBack:   #{$easeInBack};
+	--easeOutBack:  #{$easeOutBack};
+	--easeBack:     #{$easeBack};
+}
+
+@include all-selector{ @include ease-out-circ($imp: true) }
+
 @each $breakpoint in map-keys($grid-breakpoints){
-	$suffix: breakpoint-suffix($breakpoint);
+	$prefix: breakpoint-prefix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
-		.ease#{$suffix}{ @include ease($imp: true) }
-		.ease-in#{$suffix}{ @include ease-in($imp: true) }
-		.ease-out#{$suffix}{ @include ease-out($imp: true) }
-		.ease-inout#{$suffix}{ @include ease-inout($imp: true) }
-		.ease-linear#{$suffix}{ @include ease-linear($imp: true) }
-		.ease-in-sine#{$suffix}{ @include ease-in-sine($imp: true) }
-		.ease-out-sine#{$suffix}{ @include ease-out-sine($imp: true) }
-		.ease-sine#{$suffix}{ @include ease-sine($imp: true) }
-		.ease-in-quad#{$suffix}{ @include ease-in-quad($imp: true) }
-		.ease-out-quad#{$suffix}{ @include ease-out-quad($imp: true) }
-		.ease-quad#{$suffix}{ @include ease-quad($imp: true) }
-		.ease-in-cubic#{$suffix}{ @include ease-in-cubic($imp: true) }
-		.ease-out-cubic#{$suffix}{ @include ease-out-cubic($imp: true) }
-		.ease-cubic#{$suffix}{ @include ease-cubic($imp: true) }
-		.ease-in-quart#{$suffix}{ @include ease-in-quart($imp: true) }
-		.ease-out-quart#{$suffix}{ @include ease-out-quart($imp: true) }
-		.ease-quart#{$suffix}{ @include ease-quart($imp: true) }
-		.ease-in-quint#{$suffix}{ @include ease-in-quint($imp: true) }
-		.ease-out-quint#{$suffix}{ @include ease-out-quint($imp: true) }
-		.ease-quint#{$suffix}{ @include ease-quint($imp: true) }
-		.ease-in-expo#{$suffix}{ @include ease-in-expo($imp: true) }
-		.ease-out-expo#{$suffix}{ @include ease-out-expo($imp: true) }
-		.ease-expo#{$suffix}{ @include ease-expo($imp: true) }
-		.ease-in-circ#{$suffix}{ @include ease-in-circ($imp: true) }
-		.ease-out-circ#{$suffix}{ @include ease-out-circ($imp: true) }
-		.ease-circ#{$suffix}{ @include ease-circ($imp: true) }
-		.ease-in-back#{$suffix}{ @include ease-in-back($imp: true) }
-		.ease-out-back#{$suffix}{ @include ease-out-back($imp: true) }
-		.ease-back#{$suffix}{ @include ease-back($imp: true) }
+		.#{$prefix}ease           { @include ease           ($imp: true) }
+		.#{$prefix}ease-in        { @include ease-in        ($imp: true) }
+		.#{$prefix}ease-out       { @include ease-out       ($imp: true) }
+		.#{$prefix}ease-inout     { @include ease-inout     ($imp: true) }
+		.#{$prefix}ease-linear    { @include ease-linear    ($imp: true) }
+		.#{$prefix}ease-in-sine   { @include ease-in-sine   ($imp: true) }
+		.#{$prefix}ease-out-sine  { @include ease-out-sine  ($imp: true) }
+		.#{$prefix}ease-sine      { @include ease-sine      ($imp: true) }
+		.#{$prefix}ease-in-quad   { @include ease-in-quad   ($imp: true) }
+		.#{$prefix}ease-out-quad  { @include ease-out-quad  ($imp: true) }
+		.#{$prefix}ease-quad      { @include ease-quad      ($imp: true) }
+		.#{$prefix}ease-in-cubic  { @include ease-in-cubic  ($imp: true) }
+		.#{$prefix}ease-out-cubic { @include ease-out-cubic ($imp: true) }
+		.#{$prefix}ease-cubic     { @include ease-cubic     ($imp: true) }
+		.#{$prefix}ease-in-quart  { @include ease-in-quart  ($imp: true) }
+		.#{$prefix}ease-out-quart { @include ease-out-quart ($imp: true) }
+		.#{$prefix}ease-quart     { @include ease-quart     ($imp: true) }
+		.#{$prefix}ease-in-quint  { @include ease-in-quint  ($imp: true) }
+		.#{$prefix}ease-out-quint { @include ease-out-quint ($imp: true) }
+		.#{$prefix}ease-quint     { @include ease-quint     ($imp: true) }
+		.#{$prefix}ease-in-expo   { @include ease-in-expo   ($imp: true) }
+		.#{$prefix}ease-out-expo  { @include ease-out-expo  ($imp: true) }
+		.#{$prefix}ease-expo      { @include ease-expo      ($imp: true) }
+		.#{$prefix}ease-in-circ   { @include ease-in-circ   ($imp: true) }
+		.#{$prefix}ease-out-circ  { @include ease-out-circ  ($imp: true) }
+		.#{$prefix}ease-circ      { @include ease-circ      ($imp: true) }
+		.#{$prefix}ease-in-back   { @include ease-in-back   ($imp: true) }
+		.#{$prefix}ease-out-back  { @include ease-out-back  ($imp: true) }
+		.#{$prefix}ease-back      { @include ease-back      ($imp: true) }
 	}
 }

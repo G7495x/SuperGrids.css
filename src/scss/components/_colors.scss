@@ -1,0 +1,16 @@
+:root{
+	@include hsla-split($bg-color,bg);
+	@include hsla-split($text-color,text);
+	@include hsla-split($accent-color,accent);
+
+	// When :root is pos-fix (like in mobile apps), sets the unsafe areas (status bar, bottom nav bar, etc.)
+	background-color: black;
+	color: white;
+
+	--mutedAlpha: #{$muted-alpha};
+}
+
+body{
+	background-color: Hsla(var(  --bgHSL),var(  --bgA));
+	color:            Hsla(var(--textHSL),var(--textA));
+}

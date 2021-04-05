@@ -1,14 +1,26 @@
-@function rgb-split($color){
-	$color: rgba($color,1);
-	@return "#{red($color)},#{green($color)},#{blue($color)}";
+/// TODO: Maybe .bg-calc, .text-calc
+
+@mixin calc-hsl($prefix){
+	--#{$prefix}HSL:
+		var(--#{$prefix}H),
+		var(--#{$prefix}S),
+		var(--#{$prefix}L);
+}
+
+@mixin hsla-split($color,$prefix){
+	--#{$prefix}H: #{       hue($color)};
+	--#{$prefix}S: #{saturation($color)};
+	--#{$prefix}L: #{ lightness($color)};
+	--#{$prefix}A: #{     alpha($color)};
+	@include calc-hsl($prefix);
 }
 
 @mixin bg-color($color,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
-	--bgRGB: #{rgb-split($color)};
-	background-color: rgba(var(--bgRGB),1) if($imp,!important,null);
+	@include hsla-split($color,bg);
+	background-color: Hsla(var(--bgHSL),var(--bgA)) if($imp,!important,null);
 }}
 
 @mixin text-color($color,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
-	--textRGB: #{rgb-split($color)};
-	color: rgba(var(--textRGB),1) if($imp,!important,null);
+	@include hsla-split($color,text);
+	color: Hsla(var(--textHSL),var(--textA)) if($imp,!important,null);
 }}

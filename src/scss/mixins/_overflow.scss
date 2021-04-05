@@ -1,0 +1,43 @@
+@mixin scroll  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+		overflow: auto if($imp,!important,null);
+		@supports(-webkit-overflow-scrolling: touch){
+			overflow: scroll if($imp,!important,null);
+			-webkit-overflow-scrolling: touch if($imp,!important,null);
+		}
+	}
+}
+@mixin scroll-x($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+		overflow-x: auto if($imp,!important,null);
+		@supports(-webkit-overflow-scrolling: touch){
+			overflow-x: scroll if($imp,!important,null);
+			-webkit-overflow-scrolling: touch if($imp,!important,null);
+		}
+	}
+}
+@mixin scroll-y($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+		overflow-y: auto if($imp,!important,null);
+		@supports(-webkit-overflow-scrolling: touch){
+			overflow-y: scroll if($imp,!important,null);
+			-webkit-overflow-scrolling: touch if($imp,!important,null);
+		}
+	}
+}
+
+@mixin of-auto     ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow:   auto    if($imp,!important,null) }}
+@mixin of-hidden   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow:   hidden  if($imp,!important,null) }}
+@mixin of-scroll   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow:   scroll  if($imp,!important,null) }}
+@mixin of-visible  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow:   visible if($imp,!important,null) }}
+
+@mixin of-auto-x   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow-x: auto    if($imp,!important,null) }}
+@mixin of-hidden-x ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow-x: hidden  if($imp,!important,null) }}
+@mixin of-scroll-x ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow-x: scroll  if($imp,!important,null) }}
+@mixin of-visible-x($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow-x: visible if($imp,!important,null) }}
+
+@mixin of-auto-y   ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow-y: auto    if($imp,!important,null) }}
+@mixin of-hidden-y ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow-y: hidden  if($imp,!important,null) }}
+@mixin of-scroll-y ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow-y: scroll  if($imp,!important,null) }}
+@mixin of-visible-y($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ overflow-y: visible if($imp,!important,null) }}
+
+@mixin trim  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include of-hidden  ($up,$down,$breakpoints,$imp) }
+@mixin trim-x($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include of-hidden-x($up,$down,$breakpoints,$imp) }
+@mixin trim-y($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include of-hidden-y($up,$down,$breakpoints,$imp) }

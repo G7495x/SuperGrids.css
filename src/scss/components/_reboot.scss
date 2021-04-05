@@ -1,128 +1,55 @@
 // Reboot - CSS Reset
 
-// Forked & modified from Bootstrap Reboot.
-// https://github.com/twbs/bootstrap/blob/master/scss/_reboot.scss
-// Rev. Mar 12, 2019 6:16 AM PDT - 3e05d01
-// Normalize is licensed MIT. https://github.com/necolas/normalize.css
-
-/// TODO: Revise again
+// Inspired by:
+// Tailwind Preflight - https://tailwindcss.com/docs/preflight
+// Bootstrap Reboot   - https://github.com/twbs/bootstrap/blob/master/scss/_reboot.scss
+//                    - Rev. Mar 10, 2021 7:06 PM PST - 644afc2 (644afc276169fd94ee2e6c5c79df8337be1b12ed)
 
 // COMPONENTS MAP
 
 // reboot
+// ├─ colors
 // ├─ typography
 // └─ forms
 
-*,
-*::before,
-*::after{
+@include all-selector{
 	flex-shrink: 0;         // Prevent shrinking of flex elements by default in some browsers
 	box-sizing: border-box; // `width` is now not affected by `padding` or `border`
 	background-size: cover; // prevent background image distortion
 	font-size: inherit;     // Make `font-size` an inherited property
 }
 
-/// TODO: Check if really needed
 :root{
-	--bgRGB:      #{rgb-split($bg-color)};
-	--textRGB:    #{rgb-split($text-color)};
-	--accentRGB:  #{rgb-split($accent-color)};
-	--mutedAlpha: #{$muted-alpha};
+	top: env(safe-area-inset-top,0px);
+	right: env(safe-area-inset-right,0px);
+	bottom: env(safe-area-inset-bottom,0px);
+	left: env(safe-area-inset-left,0px);
+
+	touch-action: manipulation; // Reduces touch latency
+
+	@media (prefers-reduced-motion: no-preference){ scroll-behavior: smooth }
 }
 
-html{
-	font-family: sans-serif;                  // Change the default font family in all browsers
-	font-size: $font-size;                    // Initial font size of document
-	font-weight: $font-weight;                // Initial font weight of document
-	line-height: $line-height;                // Correct the line height in all browsers
-	-webkit-text-size-adjust: 100%;           // Prevent adjustments of font size after orientation changes in iOS
-	-webkit-tap-highlight-color: transparent; // Change the default tap highlight to be completely transparent in iOS
-}
-
-article,
-aside,
-figcaption,
+// Inspired by Tailwind Preflight
+h1,h2,h3,h4,h5,h6,
+p,
+ul,ol,dl,dd,
+blockquote,
 figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section{ display: block } // Shim for "new" HTML5 structural elements to display correctly
+pre,
+hr{ margin: 0 } // Remove margin to heading, paragraph, list elements. Use grid spacing / margin-padding instead
 
-body{
-	margin: 0;                              // Remove body margin in all browsers
-	background-color: $bg-color;            // As a best practice, apply a default `background-color`
-	background-color: rgba(var(--bgRGB),1);
-	color: $text-color;                     // As a best practice, apply a default `color`
-	color: rgba(var(--textRGB),1);
-	text-align: left;                       // Set an explicit initial text-align value so that we can later use the `inherit` value on things like `<th>` elements.
-}
-
-// Future-proof rule: in browsers that support :focus-visible, suppress the focus outline on elements that programmatically receive focus but wouldn't normally show a visible focus outline. In general, this would mean that the outline is only applied if the interaction that led to the element receiving programmatic focus was a keyboard interaction, or the browser has somehow determined that the user is primarily a keyboard user and/or wants focus outlines to always be presented.
-// https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
-// https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/
-[tabindex="-1"]:focus:not(:focus-visible){ outline: 0 !important }
+// Change the default tap highlight to be completely transparent in iOS
+body{ -webkit-tap-highlight-color: transparent }
 
 hr{
-	height: 1px;                    // Make height 1 px
-	margin: 0;                      // Remove margin, use grid spacing / margin-padding instead
-	border: 0;                      // Remove borders
-	background-color: currentcolor; // Set background color to text color
+	height: 1px; // Make height 1 px
+	border: 0;   // Remove borders
+	background-color: Hsla(var(--textHSL),var(--mutedAlpha));
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-dl{ margin: 0 } // Remove margin to heading, paragraph, list elements. Use grid spacing / margin-padding instead
-
-p{ margin-bottom: 1em }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{ font-weight: unset } // Set headings to normal weight
-
-abbr[title],
-abbr[data-original-title]{
-	border-bottom: 0;      // Remove the bottom border in Firefox 39-
-	font-weight: bold;     // Font weight to bold
-	text-decoration: none; // Remove dotted underline
-	cursor: help;          // Add explicit cursor to indicate changed behavior
-}
-
-address{
-	font-style: normal;
-	line-height: inherit;
-}
-
-dfn{ font-style: italic }     // Add the correct font style in Android 4.3-
-b{ font-weight: bold }        // Add the correct font weight in Chrome, Edge, and Safari
-strong{ font-weight: bolder } // Add the correct font weight in Chrome, Edge, and Safari
-small{ font-size: 75% }       // Add the correct font size in all browsers
-
-// Prevent `sub` and `sup` elements from affecting the line height in all browsers
-sub,
-sup{
-	position: relative;
-	font-size: 75%;
-	line-height: 0;
-	vertical-align: baseline;
-}
-
-sub{ bottom: -.25em }
-sup{ top: -.5em }
 
 a{
-	text-decoration: none;         // Remove underline for links
+	text-decoration:  none;        // Remove underline for links
 	background-color: transparent; // Remove the gray background on active links in IE 10
 }
 
@@ -142,197 +69,26 @@ a:not([href]):not([tabindex]){
 	&:focus{ outline: 0 }
 }
 
-pre,
-code,
-kbd,
-samp{
-	font-family: monospace; // Set monospace font for relevant tags
-	font-size: 1em;         // Correct the odd `em` font sizing in all browsers
-}
-
-pre{
-	margin: 0;      // Remove margin, use grid spacing / margin-padding instead
-	overflow: auto; // Don't allow content to break outside
-}
-
-figure{ margin: 0 } // Remove margin, use grid spacing / margin-padding instead
-
-img{
-	vertical-align: middle;
-	display: block;    // Using `display: block` for grid compatability
-	border: 0;         // Remove border for `img` elements
-	object-fit: cover; // By default, set `object-fit: cover` to prevent image distortion
-}
-
-// Workaround for the SVG overflow bug in IE10/11 is still required
-// See https://github.com/twbs/bootstrap/issues/26878
-svg{
-	overflow: hidden;
-	vertical-align: middle;
-}
-
-table{ border-collapse: collapse } // Prevent double borders
-
-caption{
-	padding: 0;
-	text-align: left;
-	caption-side: bottom;
-}
-
-th{ text-align: inherit } // Matches default `<td>` alignment by inheriting from the `<body>`, or the closest parent with a set `text-align`
-
-input,
-button,
-select,
-optgroup,
-textarea,
-label,
-progress{
-	display: block;           // Using `display: block` for grid compatability
-	min-width: 0;             // Remove default min-width
-	margin: 0;                // Remove the margin in Firefox and Safari
-	border-radius: 0;         // Remove `border-radius` on all browsers
-	font-family: inherit;     // Inherit font properties
-	font-size: inherit;       // Inherit font properties
-	line-height: inherit;     // Inherit font properties
-	-webkit-appearance: none; // For consistent custom styling across all browsers
-}
-
-input,
-button,
-select,
-progress{ vertical-align: middle } // Add the correct vertical alignment in Chrome, Firefox, and Opera
-
-::-webkit-file-upload-button{
-	border-radius: 0;         // Remove `border-radius` on all browsers
-	font: inherit;            // Change font properties to `inherit` in Safari
-	-webkit-appearance: none; // Correct the inability to style clickable types in iOS and Safari
-}
-
-button,
-select{ text-transform: none } // Remove the inheritance of text transform in Firefox
-
-// Remove the inheritance of word-wrap in Safari.
-// Details at https://github.com/twbs/bootstrap/issues/24990
-select{ word-wrap: normal }
-
-// Remove inner border and padding from Firefox, but don't restore the outline like Normalize
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner{
-	border: 0;
-	padding: 0;
-}
-
-input[type="radio"],
-input[type="checkbox"]{
-	box-sizing: border-box; // Add the correct box sizing in IE 10-
-	padding: 0;             // Remove the padding in IE 10-
-}
-
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="file"]{
-	// Remove the default appearance of temporal inputs to avoid a Mobile Safari bug where setting a custom line-height prevents text from being vertically centered within the input
-	// See https://bugs.webkit.org/show_bug.cgi?id=139848 and https://github.com/twbs/bootstrap/issues/11266
-	display: flex;
-	align-items: center;
-}
-
-input[type="color"]{
-	@mixin swatch-wrapper{
-		&::-webkit-color-swatch-wrapper{ @content }
-		&::-moz-focus-inner{ @content }
-	}
-	@mixin swatch{
-		&::-webkit-color-swatch{ @content }
-		&::-moz-color-swatch{ @content }
-	}
-	@include swatch-wrapper{ padding: 0 }
-	@include swatch{
-		width: calc(100% + 8px);
-		margin: 0 -4px;
-		border: 1px solid rgba(black,.15);
-		border-radius: 4px;
-	}
-}
-
-input[type="range"]{
-	@mixin range-thumb{
-		&::-webkit-slider-thumb{ @content }
-		&::-moz-range-thumb{ @content }
-	}
-	@mixin range-track{
-		&::-webkit-slider-runnable-track{ @content }
-		&::-moz-range-track{ @content }
-	}
-	@include range-thumb{
-		-webkit-appearance: none;
-		box-sizing: border-box;
-	}
-	@include range-track{
-		display: flex;
-		align-items: center;
-	}
-	&::-moz-focus-outer{ border: 0 }
-}
-
-textarea{
-	overflow: auto;   // Remove the default vertical scrollbar in IE
-	resize: vertical; // Textareas should really only resize vertically so they don't break their (horizontal) containers
-}
-
-fieldset{
-	// Browsers set a default `min-width: min-content;` on fieldsets, unlike e.g. `<div>`s, which have `min-width: 0;` by default
-	// So we reset that to ensure fieldsets behave more like a standard block element
-	// See https://github.com/twbs/bootstrap/issues/12359 and https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
-	min-width: 0;
-	// Reset the default outline behavior of fieldsets so they don't affect page layout
-	margin: 0;
-	border: 0;
-	padding: 0;
-}
-
-legend{
+// Inspired by Tailwind Preflight
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object{
 	display: block;
-	width: 100%;
-	max-width: 100%;     // Correct the text wrapping in Edge and IE
-	padding: 0;
-	line-height: inherit;
-	color: inherit;      // Correct the color inheritance from `fieldset` elements in IE
-	white-space: normal; // Correct the text wrapping in Edge and IE
+	vertical-align: middle;
 }
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button{ height: auto } // Correct the style of increment and decrement buttons in Chrome
+img{ object-fit: cover } // By default, set `object-fit: cover` to prevent image distortion
 
-[type="search"]::-webkit-search-decoration{ -webkit-appearance: none } // Remove the inner padding in Chrome and Safari on macOS.
+// Always hide an element with the `hidden` HTML attribute (from PureCSS)
+[hidden]{ display: none !important }
 
-::-webkit-file-upload-button { font: inherit } // Change font properties to `inherit` in Safari
-
-output{ display: inline-block } // Add the correct display in all browsers
-
-summary{
-	display: list-item; // Add the correct display in all browsers
-	cursor: pointer;    // Add the correct cursor in all browsers
-}
-
-template{ display: none } // Add the correct display in IE
-
-blockquote{
-	margin: 0; // Remove margin, use grid spacing / margin-padding instead
-	>footer{   // Naming a source
-		opacity: .5;
-		&::before{ content: "\2014 \00A0" }
-	}
-}
-
-ul{ padding-left: $list-indent }
-ol{ padding-left: $list-indent }
-dd{ margin-left:  $list-indent }
+// Gets rid of the annoying outline for mouse users but preserves it for keyboard users
+*:focus:not(:focus-visible){ outline: none }
 
 // Append link URL when printing
 // @media print{
@@ -344,9 +100,36 @@ dd{ margin-left:  $list-indent }
 // 	}
 // }
 
-// Always hide an element with the `hidden` HTML attribute (from PureCSS)
-// Needed for proper display in IE 10-
-[hidden]{ display: none !important }
+// -- TABLES --------------------------------------------------------------- //
 
+table{
+	caption-side: bottom;
+	border-collapse: collapse; // Prevent double borders
+}
+
+caption{
+	padding: 0;
+	text-align: left;
+}
+
+th{
+	text-align: inherit;              // Matches default `<td>` alignment by inheriting `text-align`
+	text-align: -webkit-match-parent; // Fix alignment for Safari
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th{
+	border-color: inherit;
+	border-style: solid;
+	border-width: 0;
+}
+
+// -- COMPONENTS ----------------------------------------------------------- //
+
+@import "colors";
 @import "typography";
 @import "forms";

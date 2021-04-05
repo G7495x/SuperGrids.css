@@ -1,83 +1,91 @@
+:root{
+	--containerWidth: #{breakpoint-min($container-breakpoint,$grid-breakpoints)};
+}
+
 @each $breakpoint in map-keys($grid-breakpoints){
-	$suffix: breakpoint-suffix($breakpoint);
+	$prefix: breakpoint-prefix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
 		// Space-Between Rules
 		@for $size from 0 through $spacing-steps{
 			$size: $size*$spacing-step-size;
-			.spb-x-#{$size}#{$suffix}{ @include spb-x($size*1px) }
-			.spb-y-#{$size}#{$suffix}{ @include spb-y($size*1px) }
+			.#{$prefix}ingap-t-#{$size}{ @include ingap-t($size*1px,$imp: true); }
+			.#{$prefix}ingap-r-#{$size}{ @include ingap-r($size*1px,$imp: true); }
+			.#{$prefix}ingap-b-#{$size}{ @include ingap-b($size*1px,$imp: true); }
+			.#{$prefix}ingap-l-#{$size}{ @include ingap-l($size*1px,$imp: true); }
 		}
 
-		.m-auto#{$suffix}{ @include m(auto,$imp: true) }
+		.#{$prefix}m-auto{ @include m(auto,$imp: true); }
 		@for $size from 0 through $spacing-steps{
 			$size: $size*$spacing-step-size;
-			.m-#{$size}#{$suffix}{ @include m($size*1px,$imp: true) }
-			@if $size!=0{ .m-m#{$size}#{$suffix}{ @include m($size*-1px,$imp: true) } }
-			.b-#{$size}#{$suffix}{ @include b($size*1px,$imp: true) }
-			.p-#{$size}#{$suffix}{ @include p($size*1px,$imp: true) }
+			.#{$prefix}m-#{$size}{ @include m($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}m-m#{$size}{ @include m($size*-1px,$imp: true); }}
+			// .#{$prefix}b-#{$size}{ @include b($size*1px,$imp: true); }
+			.#{$prefix}p-#{$size}{ @include p($size*1px,$imp: true); }
 		}
 
-		.mx-auto#{$suffix}{ @include mx(auto,$imp: true) }
+		.#{$prefix}mx-auto{ @include mx(auto,$imp: true); }
 		@for $size from 0 through $spacing-steps{
 			$size: $size*$spacing-step-size;
-			.mx-#{$size}#{$suffix}{ @include mx($size*1px,$imp: true) }
-			@if $size!=0{ .mx-m#{$size}#{$suffix}{ @include mx($size*-1px,$imp: true) } }
-			.bx-#{$size}#{$suffix}{ @include bx($size*1px,$imp: true) }
-			.px-#{$size}#{$suffix}{ @include px($size*1px,$imp: true) }
+			.#{$prefix}mx-#{$size}{ @include mx($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}mx-m#{$size}{ @include mx($size*-1px,$imp: true); }}
+			// .#{$prefix}bx-#{$size}{ @include bx($size*1px,$imp: true); }
+			.#{$prefix}px-#{$size}{ @include px($size*1px,$imp: true); }
 		}
 
-		.my-auto#{$suffix}{ @include my(auto,$imp: true) }
+		.#{$prefix}my-auto{ @include my(auto,$imp: true); }
 		@for $size from 0 through $spacing-steps{
 			$size: $size*$spacing-step-size;
-			.my-#{$size}#{$suffix}{ @include my($size*1px,$imp: true) }
-			@if $size!=0{ .my-m#{$size}#{$suffix}{ @include my($size*-1px,$imp: true) } }
-			.by-#{$size}#{$suffix}{ @include by($size*1px,$imp: true) }
-			.py-#{$size}#{$suffix}{ @include py($size*1px,$imp: true) }
+			.#{$prefix}my-#{$size}{ @include my($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}my-m#{$size}{ @include my($size*-1px,$imp: true); }}
+			// .#{$prefix}by-#{$size}{ @include by($size*1px,$imp: true); }
+			.#{$prefix}py-#{$size}{ @include py($size*1px,$imp: true); }
 		}
 
-		.mt-auto#{$suffix}{ @include mt(auto,$imp: true) }
+		.#{$prefix}mt-auto{ @include mt(auto,$imp: true); }
 		@for $size from 0 through $spacing-steps{
 			$size: $size*$spacing-step-size;
-			.mt-#{$size}#{$suffix}{ @include mt($size*1px,$imp: true) }
-			@if $size!=0{ .mt-m#{$size}#{$suffix}{ @include mt($size*-1px,$imp: true) } }
-			.bt-#{$size}#{$suffix}{ @include bt($size*1px,$imp: true) }
-			.pt-#{$size}#{$suffix}{ @include pt($size*1px,$imp: true) }
+			.#{$prefix}mt-#{$size}{ @include mt($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}mt-m#{$size}{ @include mt($size*-1px,$imp: true); }}
+			// .#{$prefix}bt-#{$size}{ @include bt($size*1px,$imp: true); }
+			.#{$prefix}pt-#{$size}{ @include pt($size*1px,$imp: true); }
 		}
 
-		.mr-auto#{$suffix}{ @include mr(auto,$imp: true) }
+		.#{$prefix}mr-auto{ @include mr(auto,$imp: true); }
 		@for $size from 0 through $spacing-steps{
 			$size: $size*$spacing-step-size;
-			.mr-#{$size}#{$suffix}{ @include mr($size*1px,$imp: true) }
-			@if $size!=0{ .mr-m#{$size}#{$suffix}{ @include mr($size*-1px,$imp: true) } }
-			.br-#{$size}#{$suffix}{ @include br($size*1px,$imp: true) }
-			.pr-#{$size}#{$suffix}{ @include pr($size*1px,$imp: true) }
+			.#{$prefix}mr-#{$size}{ @include mr($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}mr-m#{$size}{ @include mr($size*-1px,$imp: true); }}
+			// .#{$prefix}br-#{$size}{ @include br($size*1px,$imp: true); }
+			.#{$prefix}pr-#{$size}{ @include pr($size*1px,$imp: true); }
 		}
 
-		.mb-auto#{$suffix}{ @include mb(auto,$imp: true) }
+		.#{$prefix}mb-auto{ @include mb(auto,$imp: true); }
 		@for $size from 0 through $spacing-steps{
 			$size: $size*$spacing-step-size;
-			.mb-#{$size}#{$suffix}{ @include mb($size*1px,$imp: true) }
-			@if $size!=0{ .mb-m#{$size}#{$suffix}{ @include mb($size*-1px,$imp: true) } }
-			.bb-#{$size}#{$suffix}{ @include bb($size*1px,$imp: true) }
-			.pb-#{$size}#{$suffix}{ @include pb($size*1px,$imp: true) }
+			.#{$prefix}mb-#{$size}{ @include mb($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}mb-m#{$size}{ @include mb($size*-1px,$imp: true); }}
+			// .#{$prefix}bb-#{$size}{ @include bb($size*1px,$imp: true); }
+			.#{$prefix}pb-#{$size}{ @include pb($size*1px,$imp: true); }
 		}
 
-		.ml-auto#{$suffix}{ @include ml(auto,$imp: true) }
+		.#{$prefix}ml-auto{ @include ml(auto,$imp: true); }
 		@for $size from 0 through $spacing-steps{
 			$size: $size*$spacing-step-size;
-			.ml-#{$size}#{$suffix}{ @include ml($size*1px,$imp: true) }
-			@if $size!=0{ .ml-m#{$size}#{$suffix}{ @include ml($size*-1px,$imp: true) } }
-			.bl-#{$size}#{$suffix}{ @include bl($size*1px,$imp: true) }
-			.pl-#{$size}#{$suffix}{ @include pl($size*1px,$imp: true) }
+			.#{$prefix}ml-#{$size}{ @include ml($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}ml-m#{$size}{ @include ml($size*-1px,$imp: true); }}
+			// .#{$prefix}bl-#{$size}{ @include bl($size*1px,$imp: true); }
+			.#{$prefix}pl-#{$size}{ @include pl($size*1px,$imp: true); }
 		}
+
+		.#{$prefix}container   { @include container($imp: true)   }
+		.#{$prefix}container-p { @include container-p($imp: true); }
+		@each $name in map-keys($grid-breakpoints){ @if breakpoint-min($name,$grid-breakpoints)!=null{
+			.#{$prefix}container-#{$name}   { @include container($name,$imp: true); }
+			.#{$prefix}container-p-#{$name} { @include container-p($name,$imp: true); }
+		}}
+		.#{$prefix}container-fluid   { @include container-fluid($imp: true); }
+		.#{$prefix}container-p-fluid { @include container-p-fluid($imp: true); }
 	}
 }
 
 .square{ @include fix-aspect }
-
-.container{ @include container($imp: true) }
-
-/* CAUTION: Should be used only with overlay scrollbars!!! */
-.container-b{ @include container-b($imp: true) }
-
-.container-p{ @include container-p($imp: true) }

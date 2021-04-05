@@ -1,0 +1,50 @@
+@mixin all-selector{
+	*,
+	*::before,
+	*::after{ @content }
+}
+
+@mixin hover{
+	@media (hover: hover){
+		&:hover{ @content }
+	}
+}
+
+@mixin disabled{
+	&:disabled,
+	&[disabled]:not([disabled="false"]){ @content }
+}
+
+@mixin retina-display{
+	@media (-webkit-min-device-pixel-ratio: 2){ @content }
+}
+
+// -- BROWSER DETECT MIXINS ------------------------------------------------ //
+// https://www.browserstack.com/guide/create-browser-specific-css
+
+/// TODO: BUG Not working
+// @mixin chrome-only{
+// 	@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){ @content }
+// }
+
+@mixin firefox-only{
+	@supports (-moz-appearance: none){ @content }
+}
+
+@mixin safari-only{
+	// Safari 11+
+	@media not all and (min-resolution: .001dpcm){
+		@supports (-webkit-appearance: none) and (stroke-color: transparent){ @content }
+	}
+
+	// Safari 10.1
+	@media not all and (min-resolution: .001dpcm){
+		@supports (-webkit-appearance: none) and (not (stroke-color: transparent)){ @content }
+	}
+
+	/// TODO: BUG SASS error
+	// Safari 6.1-10.0 (but not 10.1)
+	// @media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio: 0){
+	// 	@media{ @content }
+	// }
+}

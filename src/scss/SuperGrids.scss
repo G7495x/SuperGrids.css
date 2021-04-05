@@ -1,51 +1,53 @@
 /*!
- * SuperGrids.css v0.9.26            - https://g7495x.github.io/SuperGrids.css
- * Licensed under Apache License 2.0 - https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE
+ * SuperGrids.css v1.0.0-beta.1 - https://G7495x.github.io/SuperGrids.css
+ * Licensed under MIT License   - https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE
  */
 
-/// WONT FIX: suffix to infix (bootstrap compatibility) - Not possible because of design + semantic advantage
-
 /// TODO: Forms Component (button groups, radio groups, etc.) + multi select
-/// TODO: Spacing.scss - Customizable Aspect Ratio, .square, responsive??
 /// TODO: css-grid rules
-/// TODO: cursor rules
-/// TODO: Position anchoring rules
 /// TODO: Animations
-/// TODO: Recheck names once (Understandability)
-/// TODO: !important (scroll)
-/// TODO: remove usage of vw, vh
-/// TODO: Global $imp variable
 /// TODO: bgAlpha, textAlpha
 
-/// MAYBE: SCSS to CSS Variables
-/// MAYBE: initial inherit unset
+/// MAYBE: rowPadding colMargin TRBL & m,p classes
+/// MAYBE: Global $imp variable
+/// MAYBE: CamelCase classes option (saves space, bmaybe less readable)
 
 /// TEST: Check for class duplicates in SuperGrids.css
 /// TEST: Check with custom breakpoints and breakpoint names
+/// TEST: Check for anti-patterns in CSS through regex
 
 // COMPONENTS MAP
 
 // SuperGrids
+// ├─ components/modern-normalize
 // ├─ components/reboot
+// │  ├─ components/colors
 // │  ├─ components/typography
 // │  └─ components/forms
-// ├─ components/grid
+// │
+// ├─ components/cursors
+// ├─ components/row-package
 // ├─ components/flex
 // ├─ components/v-align
-// ├─ components/scroll
+// ├─ components/overflow
 // ├─ components/easing
 // ├─ components/spacing
+// ├─ components/round
 // ├─ components/position
 // └─ components/display
 
 @import 'mixins';
 
+@import 'components/modern-normalize';
 @import 'components/reboot';
-@import 'components/grid';
+
+@import 'components/cursors';
+@import 'components/row-package';
 @import 'components/flex';
 @import 'components/v-align';
-@import 'components/scroll';
+@import 'components/overflow';
 @import 'components/easing';
 @import 'components/spacing';
+@import 'components/round';
 @import 'components/position';
 @import 'components/display';

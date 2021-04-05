@@ -19,43 +19,43 @@
 			0 0 0 1px rgba(0,0,0,.0375);
 	}
 </style>
-<body>
-	<div class="container row spc-8 spc-12-sm">
+<body style="--containerWidth: 768px">
+	<div class="container row gap-8 sm:gap-12">
 		<card></card>
-		<card class="col-md"></card>
-		<card class="col col-auto-md"></card>
+		<card class="lg:col"></card>
+		<card class="col lg:col-auto"></card>
 		<div class="row-breaker"></div>
-		<card class="card col-12 col-6-sm col-4-md"></card>
-		<card class="card col-12 col-6-sm col-4-md"></card>
-		<card class="card col-12 col-6-sm col-4-md"></card>
-		<div class="row col-6 spc-8 spc-12-sm col-extrude">
-			<card class="card col-12 col-6-sm col-12-md"></card>
-			<div class="row-breaker-md"></div>
-			<card class="card col-12 col-6-sm col-4-md"></card>
-			<card class="card col-12 col-6-sm col-4-md"></card>
-			<img class="card col-12 col-6-sm col-4-md" src="https://picsum.photos/g/200/100/?random" style="padding: 0">
+		<card class="card col-12 sm:col-6 md:col-4"></card>
+		<card class="card col-12 sm:col-6 md:col-4"></card>
+		<card class="card col-12 sm:col-6 md:col-4"></card>
+		<div class="row col-6 gap-8 sm:gap-12 col-extrude">
+			<card class="card col-12 sm:col-6 md:col-12"></card>
+			<div class="md:row-breaker"></div>
+			<card class="card col-12 sm:col-6 md:col-4"></card>
+			<card class="card col-12 sm:col-6 md:col-4"></card>
+			<img class="card col-12 sm:col-6 md:col-4" src="https://picsum.photos/g/200/100/?random" style="padding: 0">
 		</div>
-		<div class="col-6 col-extrude row row-5-sm row-6-md spc-8 spc-12-sm">
-			<div class="card col-4 col-1-sm"></div>
-			<div class="card col-4 col-1-sm"></div>
-			<div class="card col-4 col-1-sm"></div>
-			<div class="card col-6 col-1-sm"></div>
-			<div class="card col-6 col-1-sm"></div>
-			<div class="card col-12 col-5-sm col-1-md"></div>
+		<div class="col-6 col-extrude row sm:row-5 md:row-6 gap-8 sm:gap-12">
+			<div class="card col-4 sm:col-1"></div>
+			<div class="card col-4 sm:col-1"></div>
+			<div class="card col-4 sm:col-1"></div>
+			<div class="card col-6 sm:col-1"></div>
+			<div class="card col-6 sm:col-1"></div>
+			<div class="card col-12 sm:col-5 md:col-1"></div>
 		</div>
-		<div class="row col-12 col-extrude spc-8 spc-12-sm" style="height: 110px">
-			<card class="col col-2-md f-self-start"></card>
-			<card class="col col-2-md f-self-center"></card>
-			<card class="col-6 col-2-md f-self-end"></card>
+		<div class="row col-12 col-extrude gap-8 sm:gap-12" style="height: 110px">
+			<card class="col md:col-2 f-self-start"></card>
+			<card class="col md:col-2 f-self-center"></card>
+			<card class="col-6 md:col-2 f-self-end"></card>
 		</div>
-		<card class="col-3 col-auto-md"></card>
-		<card class="col-auto col-3-md"></card>
+		<card class="col-3 md:col-auto"></card>
+		<card class="col-auto md:col-3"></card>
 		<div class="row-breaker"></div>
-		<card class="col-3 col-md"></card>
-		<card class="col col-3-md"></card>
+		<card class="col-3 md:col"></card>
+		<card class="col md:col-3"></card>
 		<div class="row-breaker"></div>
 		<div class="card hide">Hello</div>
-		<div class="spb-y-10">
+		<div class="d-flex ingap-r-10 lg:f-vert lg:ingap-r-0 lg:ingap-b-10">
 			<card></card>
 			<card></card>
 			<card></card>
@@ -67,10 +67,49 @@
 		</div>
 	</div>
 	<card class="col-6">Col without row</card>
-	<row class="row spc-12">
+	<row class="row gap-12">
 		<card class="col-4 col-extrude-l col-extrude-r"></card>
 		<card class="col-4 col-extrude-l col-extrude-t"></card>
 		<card class="col-4 col-extrude-l col-extrude-b"></card>
 	</row>
+	<div class="row gap-12 container">
+		<card class="row gap">
+			<card class="row">
+				<card class="col-4"></card>
+				<card class="col-4"></card>
+				<card class="col-4"></card>
+			</card>
+			<card class="col"></card>
+			<card class="col"></card>
+		</card>
+		<card class="col"></card>
+	</div>
+	<card class="container col-2"></card>
+	<div class="row gap-12"><card class="container col-2"></card></div>
+	<div class="row gap-12"><card class="container-xl col-2"></card></div>
+	<card class="row gap-12 container-p"><div>row container-p</div></card>
+	<card class="col-8 row gap-12">
+		<card class="container-sm"></card>
+	</card>
+	<card class="col-8 row gap-12">
+		<card style="width: 256px"></card>
+		<card class="container-sm"></card>
+	</card>
+	<card class="col-8 row gap-12">
+		<card style="width: 256px"></card>
+		<card class="container-p-sm col"><card></card></card>
+	</card>
+	<card class="col-8 row gap-12">
+		<card style="width: 256px"></card>
+		<card class="container-sm col"><card></card></card>
+		<card class="container-sm col-auto"><card></card></card>
+	</card>
+	<card>
+		<div class="layered">
+			<h1 class="pos-sta">A</h1>
+			<h1>B</h1>
+			<h1>C</h1>
+		</div>
+	</card>
 </body>
 </html>

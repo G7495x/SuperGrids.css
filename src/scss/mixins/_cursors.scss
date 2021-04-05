@@ -1,0 +1,21 @@
+@mixin cur-a($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: auto          if($imp,!important,null) }}
+@mixin cur-d($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: default       if($imp,!important,null) }}
+@mixin cur-p($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: pointer       if($imp,!important,null) }}
+@mixin cur-t($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: text          if($imp,!important,null) }}
+@mixin cur-m($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: move          if($imp,!important,null) }}
+@mixin cur-g($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: grab          if($imp,!important,null) }}
+@mixin cur-w($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: wait          if($imp,!important,null) }}
+@mixin cur-c($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: cell          if($imp,!important,null) }}
+@mixin cur-l($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: progress      if($imp,!important,null) }}
+@mixin cur-h($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: help          if($imp,!important,null) }}
+@mixin cur-x($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: crosshair     if($imp,!important,null) }}
+
+@mixin cur-no($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: not-allowed   if($imp,!important,null) }}
+@mixin cur-rx($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: ew-resize     if($imp,!important,null) }}
+@mixin cur-ry($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: ns-resize     if($imp,!important,null) }}
+@mixin cur-gg($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: grabbing      if($imp,!important,null) }}
+@mixin cur-tv($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: vertical-text if($imp,!important,null) }}
+
+@mixin cur-nesw($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: nesw-resize if($imp,!important,null) }}
+@mixin cur-nwse($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: nwse-resize if($imp,!important,null) }}
+@mixin cur-none($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ cursor: none        if($imp,!important,null) }}

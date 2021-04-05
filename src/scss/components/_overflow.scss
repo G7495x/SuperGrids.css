@@ -1,0 +1,29 @@
+@each $breakpoint in map-keys($grid-breakpoints){
+	$prefix: breakpoint-prefix($breakpoint);
+	@include media-breakpoint-up($breakpoint){
+		.#{$prefix}scroll  { @include scroll($imp: true);   }
+		.#{$prefix}scroll-x{ @include scroll-x($imp: true); }
+		.#{$prefix}scroll-y{ @include scroll-y($imp: true); }
+
+		.#{$prefix}of-auto   { @include of-auto($imp: true);      }
+		.#{$prefix}of-hidden { @include of-hidden($imp: true);    }
+		.#{$prefix}of-scroll { @include of-scroll($imp: true);    }
+		.#{$prefix}of-visible{ @include of-visible($imp: true);   }
+
+		.#{$prefix}of-auto-x   { @include of-auto-x($imp: true);    }
+		.#{$prefix}of-hidden-x { @include of-hidden-x($imp: true);  }
+		.#{$prefix}of-scroll-x { @include of-scroll-x($imp: true);  }
+		.#{$prefix}of-visible-x{ @include of-visible-x($imp: true); }
+
+		.#{$prefix}of-auto-y   { @include of-auto-y($imp: true);    }
+		.#{$prefix}of-hidden-y { @include of-hidden-y($imp: true);  }
+		.#{$prefix}of-scroll-y { @include of-scroll-y($imp: true);  }
+		.#{$prefix}of-visible-y{ @include of-visible-y($imp: true); }
+
+		.#{$prefix}trim  { @include trim($imp: true);   }
+		.#{$prefix}trim-x{ @include trim-x($imp: true); }
+		.#{$prefix}trim-y{ @include trim-y($imp: true); }
+	}
+}
+
+/// TODO: https://css-tricks.com/custom-scrollbars-in-webkit/

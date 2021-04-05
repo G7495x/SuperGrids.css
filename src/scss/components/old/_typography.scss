@@ -11,10 +11,14 @@
 	--lh:         #{$line-height};
 	--listIndent: #{$list-indent};
 
+	font-family: sans-serif;   // Change the default font family in all browsers
 	font-size:   $font-size;   // Initial font size of document
 	font-weight: $font-weight; // Initial font weight of document
 	line-height: var(--lh);    // Correct the line height in all browsers
 	text-align:  left;         // Set an explicit initial text-align value so that we can later use the `inherit` value on things like `<th>` elements.
+	-moz-tab-size: 4;
+	tab-size: 4;
+	-webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
 }
 
 h1,
@@ -60,12 +64,28 @@ blockquote{
 	}
 }
 
-small{ font-size: 75% } // Add the correct font size in all browsers
+b      { font-weight: bold   } // Add the correct font weight in Chrome, Edge, and Safari
+strong { font-weight: bolder } // Add the correct font weight in Chrome, Edge, and Safari
+small  { font-size:   75%    } // Add the correct font size in all browsers
+
+// Prevent `sub` and `sup` elements from affecting the line height in all browsers
+sub,
+sup{
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sub{ bottom: -.25em }
+sup{ top:    -.5em  }
 
 pre,
 code,
 kbd,
 samp{
+	font-family: monospace; // Set monospace font for relevant tags
+	font-size: 1em;         // Correct the odd `em` font sizing in all browsers
 	direction: ltr #{"/* rtl:ignore */"};
 	unicode-bidi: bidi-override;
 }
@@ -83,11 +103,13 @@ pre{
 
 code{ word-wrap: break-word }
 
-// -- CLASSES -------------------------------------------------------------- //
+// ------------------------------------------------------------------------- //
 
 @each $breakpoint in map-keys($grid-breakpoints){
 	$prefix: breakpoint-prefix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
+		// .#{$prefix}text-show { @include text-show ($imp: true) } // This must be on top // TODO: Remove
+
 		.#{$prefix}h0 { @include h0 ($imp: true); }
 		.#{$prefix}h1 { @include h1 ($imp: true); }
 		.#{$prefix}h2 { @include h2 ($imp: true); }
@@ -133,5 +155,7 @@ code{ word-wrap: break-word }
 
 		.#{$prefix}text-muted   { @include text-muted   ($imp: true); }
 		.#{$prefix}text-unmuted { @include text-unmuted ($imp: true); }
+
+		// .#{$prefix}text-hide { @include text-hide ($imp: true) } // TODO: Remove
 	}
 }

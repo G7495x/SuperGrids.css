@@ -1,43 +1,33 @@
-/// MAYBE: --gap-x, --gap-y for understandability
-
-@mixin _row($imp: false){
-	display: flex                                  if($imp,!important,null);
-	flex-wrap: wrap                                if($imp,!important,null);
-	padding: var(--rowPaddingY) var(--rowPaddingX) if($imp,!important,null);
+@mixin _row($imp: false){ // Row mixin without `--colCount`
+	display: flex                                    if($imp,!important,null);
+	flex-wrap: wrap                                  if($imp,!important,null);
+	padding: var(--rowPaddingY) var(--rowPaddingX)   if($imp,!important,null);
 	&>*{ margin: var(--colMarginY) var(--colMarginX) if($imp,!important,null) }
 }
 
 @mixin row($size: null,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
 	@include _row($imp);
-	@if $size{ &>*{ --colCount: #{$size} }}
+	@if $size{ &>*{ --colCount: #{$size}}}
 }}
 
-@mixin spc($gap,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
-	--rowPaddingX: #{$gap/2};
-	--rowPaddingY: #{$gap/2};
+@mixin gap($gap-y: null,$gap-x: $gap-y,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
+	--rowPaddingY: #{if($gap-y!=null,#{$gap-y/2},inherit)};
+	--rowPaddingX: #{if($gap-x!=null,#{$gap-x/2},inherit)};
 	&>*{
-		--colMarginX: #{$gap/2};
-		--colMarginY: #{$gap/2};
+		--colMarginY: #{if($gap-y!=null,#{$gap-y/2},inherit)};
+		--colMarginX: #{if($gap-x!=null,#{$gap-x/2},inherit)};
 	}
 }}
-@mixin spc-x($gap-x,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
-	--rowPaddingX:     #{$gap-x/2};
-	&>*{ --colMarginX: #{$gap-x/2}}
+@mixin gap-x($gap-x: null,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
+	--rowPaddingX: #{if($gap-x!=null,#{$gap-x/2},inherit)};
+	&>*{ --colMarginX: #{if($gap-x!=null,#{$gap-x/2},inherit)}; }
 }}
-@mixin spc-y($gap-y,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
-	--rowPaddingY:     #{$gap-y/2};
-	&>*{ --colMarginY: #{$gap-y/2}}
-}}
-@mixin spc-xy($gap-x,$gap-y,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
-	--rowPaddingX: #{$gap-x/2};
-	--rowPaddingY: #{$gap-y/2};
-	&>*{
-		--colMarginX: #{$gap-x/2};
-		--colMarginY: #{$gap-y/2};
-	}
+@mixin gap-y($gap-y: null,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
+	--rowPaddingY: #{if($gap-y!=null,#{$gap-y/2},inherit)};
+	&>*{ --colMarginY: #{if($gap-y!=null,#{$gap-y/2},inherit)}; }
 }}
 
-@mixin _col($imp: false){
+@mixin _col($imp: false){ // Col mixin without `--colSize`
 	--colWidth: calc(var(--colSize) * 100% / var(--colCount) - var(--colMarginX) * 2);
 	flex: 0 0 auto         if($imp,!important,null);
 	width: var(--colWidth) if($imp,!important,null);
@@ -56,7 +46,7 @@
 	}
 }}
 
-@mixin col-extrude($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+@mixin col-extrude  ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
 	--colWidth: calc(var(--colSize) * 100% / var(--colCount) + var(--colMarginX) * 2);
 	margin:     calc(var(--colMarginY) * -1) calc(var(--colMarginX) * -1) if($imp,!important,null);
 }}

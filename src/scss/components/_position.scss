@@ -1,12 +1,73 @@
 @each $breakpoint in map-keys($grid-breakpoints){
-	$suffix: breakpoint-suffix($breakpoint);
+	$prefix: breakpoint-prefix($breakpoint);
 	@include media-breakpoint-up($breakpoint){
-		.pos-sta#{$suffix}{ @include pos-sta($imp: true) }
-		.pos-rel#{$suffix}{ @include pos-rel($imp: true) }
-		.pos-abs#{$suffix}{ @include pos-abs($imp: true) }
-		.pos-fix#{$suffix}{ @include pos-fix($imp: true) }
-		.pos-sty#{$suffix}{ @include pos-sty($imp: true) }
+		.#{$prefix}layered{ @include layered($imp: true); }
 
-		.stretch-to-fit#{$suffix}{ @include stretch-to-fit }
+		.#{$prefix}pos-sta{ @include pos-sta($imp: true); }
+		.#{$prefix}pos-rel{ @include pos-rel($imp: true); }
+		.#{$prefix}pos-abs{ @include pos-abs($imp: true); }
+		.#{$prefix}pos-fix{ @include pos-fix($imp: true); }
+		.#{$prefix}pos-sty{ @include pos-sty($imp: true); }
+
+		.#{$prefix}stretch-to-fit{ @include fit(0); }
+
+		// .#{$prefix}m-auto{ @include m(auto,$imp: true); }
+		// @for $size from 0 through $spacing-steps{
+		// 	$size: $size*$spacing-step-size;
+		// 	.#{$prefix}m-#{$size}{ @include m($size*1px,$imp: true); }
+		// 	@if $size!=0{ .#{$prefix}m-m#{$size}{ @include m($size*-1px,$imp: true); }}
+		// 	// .#{$prefix}b-#{$size}{ @include b($size*1px,$imp: true); }
+		// 	.#{$prefix}p-#{$size}{ @include p($size*1px,$imp: true); }
+		// }
+
+		/// MAYBE: Percent classes
+		.#{$prefix}fit-auto{ @include fit(auto,$imp: true); }
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}fit-#{$size}{ @include fit($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}fit-m#{$size}{ @include fit($size*-1px,$imp: true); }}
+		}
+
+		.#{$prefix}fit-x-auto{ @include fit-x(auto,$imp: true); }
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}fit-x-#{$size}{ @include fit-x($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}fit-x-m#{$size}{ @include fit-x($size*-1px,$imp: true); }}
+		}
+
+		.#{$prefix}fit-y-auto{ @include fit-y(auto,$imp: true); }
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}fit-y-#{$size}{ @include fit-y($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}fit-y-m#{$size}{ @include fit-y($size*-1px,$imp: true); }}
+		}
+
+		.#{$prefix}fit-t-auto{ @include fit-t(auto,$imp: true); }
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}fit-t-#{$size}{ @include fit-t($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}fit-t-m#{$size}{ @include fit-t($size*-1px,$imp: true); }}
+		}
+
+		.#{$prefix}fit-r-auto{ @include fit-r(auto,$imp: true); }
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}fit-r-#{$size}{ @include fit-r($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}fit-r-m#{$size}{ @include fit-r($size*-1px,$imp: true); }}
+		}
+
+		.#{$prefix}fit-b-auto{ @include fit-b(auto,$imp: true); }
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}fit-b-#{$size}{ @include fit-b($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}fit-b-m#{$size}{ @include fit-b($size*-1px,$imp: true); }}
+		}
+
+		.#{$prefix}fit-l-auto{ @include fit-l(auto,$imp: true); }
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}fit-l-#{$size}{ @include fit-l($size*1px,$imp: true); }
+			@if $size!=0{ .#{$prefix}fit-l-m#{$size}{ @include fit-l($size*-1px,$imp: true); }}
+		}
 	}
 }

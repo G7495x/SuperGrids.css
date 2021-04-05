@@ -1,14 +1,37 @@
-@mixin pos-sta($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: static if($imp,!important,null) } }
-@mixin pos-rel($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: relative if($imp,!important,null) } }
-@mixin pos-abs($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: absolute if($imp,!important,null) } }
-@mixin pos-fix($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: fixed if($imp,!important,null) } }
-@mixin pos-sty($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: sticky if($imp,!important,null) } }
+@mixin pos-sta($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: static   if($imp,!important,null) }}
+@mixin pos-rel($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: relative if($imp,!important,null) }}
+@mixin pos-abs($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: absolute if($imp,!important,null) }}
+@mixin pos-fix($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: fixed    if($imp,!important,null) }}
+@mixin pos-sty($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ position: sticky   if($imp,!important,null) }}
 
-@mixin stretch-to-fit($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
+@mixin fit($top: null,$right: $top,$bottom: $top,$left: $right,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
-		top: 0 if($imp,!important,null);
-		right: 0 if($imp,!important,null);
-		bottom: 0 if($imp,!important,null);
-		left: 0 if($imp,!important,null)
+		@if $top    !=null { top:    $top    if($imp,!important,null) }
+		@if $right  !=null { right:  $right  if($imp,!important,null) }
+		@if $bottom !=null { bottom: $bottom if($imp,!important,null) }
+		@if $left   !=null { left:   $left   if($imp,!important,null) }
 	}
 }
+@mixin fit-x($offset,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include fit(null,$offset,$imp: $imp); }}
+@mixin fit-y($offset,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include fit($offset,null,$imp: $imp); }}
+@mixin fit-t($offset,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include fit($offset,null,null,null,$imp: $imp); }}
+@mixin fit-r($offset,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include fit(null,$offset,null,null,$imp: $imp); }}
+@mixin fit-b($offset,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include fit(null,null,$offset,null,$imp: $imp); }}
+@mixin fit-l($offset,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include fit(null,null,null,$offset,$imp: $imp); }}
+
+@mixin layered($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
+	position: relative if($imp,!important,null);
+	>*{
+		position: absolute if($imp,!important,null);
+		@include fit(0px,$imp: $imp);
+	}
+}}
+
+// @mixin stretch-to-fit($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
+// 	@include media-breakpoint($up,$down,$breakpoints){
+// 		top: 0 if($imp,!important,null);
+// 		right: 0 if($imp,!important,null);
+// 		bottom: 0 if($imp,!important,null);
+// 		left: 0 if($imp,!important,null)
+// 	}
+// }

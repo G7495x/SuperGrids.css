@@ -1,0 +1,11 @@
+@mixin br($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border-radius: $size if($imp,!important,null) }}
+
+@mixin br-tl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border-top-left-radius:     $size if($imp,!important,null) }}
+@mixin br-tr($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border-top-right-radius:    $size if($imp,!important,null) }}
+@mixin br-br($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border-bottom-right-radius: $size if($imp,!important,null) }}
+@mixin br-bl($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ border-bottom-left-radius:  $size if($imp,!important,null) }}
+
+@mixin br-t($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include br-tl($size,$imp: $imp);@include br-tr($size,$imp: $imp); }}
+@mixin br-r($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include br-tr($size,$imp: $imp);@include br-br($size,$imp: $imp); }}
+@mixin br-b($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include br-br($size,$imp: $imp);@include br-bl($size,$imp: $imp); }}
+@mixin br-l($size,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include br-bl($size,$imp: $imp);@include br-tl($size,$imp: $imp); }}

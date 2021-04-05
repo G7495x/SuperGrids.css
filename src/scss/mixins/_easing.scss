@@ -34,174 +34,174 @@ $easeBack:     cubic-bezier(0.68,-0.55,0.265,1.55);
 @mixin ease($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: ease if($imp,!important,null);
-		animation-timing-function: ease if($imp,!important,null);
+		animation-timing-function:  ease if($imp,!important,null);
 	}
 }
 @mixin ease-in($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: ease-in if($imp,!important,null);
-		animation-timing-function: ease-in if($imp,!important,null);
+		animation-timing-function:  ease-in if($imp,!important,null);
 	}
 }
 @mixin ease-out($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: ease-out if($imp,!important,null);
-		animation-timing-function: ease-out if($imp,!important,null);
+		animation-timing-function:  ease-out if($imp,!important,null);
 	}
 }
 @mixin ease-inout($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: ease-in-out if($imp,!important,null);
-		animation-timing-function: ease-in-out if($imp,!important,null);
+		animation-timing-function:  ease-in-out if($imp,!important,null);
 	}
 }
 @mixin ease-linear($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: linear if($imp,!important,null);
-		animation-timing-function: linear if($imp,!important,null);
+		animation-timing-function:  linear if($imp,!important,null);
 	}
 }
 @mixin ease-in-sine($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeInSine if($imp,!important,null);
-		animation-timing-function: $easeInSine if($imp,!important,null);
+		animation-timing-function:  $easeInSine if($imp,!important,null);
 	}
 }
 @mixin ease-out-sine($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeOutSine if($imp,!important,null);
-		animation-timing-function: $easeOutSine if($imp,!important,null);
+		animation-timing-function:  $easeOutSine if($imp,!important,null);
 	}
 }
 @mixin ease-sine($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeSine if($imp,!important,null);
-		animation-timing-function: $easeSine if($imp,!important,null);
+		animation-timing-function:  $easeSine if($imp,!important,null);
 	}
 }
 @mixin ease-in-quad($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeInQuad if($imp,!important,null);
-		animation-timing-function: $easeInQuad if($imp,!important,null);
+		animation-timing-function:  $easeInQuad if($imp,!important,null);
 	}
 }
 @mixin ease-out-quad($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeOutQuad if($imp,!important,null);
-		animation-timing-function: $easeOutQuad if($imp,!important,null);
+		animation-timing-function:  $easeOutQuad if($imp,!important,null);
 	}
 }
 @mixin ease-quad($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeQuad if($imp,!important,null);
-		animation-timing-function: $easeQuad if($imp,!important,null);
+		animation-timing-function:  $easeQuad if($imp,!important,null);
 	}
 }
 @mixin ease-in-cubic($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeInCubic if($imp,!important,null);
-		animation-timing-function: $easeInCubic if($imp,!important,null);
+		animation-timing-function:  $easeInCubic if($imp,!important,null);
 	}
 }
 @mixin ease-out-cubic($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeOutCubic if($imp,!important,null);
-		animation-timing-function: $easeOutCubic if($imp,!important,null);
+		animation-timing-function:  $easeOutCubic if($imp,!important,null);
 	}
 }
 @mixin ease-cubic($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeCubic if($imp,!important,null);
-		animation-timing-function: $easeCubic if($imp,!important,null);
+		animation-timing-function:  $easeCubic if($imp,!important,null);
 	}
 }
 @mixin ease-in-quart($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeInQuart if($imp,!important,null);
-		animation-timing-function: $easeInQuart if($imp,!important,null);
+		animation-timing-function:  $easeInQuart if($imp,!important,null);
 	}
 }
 @mixin ease-out-quart($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeOutQuart if($imp,!important,null);
-		animation-timing-function: $easeOutQuart if($imp,!important,null);
+		animation-timing-function:  $easeOutQuart if($imp,!important,null);
 	}
 }
 @mixin ease-quart($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeQuart if($imp,!important,null);
-		animation-timing-function: $easeQuart if($imp,!important,null);
+		animation-timing-function:  $easeQuart if($imp,!important,null);
 	}
 }
 @mixin ease-in-quint($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeInQuint if($imp,!important,null);
-		animation-timing-function: $easeInQuint if($imp,!important,null);
+		animation-timing-function:  $easeInQuint if($imp,!important,null);
 	}
 }
 @mixin ease-out-quint($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeOutQuint if($imp,!important,null);
-		animation-timing-function: $easeOutQuint if($imp,!important,null);
+		animation-timing-function:  $easeOutQuint if($imp,!important,null);
 	}
 }
 @mixin ease-quint($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeQuint if($imp,!important,null);
-		animation-timing-function: $easeQuint if($imp,!important,null);
+		animation-timing-function:  $easeQuint if($imp,!important,null);
 	}
 }
 @mixin ease-in-expo($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeInExpo if($imp,!important,null);
-		animation-timing-function: $easeInExpo if($imp,!important,null);
+		animation-timing-function:  $easeInExpo if($imp,!important,null);
 	}
 }
 @mixin ease-out-expo($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeOutExpo if($imp,!important,null);
-		animation-timing-function: $easeOutExpo if($imp,!important,null);
+		animation-timing-function:  $easeOutExpo if($imp,!important,null);
 	}
 }
 @mixin ease-expo($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeExpo if($imp,!important,null);
-		animation-timing-function: $easeExpo if($imp,!important,null);
+		animation-timing-function:  $easeExpo if($imp,!important,null);
 	}
 }
 @mixin ease-in-circ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeInCirc if($imp,!important,null);
-		animation-timing-function: $easeInCirc if($imp,!important,null);
+		animation-timing-function:  $easeInCirc if($imp,!important,null);
 	}
 }
 @mixin ease-out-circ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeOutCirc if($imp,!important,null);
-		animation-timing-function: $easeOutCirc if($imp,!important,null);
+		animation-timing-function:  $easeOutCirc if($imp,!important,null);
 	}
 }
 @mixin ease-circ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeCirc if($imp,!important,null);
-		animation-timing-function: $easeCirc if($imp,!important,null);
+		animation-timing-function:  $easeCirc if($imp,!important,null);
 	}
 }
 @mixin ease-in-back($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeInBack if($imp,!important,null);
-		animation-timing-function: $easeInBack if($imp,!important,null);
+		animation-timing-function:  $easeInBack if($imp,!important,null);
 	}
 }
 @mixin ease-out-back($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeOutBack if($imp,!important,null);
-		animation-timing-function: $easeOutBack if($imp,!important,null);
+		animation-timing-function:  $easeOutBack if($imp,!important,null);
 	}
 }
 @mixin ease-back($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){
 	@include media-breakpoint($up,$down,$breakpoints){
 		transition-timing-function: $easeBack if($imp,!important,null);
-		animation-timing-function: $easeBack if($imp,!important,null);
+		animation-timing-function:  $easeBack if($imp,!important,null);
 	}
 }

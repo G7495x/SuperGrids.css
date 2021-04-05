@@ -1,3 +1,13 @@
+// Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+
+@mixin button-inputs{
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	button,
+	.button{ @content }
+}
+
 @mixin outline-inputs{
 	input[type="color"],
 	input[type="date"],
@@ -13,32 +23,70 @@
 	input[type="url"],
 	input[type="week"],
 	select,
-	textarea{ @content; }
-}
+	textarea{ @content }
 
-@mixin button-inputs{
-	input[type="button"],
-	input[type="reset"],
-	input[type="submit"],
-	button,
-	.button{ @content; }
-	input::-webkit-file-upload-button{ @content; }
+	@include button-inputs{
+		&.outline{ @content }
+	}
 }
 
 @mixin input-range-thumb{
-	&::-webkit-slider-thumb{ @content; }
-	&::-moz-range-thumb{ @content; }
+	&::-webkit-slider-thumb{ @content }
+	&::-moz-range-thumb{ @content }
 }
 @mixin input-range-track{
-	&::-webkit-slider-runnable-track{ @content; }
-	&::-moz-range-track{ @content; }
+	&::-webkit-slider-runnable-track{ @content }
+	&::-moz-range-track{ @content }
+}
+@mixin input-range-progress{
+	&::-moz-range-progress{ @content }
 }
 
 @mixin input-color-swatch{
-	&::-webkit-color-swatch{ @content; }
-	&::-moz-color-swatch{ @content; }
+	&::-webkit-color-swatch{ @content }
+	&::-moz-color-swatch{ @content }
 }
 @mixin input-color-swatch-wrapper{
-	&::-webkit-color-swatch-wrapper{ @content; }
-	&::-moz-focus-inner{ @content; }
+	&::-webkit-color-swatch-wrapper{ @content }
+	&::-moz-focus-inner{ @content }
+}
+
+@mixin outline-input-style{
+	height: $input-height;
+	border-radius: 6px;
+	border: 0.5px solid Hsla(var(--textHSL),.05);
+	padding: 4px 12px;
+	background-color: Hsla(var(--textHSL),.0375);
+	color: Hsla(var(--textHSL),var(--textA));
+	box-shadow: none;
+	text-align: left;
+	cursor: auto;
+	// user-select: initial;
+
+	&:focus{
+		border-color: Hsla(var(--accentHSL),.375);
+		outline: none;
+		background-color: Hsla(var(--accentHSL),.0375);
+		box-shadow: none;
+	}
+}
+
+@mixin button-input-style{
+	height: $input-height;
+	border-radius: 6px;
+	border: none;
+	padding: 4px 12px;
+	background-color: Hsla(var(--accentHSL),var(--accentA));
+	color: white;
+	box-shadow: 0 4px 20px Hsla(var(--accentHSL),.25);
+	text-align: center;
+	cursor: pointer;
+	// user-select: none;
+
+	&:focus{
+		border-color: Hsla(var(--accentHSL),.375);
+		outline: none;
+		background-color: Hsla(var(--accentHSL),var(--accentA));
+		box-shadow: 0 4px 20px Hsla(var(--accentHSL),var(--accentA));
+	}
 }

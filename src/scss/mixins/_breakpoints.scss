@@ -2,27 +2,27 @@
 
 // Forked & modified (mostly formatting + minor tweaks) from Bootstrap.
 // https://github.com/twbs/bootstrap/blob/master/scss/mixins/_breakpoints.scss
-// Rev. Jun 16, 2019 11:00 PM PDT - c5b1919
+// Rev. Aug 22, 2020 02:36 PM PDT - 7058f89
 // Bootstrap is licensed MIT. https://github.com/twbs/bootstrap
 
 // Breakpoints are a map of (name: minimum width), order from small to large (mobile-first approach). Ex:
 //   (
-//     xs: 0,     - Phones  (portrait)  [0px   ,576px)
-//     sm: 576px, - Phones  (landscape) [576px ,768px)
-//     md: 768px, - Tablets (portrait)  [768px ,992px)
-//     lg: 992px, - Tablets (landscape) [992px ,1200px)
-//     xl: 1200px - Computers           [1200px,infinity)
+//     xs: 0,      - Phones  (portrait)  [0px   , 511.98px]
+//     sm: 512px,  - Phones  (landscape) [512px , 767.98px]
+//     md: 768px,  - Tablets (portrait)  [768px , 1023.98px]
+//     lg: 1024px, - Tablets (landscape) [1024px, 1279.98px]
+//     xl: 1280px  - Computers           [1280px, infinity]
 //   )
 // The map defined as the `$grid-breakpoints` global variable is used as the `$breakpoints` argument by default.
 
-// ----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 // 01 - FUNCTIONS
 
 // Name of the next breakpoint (null for the largest (last) breakpoint).
 //   >> breakpoint-next(sm)
 //   md
-//   >> breakpoint-next(sm,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
+//   >> breakpoint-next(sm,(xs: 0,sm: 512px,md: 768px,lg: 1024px,xl: 1280px))
 //   md
 @function breakpoint-next($name,$breakpoints: $grid-breakpoints){
 	$breakpoint-names: map-keys($breakpoints);
@@ -31,8 +31,8 @@
 }
 
 // Minimum of breakpoint width (lower bound of breakpoint, null for the smallest (first) breakpoint).
-//   >> breakpoint-min(sm,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
-//   576px
+//   >> breakpoint-min(sm,(xs: 0,sm: 512px,md: 768px,lg: 1024px,xl: 1280px))
+//   512px
 @function breakpoint-min($name,$breakpoints: $grid-breakpoints){
 	$min: map-get($breakpoints,$name);
 	@return if($min!=0,$min,null);
@@ -44,33 +44,33 @@
 // See https://www.w3.org/TR/mediaqueries-4/#mq-min-max
 // Use 0.02px rather than 0.01px to work around a current rounding bug in Safari.
 // See https://bugs.webkit.org/show_bug.cgi?id=178261
-//   >> breakpoint-max(sm,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
+//   >> breakpoint-max(sm,(xs: 0,sm: 512px,md: 768px,lg: 1024px,xl: 1280px))
 //   767.98px
 @function breakpoint-max($name,$breakpoints: $grid-breakpoints){
 	$next: breakpoint-next($name,$breakpoints);
-	@return if($next,breakpoint-min($next,$breakpoints)-.02,null);
+	@return if($next,breakpoint-min($next,$breakpoints) - .02,null);
 }
 
-// Breakpoint name with a dash infront (Blank if smallest (first) breakpoint).
+// Breakpoint name with a colon in the back (Blank if smallest (first) breakpoint).
 // Useful for making responsive utilities.
-//   >> breakpoint-suffix(xs)
+//   >> breakpoint-prefix(xs)
 //   ""  (Returns a blank string)
-//   >> breakpoint-suffix(sm,(xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px))
-//   "-sm"
-@function breakpoint-suffix($name,$breakpoints: $grid-breakpoints){ @return if(breakpoint-min($name,$breakpoints),"-#{$name}",""); }
+//   >> breakpoint-prefix(sm,(xs: 0,sm: 512px,md: 768px,lg: 1024px,xl: 1280px))
+//   "sm:"
+@function breakpoint-prefix($name,$breakpoints: $grid-breakpoints){ @return if(breakpoint-min($name,$breakpoints),"#{$name}\\:",""); }
 
-// ----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 // 02 - MIXINS
 
 // Media query from parameters.
 // Makes the @content apply for all breakpoints from $lower to $upper
 //   >> media-breakpoint(sm){ @content }
-//   @media (min-width: 576px){ @content }
+//   @media (min-width: 512px){ @content }
 //   >> media-breakpoint(sm,md){ @content }
-//   @media (min-width: 576px) and (max-width: 991.98px){ @content }
+//   @media (min-width: 512px) and (max-width: 1023.98px){ @content }
 //   >> media-breakpoint(null,md){ @content } or media-breakpoint($upper: md){ @content }
-//   @media (max-width: 991.98px){ @content }
+//   @media (max-width: 1023.98px){ @content }
 @mixin media-breakpoint($lower: null,$upper: null,$breakpoints: $grid-breakpoints){
 	$min: breakpoint-min($lower,$breakpoints);
 	$max: if($upper,breakpoint-max($upper,$breakpoints),null);
@@ -88,55 +88,55 @@
 // Media query with min-width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
 //   >> media-breakpoint-up(sm){ @content }
-//   @media (min-width: 576px){ @content }
-@mixin media-breakpoint-up($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint($name,null,$breakpoints){ @content } }
+//   @media (min-width: 512px){ @content }
+@mixin media-breakpoint-up($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint($name,null,$breakpoints){ @content }}
 
 // Media query with max-width. No query for the largest breakpoint. (rarely used in mobile-first approach)
 // Makes the @content apply to the given breakpoint and narrower.
 //   >> media-breakpoint-down(sm){ @content }
 //   @media (max-width: 767.98px){ @content }
-@mixin media-breakpoint-down($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint(null,$name,$breakpoints){ @content } }
+@mixin media-breakpoint-down($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint(null,$name,$breakpoints){ @content }}
 
 // Media query with min-width and max-width (spans multiple breakpoints).
 // Makes the @content apply for all breakpoints from $lower to $upper
 //   >> media-breakpoint-between(sm,md){ @content }
-//   @media (min-width: 576px) and (max-width: 991.98px){ @content }
-@mixin media-breakpoint-between($lower,$upper,$breakpoints: $grid-breakpoints){ @include media-breakpoint($lower,$upper,$breakpoints){ @content } }
+//   @media (min-width: 512px) and (max-width: 1023.98px){ @content }
+@mixin media-breakpoint-between($lower,$upper,$breakpoints: $grid-breakpoints){ @include media-breakpoint($lower,$upper,$breakpoints){ @content }}
 
 // Similar to media-breakpoint-between when $lower = $upper (spanning only one breakpoint)
 //   >> media-breakpoint-only(sm){ @content }
-//   @media (min-width: 576px) and (max-width: 767.98px){ @content }
-@mixin media-breakpoint-only($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint($name,$name,$breakpoints){ @content } }
+//   @media (min-width: 512px) and (max-width: 767.98px){ @content }
+@mixin media-breakpoint-only($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint($name,$name,$breakpoints){ @content }}
 
 /// TODO: More media features - https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
-/// TODO: Orientation, hover
+/// TODO: hover, focus
 
 // Make a custom class/etc. responsive (mobile-first approach)
 //   >> @include responsive(".cc"){ custom: rule }
 //   .cc{ custom: rule }
-//   @media (min-width: 576px){ .cc-sm{ custom: rule } }
-//   @media (min-width: 768px){ .cc-md{ custom: rule } }
-//   @media (min-width: 992px){ .cc-lg{ custom: rule } }
-//   @media (min-width: 1200px){ .cc-xl{ custom: rule } }
+//   @media (min-width: 512px){ .cc-sm{ custom: rule }}
+//   @media (min-width: 768px){ .cc-md{ custom: rule }}
+//   @media (min-width: 1024px){ .cc-lg{ custom: rule }}
+//   @media (min-width: 1280px){ .cc-xl{ custom: rule }}
 @mixin responsive($selector,$breakpoints: $grid-breakpoints){
 	@each $breakpoint in map-keys($breakpoints){
 		@include media-breakpoint-up($breakpoint,$breakpoints){
-			#{$selector}#{breakpoint-suffix($breakpoint,$breakpoints)}{ @content }
+			#{breakpoint-prefix($breakpoint,$breakpoints)}#{$selector}{ @content }
 		}
 	}
 }
 
 // Make a custom class/etc. responsive (for a particular breakpoint only) (single breakpoints)
 //   >> @include responsive-only(".cc"){ custom: rule }
-//   @media (max-width: 575.98px) { .cc-xs-o { custom: rule } }
-//   @media (min-width: 576px) and (max-width: 767.98px) { .cc-sm-o { custom: rule } }
-//   @media (min-width: 768px) and (max-width: 991.98px) { .cc-md-o { custom: rule } }
-//   @media (min-width: 992px) and (max-width: 1199.98px) { .cc-lg-o { custom: rule } }
-//   @media (min-width: 1200px) { .cc-xl-o { custom: rule } }
+//   @media (max-width: 511.98px) { .cc-xs-o { custom: rule }}
+//   @media (min-width: 512px) and (max-width: 767.98px) { .cc-sm-o { custom: rule }}
+//   @media (min-width: 768px) and (max-width: 1023.98px) { .cc-md-o { custom: rule }}
+//   @media (min-width: 1024px) and (max-width: 1279.98px) { .cc-lg-o { custom: rule }}
+//   @media (min-width: 1280px) { .cc-xl-o { custom: rule }}
 @mixin responsive-only($selector,$breakpoints: $grid-breakpoints){
 	@each $breakpoint in map-keys($breakpoints){
 		@include media-breakpoint-only($breakpoint,$breakpoints){
-			#{$selector}-#{$breakpoint}-o{ @content }
+			#{$breakpoint}-o\:#{$selector}{ @content }
 		}
 	}
 }

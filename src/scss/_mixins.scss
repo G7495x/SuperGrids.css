@@ -11,18 +11,22 @@
 // ├─ mixins/breakpoints
 // ├─ mixins/typography
 // ├─ mixins/forms
-// ├─ mixins/grid
+// │
+// ├─ mixins/cursors
+// ├─ mixins/row
+// ├─ mixins/row-package
 // ├─ mixins/flex
 // ├─ mixins/v-align
-// ├─ mixins/scroll
+// ├─ mixins/overflow
 // ├─ mixins/easing
 // ├─ mixins/spacing
+// ├─ mixins/round
 // ├─ mixins/position
-// └─ mixins/display
+// ├─ mixins/display
+// └─ mixins/colors
 
 // VARIABLES
 
-@import 'variables/general';    // General variables
 @import 'variables/colors';     // Colors used within the framework
 @import 'variables/typography'; // Font related properties
 @import 'variables/layout';     // Grid and spacing properties
@@ -30,15 +34,20 @@
 
 // MIXINS
 
+@import 'mixins/helpers';
 @import 'mixins/breakpoints';
 @import 'mixins/typography';
 @import 'mixins/forms';
-@import 'mixins/grid';
+
+@import 'mixins/cursors';
+@import 'mixins/row';
+@import 'mixins/row-package';
 @import 'mixins/flex';
 @import 'mixins/v-align';
-@import 'mixins/scroll';
+@import 'mixins/overflow';
 @import 'mixins/easing';
 @import 'mixins/spacing';
+@import 'mixins/round';
 @import 'mixins/position';
 @import 'mixins/display';
 @import 'mixins/colors';

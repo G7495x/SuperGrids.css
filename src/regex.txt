@@ -1,0 +1,4 @@
+Antipattern        - (-(xs|sm|md|lg|xl|xxl))|(\\: )
+Classname selector - \.[a-z][a-z0-9\-\\:]+( |,)
+                     (remove trailing space / comma via (,| ))
+Prefix selector    - \.[a-z0-9]+?-

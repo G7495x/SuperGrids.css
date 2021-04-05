@@ -1,0 +1,26 @@
+@each $breakpoint in map-keys($grid-breakpoints){
+	$prefix: breakpoint-prefix($breakpoint);
+	@include media-breakpoint-up($breakpoint){
+		.#{$prefix}cur-none{ @include cur-none($imp: true); }
+		.#{$prefix}cur-nwse{ @include cur-nwse($imp: true); }
+		.#{$prefix}cur-nesw{ @include cur-nesw($imp: true); }
+
+		.#{$prefix}cur-tv{ @include cur-tv($imp: true); }
+		.#{$prefix}cur-gg{ @include cur-gg($imp: true); }
+		.#{$prefix}cur-ry{ @include cur-ry($imp: true); }
+		.#{$prefix}cur-rx{ @include cur-rx($imp: true); }
+		.#{$prefix}cur-no{ @include cur-no($imp: true); }
+
+		.#{$prefix}cur-x{ @include cur-x($imp: true); }
+		.#{$prefix}cur-h{ @include cur-h($imp: true); }
+		.#{$prefix}cur-l{ @include cur-l($imp: true); }
+		.#{$prefix}cur-c{ @include cur-c($imp: true); }
+		.#{$prefix}cur-w{ @include cur-w($imp: true); }
+		.#{$prefix}cur-g{ @include cur-g($imp: true); }
+		.#{$prefix}cur-m{ @include cur-m($imp: true); }
+		.#{$prefix}cur-t{ @include cur-t($imp: true); }
+		.#{$prefix}cur-p{ @include cur-p($imp: true); }
+		.#{$prefix}cur-d{ @include cur-d($imp: true); }
+		.#{$prefix}cur-a{ @include cur-a($imp: true); }
+	}
+}

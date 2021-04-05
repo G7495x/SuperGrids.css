@@ -1,0 +1,25 @@
+@each $breakpoint in map-keys($grid-breakpoints){
+	$prefix: breakpoint-prefix($breakpoint);
+	@include media-breakpoint-up($breakpoint){
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}br-#{$size}{ @include br($size*1px,$imp: true); }
+		}
+
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}br-t-#{$size}{ @include br-t($size*1px,$imp: true); }
+			.#{$prefix}br-r-#{$size}{ @include br-r($size*1px,$imp: true); }
+			.#{$prefix}br-b-#{$size}{ @include br-b($size*1px,$imp: true); }
+			.#{$prefix}br-l-#{$size}{ @include br-l($size*1px,$imp: true); }
+		}
+
+		@for $size from 0 through $spacing-steps{
+			$size: $size*$spacing-step-size;
+			.#{$prefix}br-tl-#{$size}{ @include br-tl($size*1px,$imp: true); }
+			.#{$prefix}br-tr-#{$size}{ @include br-tr($size*1px,$imp: true); }
+			.#{$prefix}br-br-#{$size}{ @include br-br($size*1px,$imp: true); }
+			.#{$prefix}br-bl-#{$size}{ @include br-bl($size*1px,$imp: true); }
+		}
+	}
+}
