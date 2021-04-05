@@ -108,9 +108,6 @@
 //   @media (min-width: 512px) and (max-width: 767.98px){ @content }
 @mixin media-breakpoint-only($name,$breakpoints: $grid-breakpoints){ @include media-breakpoint($name,$name,$breakpoints){ @content }}
 
-/// TODO: More media features - https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
-/// TODO: hover, focus
-
 // Make a custom class/etc. responsive (mobile-first approach)
 //   >> @include responsive(".cc"){ custom: rule }
 //   .cc{ custom: rule }
