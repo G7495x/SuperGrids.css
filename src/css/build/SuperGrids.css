@@ -1,5 +1,5 @@
 /*!
- * SuperGrids.css v1.0.0-beta.3 - https://G7495x.github.io/SuperGrids.css
+ * SuperGrids.css v1.0.0-beta.4 - https://G7495x.github.io/SuperGrids.css
  * Licensed under MIT License   - https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE
  */
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -22110,10 +22110,10 @@ input[type="radio"] {
   position: sticky !important; }
 
 .stretch-to-fit {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; }
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important; }
 
 .fit-auto {
   top: auto !important;
@@ -23435,10 +23435,10 @@ input[type="radio"] {
   .sm\:pos-sty {
     position: sticky !important; }
   .sm\:stretch-to-fit {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; }
+    top: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    left: 0px !important; }
   .sm\:fit-auto {
     top: auto !important;
     right: auto !important;
@@ -24410,10 +24410,10 @@ input[type="radio"] {
   .md\:pos-sty {
     position: sticky !important; }
   .md\:stretch-to-fit {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; }
+    top: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    left: 0px !important; }
   .md\:fit-auto {
     top: auto !important;
     right: auto !important;
@@ -25385,10 +25385,10 @@ input[type="radio"] {
   .lg\:pos-sty {
     position: sticky !important; }
   .lg\:stretch-to-fit {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; }
+    top: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    left: 0px !important; }
   .lg\:fit-auto {
     top: auto !important;
     right: auto !important;
@@ -26360,10 +26360,10 @@ input[type="radio"] {
   .xl\:pos-sty {
     position: sticky !important; }
   .xl\:stretch-to-fit {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; }
+    top: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    left: 0px !important; }
   .xl\:fit-auto {
     top: auto !important;
     right: auto !important;
@@ -27335,10 +27335,10 @@ input[type="radio"] {
   .xxl\:pos-sty {
     position: sticky !important; }
   .xxl\:stretch-to-fit {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; }
+    top: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    left: 0px !important; }
   .xxl\:fit-auto {
     top: auto !important;
     right: auto !important;

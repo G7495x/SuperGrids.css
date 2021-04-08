@@ -9,7 +9,7 @@
 		.#{$prefix}pos-fix{ @include pos-fix($imp: true); }
 		.#{$prefix}pos-sty{ @include pos-sty($imp: true); }
 
-		.#{$prefix}stretch-to-fit{ @include fit(0); }
+		.#{$prefix}stretch-to-fit{ @include stretch-to-fit($imp: true); }
 
 		// .#{$prefix}m-auto{ @include m(auto,$imp: true); }
 		// @for $size from 0 through $spacing-steps{

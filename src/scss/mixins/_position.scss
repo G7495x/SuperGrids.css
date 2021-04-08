@@ -19,6 +19,8 @@
 @mixin fit-b($offset,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include fit(null,null,$offset,null,$imp: $imp); }}
 @mixin fit-l($offset,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include fit(null,null,null,$offset,$imp: $imp); }}
 
+@mixin stretch-to-fit($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ @include fit(0px,$imp: $imp); }}
+
 @mixin layered($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
 	position: relative if($imp,!important,null);
 	>*{
