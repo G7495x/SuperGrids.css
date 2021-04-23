@@ -1,5 +1,5 @@
 /*!
- * SuperGrids.css v1.0.0-beta.5 - https://G7495x.github.io/SuperGrids.css
+ * SuperGrids.css v1.0.0-beta.6 - https://G7495x.github.io/SuperGrids.css
  * Licensed under MIT License   - https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE
  */
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -28944,7 +28944,7 @@ input[type="radio"] {
   mask: var(--mask); }
 
 .popover-tl, .popover-tc, .popover-tr {
-  --triangleGraphic: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns:serif="http://www.serif.com/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 9" xml:space="preserve"><path fill-rule="evenodd" d="M12.01,0c0.64,0,1.25,0.25,1.7,0.7c1.15,1.15,3.48,3.48,5.2,5.2c1.35,1.35,3.18,2.11,5.09,2.11c0.01,0,0.01,0,0.01,0V9H0V8h0.02c1.91,0,3.74-0.76,5.09-2.11C6.83,4.17,9.15,1.85,10.3,0.7c0.45-0.45,1.06-0.7,1.7-0.7C12,0,12,0,12.01,0z"/></svg>');
+  --triangleGraphic: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 9" xml:space="preserve"><path fill-rule="evenodd" d="M12.01,0c0.64,0,1.25,0.25,1.7,0.7c1.15,1.15,3.48,3.48,5.2,5.2c1.35,1.35,3.18,2.11,5.09,2.11c0.01,0,0.01,0,0.01,0V9H0V8h0.02c1.91,0,3.74-0.76,5.09-2.11C6.83,4.17,9.15,1.85,10.3,0.7c0.45-0.45,1.06-0.7,1.7-0.7C12,0,12,0,12.01,0z"/></svg>');
   --top: 8px;
   padding-top: 8px; }
 
@@ -28958,7 +28958,7 @@ input[type="radio"] {
   --trianglePosition: calc(100% - var(--offset)) 0% ; }
 
 .popover-bl, .popover-bc, .popover-br {
-  --triangleGraphic: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns:serif="http://www.serif.com/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 9" xml:space="preserve"><path fill-rule="evenodd" d="M11.99,9c-0.64,0-1.25-0.25-1.7-0.7C9.15,7.15,6.83,4.83,5.11,3.11C3.76,1.76,1.93,1,0.02,1H0V0h24v0.99c0,0,0,0-0.01,0c-1.91,0-3.74,0.76-5.09,2.11c-1.72,1.72-4.05,4.05-5.2,5.2C13.25,8.75,12.64,9,12.01,9C12,9,12,9,11.99,9z"/></svg>');
+  --triangleGraphic: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 9" xml:space="preserve"><path fill-rule="evenodd" d="M11.99,9c-0.64,0-1.25-0.25-1.7-0.7C9.15,7.15,6.83,4.83,5.11,3.11C3.76,1.76,1.93,1,0.02,1H0V0h24v0.99c0,0,0,0-0.01,0c-1.91,0-3.74,0.76-5.09,2.11c-1.72,1.72-4.05,4.05-5.2,5.2C13.25,8.75,12.64,9,12.01,9C12,9,12,9,11.99,9z"/></svg>');
   --bottom: 8px;
   padding-bottom: 8px; }
 

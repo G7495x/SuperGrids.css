@@ -4,7 +4,7 @@
 	--cornerDiameter: 16px;
 	--offset: 0px;
 
-	--cornerGraphic: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>');
+	--cornerGraphic: #{$cornerGraphic};
 
 	--top: 0px;
 	--right: 0px;
@@ -39,7 +39,7 @@
 .popover-tl,.popover-tc,.popover-tr{
 	@extend %popover;
 
-	--triangleGraphic: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns:serif="http://www.serif.com/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 9" xml:space="preserve"><path fill-rule="evenodd" d="M12.01,0c0.64,0,1.25,0.25,1.7,0.7c1.15,1.15,3.48,3.48,5.2,5.2c1.35,1.35,3.18,2.11,5.09,2.11c0.01,0,0.01,0,0.01,0V9H0V8h0.02c1.91,0,3.74-0.76,5.09-2.11C6.83,4.17,9.15,1.85,10.3,0.7c0.45-0.45,1.06-0.7,1.7-0.7C12,0,12,0,12.01,0z"/></svg>');
+	--triangleGraphic: #{$triangle-t};
 	--top: 8px;
 	padding-top: 8px;
 }
@@ -51,7 +51,7 @@
 .popover-bl,.popover-bc,.popover-br{
 	@extend %popover;
 
-	--triangleGraphic: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns:serif="http://www.serif.com/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 9" xml:space="preserve"><path fill-rule="evenodd" d="M11.99,9c-0.64,0-1.25-0.25-1.7-0.7C9.15,7.15,6.83,4.83,5.11,3.11C3.76,1.76,1.93,1,0.02,1H0V0h24v0.99c0,0,0,0-0.01,0c-1.91,0-3.74,0.76-5.09,2.11c-1.72,1.72-4.05,4.05-5.2,5.2C13.25,8.75,12.64,9,12.01,9C12,9,12,9,11.99,9z"/></svg>');
+	--triangleGraphic: #{$triangle-b};
 	--bottom: 8px;
 	padding-bottom: 8px;
 }
@@ -66,7 +66,7 @@
 .popover-lt,.popover-lc,.popover-lb{
 	@extend %popover;
 
-	--triangleGraphic: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 9 24" xml:space="preserve"><path fill-rule="evenodd" d="M0,11.99c0-0.64,0.25-1.25,0.7-1.7c1.15-1.15,3.47-3.47,5.19-5.19C7.24,3.76,8,1.93,8,0.02V0l1,0l0,24H8.01c0,0,0,0,0-0.01c0-1.91-0.76-3.74-2.11-5.09c-1.72-1.72-4.05-4.05-5.2-5.2C0.25,13.25,0,12.64,0,12.01C0,12,0,12,0,11.99z"/></svg>');
+	--triangleGraphic: #{$triangle-l};
 	--left: 8px;
 	padding-left: 8px;
 }
@@ -78,7 +78,7 @@
 .popover-rt,.popover-rc,.popover-rb{
 	@extend %popover;
 
-	--triangleGraphic: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 9 24" xml:space="preserve"><path fill-rule="evenodd" d="M9,12.01c0,0.64-0.25,1.25-0.7,1.7c-1.15,1.15-3.47,3.47-5.19,5.19C1.76,20.24,1,22.07,1,23.98V24H0L0,0l0.99,0c0,0,0,0,0,0.01c0,1.91,0.76,3.74,2.11,5.09c1.72,1.72,4.05,4.05,5.2,5.2c0.45,0.45,0.7,1.06,0.7,1.7C9,12,9,12,9,12.01z"/></svg>');
+	--triangleGraphic: #{$triangle-r};
 	--right: 8px;
 	padding-right: 8px;
 }
