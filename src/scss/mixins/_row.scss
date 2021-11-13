@@ -11,20 +11,20 @@
 }}
 
 @mixin gap($gap-y: null,$gap-x: $gap-y,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
-	--rowPaddingY: #{if($gap-y!=null,#{$gap-y/2},inherit)};
-	--rowPaddingX: #{if($gap-x!=null,#{$gap-x/2},inherit)};
+	--rowPaddingY: #{if($gap-y!=null,math.div($gap-y,2),inherit)};
+	--rowPaddingX: #{if($gap-x!=null,math.div($gap-x,2),inherit)};
 	&>*{
-		--colMarginY: #{if($gap-y!=null,#{$gap-y/2},inherit)};
-		--colMarginX: #{if($gap-x!=null,#{$gap-x/2},inherit)};
+		--colMarginY: #{if($gap-y!=null,math.div($gap-y,2),inherit)};
+		--colMarginX: #{if($gap-x!=null,math.div($gap-x,2),inherit)};
 	}
 }}
 @mixin gap-x($gap-x: null,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
-	--rowPaddingX: #{if($gap-x!=null,#{$gap-x/2},inherit)};
-	&>*{ --colMarginX: #{if($gap-x!=null,#{$gap-x/2},inherit)}; }
+	--rowPaddingX: #{if($gap-x!=null,math.div($gap-x,2),inherit)};
+	&>*{ --colMarginX: #{if($gap-x!=null,math.div($gap-x,2),inherit)}; }
 }}
 @mixin gap-y($gap-y: null,$up: null,$down: null,$breakpoints: $grid-breakpoints){ @include media-breakpoint($up,$down,$breakpoints){
-	--rowPaddingY: #{if($gap-y!=null,#{$gap-y/2},inherit)};
-	&>*{ --colMarginY: #{if($gap-y!=null,#{$gap-y/2},inherit)}; }
+	--rowPaddingY: #{if($gap-y!=null,math.div($gap-y,2),inherit)};
+	&>*{ --colMarginY: #{if($gap-y!=null,math.div($gap-y,2),inherit)}; }
 }}
 
 @mixin _col($imp: false){ // Col mixin without `--colSize`

@@ -92,7 +92,7 @@
 @mixin f-self-baseline($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: baseline if($imp,!important,null)   }}
 @mixin f-self-stretch ($up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ align-self: stretch if($imp,!important,null)    }}
 
-@mixin f-flex  ($n: 1,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-flex: $n   if($imp,!important,null) }}
+@mixin f-flex  ($n: 1,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex: $n   if($imp,!important,null) }}
 @mixin f-grow  ($n: 1,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-grow: $n   if($imp,!important,null) }}
 @mixin f-shrink($n: 1,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){ flex-shrink: $n if($imp,!important,null) }}
 

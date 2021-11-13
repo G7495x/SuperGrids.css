@@ -115,7 +115,7 @@ input[type="color"]{
 	padding-right: $input-height;
 	background-image: var(--svg-caret-down);
 	background-size: 12px;
-	background-position: calc(100% - #{$input-height/2} + 6px) center;
+	background-position: calc(100% - #{math.div($input-height,2)} + 6px) center;
 	background-repeat: no-repeat;
 }
 

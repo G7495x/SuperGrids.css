@@ -1,16 +1,16 @@
 {
 	"name": "supergrids.css",
-	"version": "1.0.0-beta.6",
+	"version": "1.0.0-beta.7",
 	"description": "SuperGrids.css - Supercharge your layouts.",
 	"main": "src/css/build/SuperGrids.css",
 	"scripts": {
-		"start": "concurrently \"browser-sync start --config ./bs-config.js\" \"node-sass -w src/scss/ -r -o src/css/build/\""
+		"start": "concurrently \"browser-sync start --config ./bs-config.js\" \"sass -w src/scss:src/css/build\" \"sass -w src/scss/SuperGrids.scss:src/css/build/SuperGrids.min.css -s compressed\""
 	},
 	"author": "G7495x",
 	"license": "MIT",
-	"devDependencies": {
-		"browser-sync": "^2.26.14",
-		"concurrently": "^6.0.0",
-		"node-sass": "^4.10.0"
+	"dependencies": {
+		"browser-sync": "^2.27.7",
+		"concurrently": "^6.4.0",
+		"sass": "^1.43.4"
 	}
 }

@@ -65,7 +65,7 @@
 
 // Container is used for centering webpage content on big displays.
 @mixin container($name: null,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
-	@if $name!=null{ --containerWidth: #{breakpoint-min($name,$breakpoints)} }
+	@if $name{ --containerWidth: #{breakpoint-min($name,$breakpoints)} }
 	width:        var(--colWidth)                               ; /// TODO: Consider !important
 	max-width:    var(--containerWidth) if($imp,!important,null);
 	margin-left:  auto                  if($imp,!important,null);
@@ -91,7 +91,7 @@
 // Same as container, but with padding instead of margin
 // BUG: does not work along side col or col-auto
 @mixin container-p($name: null,$up: null,$down: null,$breakpoints: $grid-breakpoints,$imp: false){ @include media-breakpoint($up,$down,$breakpoints){
-	@if $name!=null{ --containerWidth: #{breakpoint-min($name,$breakpoints)} }
+	@if $name{ --containerWidth: #{breakpoint-min($name,$breakpoints)} }
 	width:         var(--colWidth);
 	$paddingX:     calc(var(--colWidth) / 2 - var(--containerWidth) / 2 + var(--rowPaddingX));
 	padding-left:  $paddingX if($imp,!important,null);

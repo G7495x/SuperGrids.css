@@ -25,6 +25,8 @@
 // ├─ mixins/display
 // └─ mixins/colors
 
+@use 'sass:math';
+
 // VARIABLES
 
 @import 'variables/colors';     // Colors used within the framework

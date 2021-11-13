@@ -1,3 +1,4 @@
+/// TODO: Move to variables
 $cornerGraphic: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>');
 
 $triangle-t: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 9" xml:space="preserve"><path fill-rule="evenodd" d="M12.01,0c0.64,0,1.25,0.25,1.7,0.7c1.15,1.15,3.48,3.48,5.2,5.2c1.35,1.35,3.18,2.11,5.09,2.11c0.01,0,0.01,0,0.01,0V9H0V8h0.02c1.91,0,3.74-0.76,5.09-2.11C6.83,4.17,9.15,1.85,10.3,0.7c0.45-0.45,1.06-0.7,1.7-0.7C12,0,12,0,12.01,0z"/></svg>');
@@ -19,24 +20,22 @@ $triangle-r: url('data:image/svg+xml;utf8,<svg version="1.1" baseProfile="tiny" 
 	--centerX: calc(50% + var(--left) / 2 - var(--right) / 2);
 	--centerY: calc(50% + var(--top) / 2 - var(--bottom) / 2);
 
+	/// TODO: Enhance calcs below
 	--width:  calc(100% - var(--left) - var(--right) - var(--cornerDiameter));
 	--height: calc(100% - var(--top) - var(--bottom) - var(--cornerDiameter));
 
 	--mask:
 		var(--triangleGraphic) var(--trianglePosition) / var(--triangleSize) no-repeat
-		,linear-gradient(black,black) var(--centerX) var(--centerY) / var(--width) var(--height) no-repeat
+
+		/* center plus */
+    ,linear-gradient(black,black) var(--centerX) var(--centerY) / calc(var(--width) + var(--cornerDiameter)) var(--height) no-repeat
+		,linear-gradient(black,black) var(--centerX) var(--centerY) / var(--width) calc(var(--height) + var(--cornerDiameter)) no-repeat
 
 		/* corners */
 		,var(--cornerGraphic) var(--left)                               var(--top) / var(--cornerDiameter) no-repeat
 		,var(--cornerGraphic) calc(100% - var(--right))                 var(--top) / var(--cornerDiameter) no-repeat
 		,var(--cornerGraphic) calc(100% - var(--right)) calc(100% - var(--bottom)) / var(--cornerDiameter) no-repeat
 		,var(--cornerGraphic) var(--left)               calc(100% - var(--bottom)) / var(--cornerDiameter) no-repeat
-
-		/* edges */
-		,linear-gradient(black,black) var(--centerX)                 var(--top) / var(--width)  var(--cornerDiameter) no-repeat
-		,linear-gradient(black,black) calc(100% - var(--right))  var(--centerY) / var(--cornerDiameter) var(--height) no-repeat
-		,linear-gradient(black,black) var(--centerX) calc(100% - var(--bottom)) / var(--width)  var(--cornerDiameter) no-repeat
-		,linear-gradient(black,black) var(--left)                var(--centerY) / var(--cornerDiameter) var(--height) no-repeat
 	;
 	mask: var(--mask);
 }
