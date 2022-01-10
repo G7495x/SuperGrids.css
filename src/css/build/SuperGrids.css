@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * SuperGrids.css v1.0.0-beta.7 - https://G7495x.github.io/SuperGrids.css
+ * SuperGrids.css v1.0.0-beta.8 - https://G7495x.github.io/SuperGrids.css
  * Licensed under MIT License   - https://github.com/G7495x/SuperGrids.css/blob/master/LICENSE
  */
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -1766,7 +1766,7 @@ input[type=range] {
 input[type=range]::-webkit-slider-thumb {
   width: 20px;
   height: 8px;
-  margin: -1.5px 0px;
+  margin: -1.75px 0px;
   border: 0.5px solid Hsla(var(--textHSL), 0.25);
   border-radius: 3px;
   background-color: Hsl(var(--textHSL));
@@ -1777,7 +1777,7 @@ input[type=range]::-webkit-slider-thumb {
 input[type=range]::-moz-range-thumb {
   width: 20px;
   height: 8px;
-  margin: -1.5px 0px;
+  margin: -1.75px 0px;
   border: 0.5px solid Hsla(var(--textHSL), 0.25);
   border-radius: 3px;
   background-color: Hsl(var(--textHSL));

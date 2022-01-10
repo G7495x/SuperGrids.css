@@ -200,7 +200,7 @@ input[type="range"]{
 	@include input-range-thumb{
 		width: 20px;
 		height: 8px;
-		margin: -1.5px 0px;
+		margin: -1.75px 0px;
 		border: 0.5px solid Hsla(var(--textHSL),.25);
 		border-radius: 3px;
 		background-color: Hsl(var(--textHSL));

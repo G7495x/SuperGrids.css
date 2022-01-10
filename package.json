@@ -1,6 +1,6 @@
 {
 	"name": "supergrids.css",
-	"version": "1.0.0-beta.7",
+	"version": "1.0.0-beta.8",
 	"description": "SuperGrids.css - Supercharge your layouts.",
 	"main": "src/css/build/SuperGrids.css",
 	"scripts": {
